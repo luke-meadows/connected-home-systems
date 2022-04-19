@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "emailjs": "^3.8.1",
+    "firebase": "^9.6.11",
     "next": "12.1.5",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "redux": "^4.1.2",
+    "styled-components": "^5.3.5",
+    "swiper": "^8.1.1"
   },
   "devDependencies": {
     "eslint": "8.13.0",
