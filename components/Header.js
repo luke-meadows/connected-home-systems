@@ -1,8 +1,19 @@
 import styled from 'styled-components';
+import HeaderContactDetails from './HeaderContactDetails';
+import Logo from './Logo';
+import Nav from './Nav';
 export default function Header() {
   return (
     <StyledHeader>
-      <h1>Header</h1>
+      <SocialsBanner>
+        <i class="icon-facebook" />
+        <i class="icon-instagram" />
+      </SocialsBanner>
+      <MainHeader>
+        <Logo width={400} />
+        <Nav />
+        <HeaderContactDetails />
+      </MainHeader>
     </StyledHeader>
   );
 }
@@ -13,5 +24,25 @@ const StyledHeader = styled.header`
   left: 0;
   width: 100%;
   background: none;
-  border: 1px solid blue;
+  height: 8rem;
+  background: var(--white);
+`;
+
+const SocialsBanner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  i {
+    cursor: pointer;
+  }
+`;
+
+const MainHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  padding: 0 6rem;
 `;
