@@ -13,7 +13,6 @@ export default function Logo({ width }) {
 
 const StyledLogo = styled.div`
   flex: 1 1 0px;
-  border: 1px solid blue;
 `;
 const ImageContainer = styled.div`
   width: 200px;

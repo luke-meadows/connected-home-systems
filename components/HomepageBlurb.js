@@ -4,9 +4,9 @@ export default function HomepageBlurb() {
     <StyledBlurb>
       <p>
         We are connected home systems. We install technology systems into your
-        home. Whether it be a new build or rennovation - our experienced
-        engineers can help you every step of the way. From design to
-        installation.
+        home. Whether it be a new build or rennovation - From design to
+        installation our experienced engineers can help you every step of the
+        way.
       </p>
     </StyledBlurb>
   );
@@ -17,6 +17,8 @@ const StyledBlurb = styled.div`
   p {
     font-weight: 500;
     font-size: 1.2rem;
-    max-width: 60ch;
+    width: 70ch;
+    color: var(--teal);
+    margin: 0 auto;
   }
 `;

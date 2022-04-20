@@ -7,6 +7,7 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --white: rgb(255, 255, 255);
   --black: rgb(11, 11, 11);
+  --teal: #31787a;
   color: var(--black);
 }
 

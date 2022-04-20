@@ -13,7 +13,6 @@ export default function HeaderContactDetails() {
 
 const StyledDetails = styled.div`
   flex: 1 1 0px;
-  border: 1px solid blue;
   display: flex;
   justify-content: flex-end;
   i {
