@@ -26,6 +26,7 @@ const StyledHeader = styled.header`
   background: none;
   height: 8rem;
   background: var(--white);
+  z-index: 2;
 `;
 
 const SocialsBanner = styled.div`
