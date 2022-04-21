@@ -2,6 +2,7 @@ import Control from '../components/Control';
 import Hero from '../components/Hero';
 import HomeImageGallery from '../components/HomeImageGallery';
 import HomepageBlurb from '../components/HomepageBlurb';
+import ServicesGrid from '../components/ServicesGrid';
 
 export default function Home() {
   return (
@@ -9,7 +10,7 @@ export default function Home() {
       <Hero />
       <HomepageBlurb />
       <HomeImageGallery />
-      <Control />
+      <ServicesGrid />
     </div>
   );
 }

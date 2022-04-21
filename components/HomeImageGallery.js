@@ -36,6 +36,7 @@ const GalleryContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 -0.2rem;
+  overflow: hidden;
 `;
 
 const Left = styled.div``;

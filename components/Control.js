@@ -23,7 +23,7 @@ export default function Control() {
 }
 
 const StyledControl = styled.div`
-  padding: 6rem;
+  padding: 10rem 6rem;
   h1 {
     color: var(--teal);
     font-weight: 500;
