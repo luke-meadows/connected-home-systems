@@ -33,7 +33,7 @@ const SocialsBanner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  height: 2.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   i {
     cursor: pointer;
@@ -44,6 +44,6 @@ const MainHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 6rem;
+  height: 5.5rem;
   padding: 0 6rem;
 `;

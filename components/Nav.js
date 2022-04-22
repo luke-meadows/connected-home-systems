@@ -22,5 +22,6 @@ const StyledNav = styled.nav`
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
   }
 `;

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Montserrat:wght@100;400;500;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,500&family=PT+Sans:wght@400;700&display=swap');
 html,
 body {
   padding: 0;
@@ -8,7 +10,26 @@ body {
   --white: rgb(255, 255, 255);
   --black: rgb(11, 11, 11);
   --teal: #31787a;
+  --green: #81e2ab;
   color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+a,
+button,
+li,
+p {
+  font-family: 'Cardo', serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 a {
@@ -25,5 +46,4 @@ a {
 p {
   margin: 0;
   padding: 0;
-  background: rgba(255, 255, 255, 0.45);
 }

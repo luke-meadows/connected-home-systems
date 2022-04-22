@@ -16,8 +16,8 @@ const StyledBlurb = styled.div`
   padding: 6rem;
   p {
     font-weight: 500;
-    font-size: 1.2rem;
-    width: 70ch;
+    font-size: 1.6rem;
+    width: 80ch;
     color: var(--teal);
     margin: 0 auto;
   }
