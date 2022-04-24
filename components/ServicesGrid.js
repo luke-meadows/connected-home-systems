@@ -150,7 +150,7 @@ const InnerCard = styled.div`
   i {
     color: white;
     font-size: 2rem;
-    background: white;
+    background: var(--white);
     color: black;
     border-radius: 2px;
   }
