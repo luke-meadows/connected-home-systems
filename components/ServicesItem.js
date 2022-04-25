@@ -5,7 +5,7 @@ export default function ServicesItem({ item, idx }) {
   return (
     <ServicesItemContainer idx={idx}>
       <ImageContainer>
-        <Image src={item.img} layout="responsive" objectFit="cover" />
+        <Image src={item.img} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ItemText>
         <h3>{item.title}</h3>
@@ -27,6 +27,7 @@ const ServicesItemContainer = styled.div`
 
 const ImageContainer = styled.div`
   width: 70%;
+  position: relative;
 `;
 
 const ItemText = styled.div`
