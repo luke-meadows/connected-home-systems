@@ -4,6 +4,7 @@ import HomeImageGallery from '../components/HomeImageGallery';
 import HomepageBlurb from '../components/HomepageBlurb';
 import HomepageServicesGrid from '../components/HomepageServicesGrid';
 import ServicesGrid from '../components/ServicesGrid';
+import Testimonials from '../components/Testimonials';
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <HomepageBlurb />
       <HomepageServicesGrid />
+      <Testimonials />
       {/* <HomeImageGallery /> */}
       {/* <ServicesGrid /> */}
     </div>

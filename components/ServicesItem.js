@@ -39,11 +39,11 @@ const ItemText = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   p {
     line-height: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
   a {
     border-bottom: 1px solid black;

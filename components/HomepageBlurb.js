@@ -7,6 +7,9 @@ export default function HomepageBlurb() {
         home. Whether it be a new build or rennovation - From design to
         installation our experienced engineers can help you every step of the
         way.
+        <span className="placeholder">
+          **placeholder, needs to be rewritten**
+        </span>
       </p>
     </StyledBlurb>
   );
@@ -20,5 +23,11 @@ const StyledBlurb = styled.div`
     width: 80ch;
     color: var(--teal);
     margin: 0 auto;
+  }
+  .placeholder {
+    color: red;
+    opacity: 0.6;
+    font-size: 0.8rem;
+    margin-left: 10rem;
   }
 `;
