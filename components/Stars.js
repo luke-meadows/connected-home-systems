@@ -3,7 +3,7 @@ export default function Stars({ quantity }) {
   return (
     <Container>
       {[...Array(quantity)].map((e, i) => (
-        <i key={i} className="icon-twitter" />
+        <i key={i} className="icon-star" />
       ))}
     </Container>
   );

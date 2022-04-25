@@ -10,11 +10,12 @@ export default function Testimonials() {
 }
 
 const TestimonialsContainer = styled.div`
-  padding: 6rem;
+  padding: 6rem 3rem;
   h2 {
+    padding: 0 3.5rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: center;
+    margin-bottom: 4rem;
   }
 `;

@@ -22,6 +22,10 @@ const StyledDetails = styled.div`
   align-items: flex-end;
   i {
     font-size: 1.2rem;
+    &:hover {
+      color: var(--teal);
+      cursor: pointer;
+    }
   }
   .row {
     display: flex;

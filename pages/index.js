@@ -1,3 +1,4 @@
+import ContactSection from '../components/ContactSection';
 import Control from '../components/Control';
 import Hero from '../components/Hero';
 import HomeImageGallery from '../components/HomeImageGallery';
@@ -13,6 +14,7 @@ export default function Home() {
       <HomepageBlurb />
       <HomepageServicesGrid />
       <Testimonials />
+      <ContactSection />
       {/* <HomeImageGallery /> */}
       {/* <ServicesGrid /> */}
     </div>

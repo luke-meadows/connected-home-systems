@@ -44,10 +44,16 @@ const ItemText = styled.div`
   p {
     line-height: 2rem;
     margin-bottom: 2rem;
+    color: var(--grey-text);
   }
   a {
     border-bottom: 1px solid black;
     padding-bottom: 0.4rem;
     width: fit-content;
+    font-style: italic;
+    font-size: 0.9rem;
+    &:hover {
+      color: var(--teal);
+    }
   }
 `;

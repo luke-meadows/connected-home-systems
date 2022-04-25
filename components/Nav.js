@@ -23,5 +23,9 @@ const StyledNav = styled.nav`
     font-size: 0.8rem;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
+    &:hover {
+      color: var(--teal);
+      cursor: pointer;
+    }
   }
 `;
