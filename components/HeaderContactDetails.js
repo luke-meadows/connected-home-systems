@@ -3,10 +3,14 @@ export default function HeaderContactDetails() {
   return (
     <StyledDetails>
       <div className="row">
-        <i class="icon-phone" />
+        <i className="icon-phone" />
         <p>+447 4148828</p>
       </div>
-      {/* <div className="row"></div> */}
+      <div className="row">
+        <i className="icon-facebook" />
+        <i className="icon-instagram" />
+        <i className="icon-twitter" />
+      </div>
     </StyledDetails>
   );
 }
@@ -14,13 +18,15 @@ export default function HeaderContactDetails() {
 const StyledDetails = styled.div`
   flex: 1 1 0px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   i {
     font-size: 1.2rem;
   }
   .row {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   p {
     text-transform: uppercase;

@@ -126,7 +126,7 @@ const Grid = styled.div`
 `;
 
 const OuterCard = styled.div`
-  box-shadow: 0px 0px 18px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
   background: var(--teal);
   color: var(--white);
   border-radius: 3px;

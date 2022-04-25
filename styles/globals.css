@@ -11,6 +11,8 @@ body {
   --black: rgb(11, 11, 11);
   --teal: #31787a;
   --green: #81e2ab;
+  --grey: #e8e8e8;
+  --black-bg: #231f20;
   color: var(--black);
 }
 

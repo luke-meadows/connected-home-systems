@@ -5,10 +5,6 @@ import Nav from './Nav';
 export default function Header() {
   return (
     <StyledHeader>
-      <SocialsBanner>
-        <i class="icon-facebook" />
-        <i class="icon-instagram" />
-      </SocialsBanner>
       <MainHeader>
         <Logo width={400} />
         <Nav />
@@ -24,7 +20,7 @@ const StyledHeader = styled.header`
   left: 0;
   width: 100%;
   background: none;
-  height: 8rem;
+  height: 6rem;
   background: var(--white);
   z-index: 2;
 `;
@@ -44,6 +40,6 @@ const MainHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5.5rem;
+  height: 100%;
   padding: 0 6rem;
 `;
