@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <StyledNav>
       <Link href="/">Services</Link>
-      <Link href="/">Portfolio</Link>
+      <Link href="/portfolio">Portfolio</Link>
       <Link href="/">Gallery</Link>
       <Link href="/">Blog</Link>
       <Link href="/">Contact</Link>

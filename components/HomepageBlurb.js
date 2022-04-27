@@ -3,13 +3,10 @@ export default function HomepageBlurb() {
   return (
     <StyledBlurb>
       <p>
-        We are connected home systems, we install technology systems into your
-        home. Whether it be a new build or rennovation - from design to
-        installation our experienced team of engineers can help you every step
-        of the way.
-        <span className="placeholder">
-          **placeholder, needs to be rewritten**
-        </span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui debitis
+        officiis alias cumque itaque error magni culpa voluptate dolorum, quo
+        aperiam autem soluta distinctio natus, eligendi amet modi, porro eum
+        cupiditate quis sapiente.
       </p>
     </StyledBlurb>
   );
