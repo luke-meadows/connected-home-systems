@@ -20,6 +20,7 @@ const StyledBlurb = styled.div`
     width: 80ch;
     color: var(--teal);
     margin: 0 auto;
+    line-height: 2;
   }
   .placeholder {
     color: red;

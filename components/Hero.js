@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import hero from '../public/video/hero.mp4';
+import HeroText from './HeroText';
 export default function Hero() {
   return (
     <StyledHero>
@@ -12,6 +13,7 @@ export default function Hero() {
         src={require('../public/video/hero.mp4')}
         type="video/mp4"
       />
+      <HeroText>Your Home Connected</HeroText>
     </StyledHero>
   );
 }
@@ -19,7 +21,13 @@ export default function Hero() {
 const StyledHero = styled.section`
   height: 100vh;
   min-height: 500px;
+  height: calc(100vh - 6rem);
   background-size: cover;
+  position: relative;
+  margin-top: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const HeroVideo = styled.video`
@@ -27,4 +35,5 @@ const HeroVideo = styled.video`
   width: 100%;
   object-fit: cover;
   pointer-events: none;
+  position: absolute;
 `;

@@ -1,30 +1,60 @@
+import Image from 'next/image';
+import { useState } from 'react';
 import styled from 'styled-components';
+import { portfolioData } from '../lib/portfolioData';
 export default function PortfolioGrid() {
-  const PortfolioGridItem = () => {
-    return <GridItem>Item</GridItem>;
+  const PortfolioGridItem = ({ item }) => {
+    const [hovered, setHovered] = useState(false);
+    return (
+      <GridItem
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <Image src={item.img} layout="fill" objectFit="cover" />
+        {hovered && (
+          <div className="overlay">
+            <h3>{item.location}</h3>
+          </div>
+        )}
+      </GridItem>
+    );
   };
 
   return (
     <Grid>
-      <PortfolioGridItem />
-      <PortfolioGridItem />
-      <PortfolioGridItem />
-      <PortfolioGridItem />
-      <PortfolioGridItem />
-      <PortfolioGridItem />
-      <PortfolioGridItem />
-      <PortfolioGridItem />
+      {portfolioData.map((item) => (
+        <PortfolioGridItem item={item} />
+      ))}
     </Grid>
   );
 }
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin: 6rem;
 `;
 const GridItem = styled.div`
   aspect-ratio: 1;
-  border: 1px solid black;
+  position: relative;
+  cursor: pointer;
+  .overlay {
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 12px;
+      color: white;
+    }
+  }
 `;
