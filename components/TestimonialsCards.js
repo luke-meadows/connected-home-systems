@@ -9,7 +9,7 @@ export default function TestimonialsCards() {
       <CardContainer>
         {testimonialsData.map((item, i) => {
           return (
-            <Card>
+            <Card key={i}>
               <h4>{item.name}</h4>
               <p>{item.comment}</p>
               <p className="location">{item.location}</p>

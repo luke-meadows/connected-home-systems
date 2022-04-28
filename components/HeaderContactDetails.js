@@ -4,7 +4,7 @@ export default function HeaderContactDetails() {
     <StyledDetails>
       <div className="row">
         <i className="icon-phone" />
-        <p>+447 4148828</p>
+        <p>+447 41488 2844</p>
       </div>
       <div className="row">
         <i className="icon-facebook" />
