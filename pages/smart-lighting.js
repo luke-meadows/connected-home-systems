@@ -9,7 +9,7 @@ export default function smartLighting() {
     img2,
   };
   return (
-    <div style={{ marginTop: '10rem' }}>
+    <div style={{ marginTop: '8rem' }}>
       <HeroText black={true}>Smart Lighting</HeroText>
       <ServicePage service={service} />
       <ContactSection />

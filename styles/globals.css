@@ -29,6 +29,11 @@ h6 {
   font-family: 'Raleway', sans-serif;
 }
 
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 a,
 button,
 li,

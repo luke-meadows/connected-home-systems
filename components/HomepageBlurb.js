@@ -22,6 +22,7 @@ const StyledBlurb = styled.div`
   flex-direction: column;
   margin: 0 auto;
   h3 {
+    text-transform: uppercase;
     text-align: center;
     letter-spacing: 3px;
     margin-bottom: 2rem;
