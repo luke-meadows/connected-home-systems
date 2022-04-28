@@ -4,7 +4,7 @@ export default function Nav() {
   return (
     <StyledNav>
       <Link href="/smart-lighting">Services</Link>
-      <Link href="/portfolio">Portfolio</Link>
+      <Link href="/projects">Projects</Link>
       <Link href="/">Gallery</Link>
       <Link href="/">Blog</Link>
       <Link href="/">Technology</Link>

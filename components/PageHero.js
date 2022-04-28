@@ -10,7 +10,7 @@ export default function PageHero() {
           <Image src={hero} layout="fill" objectFit="cover" ob />
         </BackgroundImage>
       </Absolute>
-      <HeroText>Portfolio</HeroText>
+      <HeroText>Projects</HeroText>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
         necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.

@@ -28,16 +28,8 @@ const StyledBlurb = styled.div`
   }
   p {
     font-weight: 500;
-
-    /* color: var(--teal); */
     margin: 0 auto;
     line-height: 2;
-  }
-  .placeholder {
-    color: red;
-    opacity: 0.6;
-    font-size: 0.8rem;
-    margin-left: 10rem;
   }
 
   button {

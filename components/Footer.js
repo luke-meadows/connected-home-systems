@@ -5,7 +5,6 @@ import LogoNoText from './LogoNoText';
 export default function Footer() {
   return (
     <StyledFooter>
-      <LogoNoText width={1} />
       <ColumnContainer>
         <Column>
           <h4>Connected Home Systems</h4>
@@ -22,7 +21,7 @@ export default function Footer() {
         </Column>
       </ColumnContainer>
       <Column>
-        <h4>Our services</h4>
+        <h4>Services</h4>
         <Link href="/">Smart Home</Link>
         <Link href="/">Design and Build</Link>
         <Link href="/">Multiroom</Link>
@@ -37,6 +36,7 @@ export default function Footer() {
         <Link href="/">Instagram</Link>
         <Link href="/">Twitter</Link>
       </Column>
+      <LogoNoText width={1} />
     </StyledFooter>
   );
 }
@@ -54,10 +54,10 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     font-weight: 500;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     margin-bottom: 1rem;
   }
   a {

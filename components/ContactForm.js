@@ -33,7 +33,7 @@ const Form = styled.form`
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     &::placeholder {
       color: black;
       opacity: 1;
@@ -45,12 +45,12 @@ const Form = styled.form`
   button {
     margin-top: 2rem;
     border: 2px solid black;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 3rem;
     font-size: 0.9rem;
     text-transform: uppercase;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     &:hover {
       color: var(--teal);
       cursor: pointer;

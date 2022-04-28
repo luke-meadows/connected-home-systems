@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { portfolioData } from '../lib/portfolioData';
-export default function ProjectGrid() {
-  const ProjectGridItem = ({ item }) => {
+export default function PortfolioGrid() {
+  const PortfolioGridItem = ({ item }) => {
     const [hovered, setHovered] = useState(false);
     return (
       <GridItem
@@ -23,7 +23,7 @@ export default function ProjectGrid() {
   return (
     <Grid>
       {portfolioData.map((item) => (
-        <ProjectGridItem item={item} />
+        <PortfolioGridItem item={item} />
       ))}
     </Grid>
   );
