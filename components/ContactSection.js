@@ -16,7 +16,7 @@ const ContactContainer = styled.div`
   h2 {
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     text-align: center;
     margin-bottom: 4rem;
   }

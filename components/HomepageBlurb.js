@@ -23,7 +23,7 @@ const StyledBlurb = styled.div`
   margin: 0 auto;
   h3 {
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 2rem;
   }
   p {

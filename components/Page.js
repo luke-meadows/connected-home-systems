@@ -7,10 +7,29 @@ export default function Page({ children }) {
       <Header />
       {children}
       <Footer />
+      <Chat>
+        <i className="icon-comment" />
+      </Chat>
     </StyledPage>
   );
 }
 
 const StyledPage = styled.div`
   position: relative;
+`;
+
+const Chat = styled.div`
+  position: fixed;
+  right: 1rem;
+  bottom: 1.5rem;
+  color: white;
+  transform: scaleX(-1);
+  i {
+    font-size: 1.8rem;
+    background-color: var(--teal);
+    padding: 0.75rem;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    cursor: pointer;
+  }
 `;

@@ -15,7 +15,7 @@ const TestimonialsContainer = styled.div`
     padding: 0 3.5rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     margin-bottom: 4rem;
   }
 `;

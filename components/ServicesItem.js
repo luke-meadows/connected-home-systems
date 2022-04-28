@@ -39,7 +39,7 @@ const ItemText = styled.div`
   h3 {
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     margin-bottom: 2rem;
   }
   p {

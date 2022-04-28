@@ -15,7 +15,6 @@ export default function ContactForm() {
 }
 
 const Form = styled.form`
-  width: 70rem;
   margin: 0 auto;
   .top {
     grid-gap: 2rem;
