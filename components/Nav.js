@@ -3,10 +3,11 @@ import styled from 'styled-components';
 export default function Nav() {
   return (
     <StyledNav>
-      <Link href="/">Services</Link>
+      <Link href="/smart-lighting">Services</Link>
       <Link href="/portfolio">Portfolio</Link>
       <Link href="/">Gallery</Link>
       <Link href="/">Blog</Link>
+      <Link href="/">Technology</Link>
       <Link href="/">Contact</Link>
     </StyledNav>
   );
@@ -27,8 +28,10 @@ const StyledNav = styled.nav`
     font-size: 0.8rem;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
-    position: relative;
+    font-family: 'Raleway', sans-serif;
 
+    position: relative;
+    letter-spacing: 1px;
     &:hover {
       color: var(--teal);
       cursor: pointer;

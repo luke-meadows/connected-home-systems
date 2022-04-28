@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-export default function HeroText({ children }) {
-  return <Text>{children}</Text>;
+export default function HeroText({ children, black }) {
+  return <Text black={black}>{children}</Text>;
 }
 
 const Text = styled.h1`
@@ -11,6 +11,10 @@ const Text = styled.h1`
   letter-spacing: 12px;
   position: relative;
   color: white;
+  color: ${(props) => (props.black ? 'black' : 'white')};
+
+  width: fit-content;
+  margin: 0 auto;
   &:after {
     content: '';
     position: absolute;
@@ -19,7 +23,7 @@ const Text = styled.h1`
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: white;
+    background-color: ${(props) => (props.black ? 'black' : 'white')};
     transform-origin: bottom right;
   }
 `;
