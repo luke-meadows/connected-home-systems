@@ -5,12 +5,18 @@ import HeroText from './HeroText';
 export default function PageHero() {
   return (
     <Container>
-      <Absolute>
+      {/* <Absolute>
         <BackgroundImage>
           <Image src={hero} layout="fill" objectFit="cover" ob />
         </BackgroundImage>
       </Absolute>
       <HeroText>Projects</HeroText>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+        necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Deleniti, necessitatibus.
+      </p> */}
+      <h2>Projects</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
         necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.

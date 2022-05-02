@@ -42,8 +42,6 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  padding: 6rem;
-  margin-top: 3rem;
 `;
 
 const ImageContainer = styled.div`
