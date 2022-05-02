@@ -33,7 +33,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  margin: 0 6rem;
+  margin: 0 6rem 6rem 6rem;
 `;
 const GridItem = styled.div`
   aspect-ratio: 1;
