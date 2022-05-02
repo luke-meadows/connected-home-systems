@@ -5,17 +5,6 @@ import HeroText from './HeroText';
 export default function PageHero() {
   return (
     <Container>
-      {/* <Absolute>
-        <BackgroundImage>
-          <Image src={hero} layout="fill" objectFit="cover" ob />
-        </BackgroundImage>
-      </Absolute>
-      <HeroText>Projects</HeroText>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-        necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Deleniti, necessitatibus.
-      </p> */}
       <h2>Projects</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
@@ -28,18 +17,10 @@ export default function PageHero() {
 
 const Container = styled.div`
   margin-top: 6rem;
-  height: 30rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-
+  padding: 6rem;
   p {
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 80ch;
-    text-align: center;
     line-height: 2;
   }
 `;
