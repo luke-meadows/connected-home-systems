@@ -6,6 +6,7 @@ export default function Nav() {
       <Link href="/smart-lighting">Services</Link>
       <Link href="/projects">Projects</Link>
       <Link href="/">Gallery</Link>
+      <Link href="/about-us">About</Link>
       <Link href="/">Blog</Link>
       <Link href="/">Technology</Link>
       <Link href="/">Contact</Link>
