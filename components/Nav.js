@@ -40,10 +40,10 @@ const StyledNav = styled.nav`
       content: '';
       position: absolute;
       width: 100%;
+      left: 0;
       transform: scaleX(0);
       height: 2px;
       bottom: -5px;
-      left: 0;
       background-color: var(--teal);
       transform-origin: bottom right;
       transition: transform 0.25s ease-out;
