@@ -4,10 +4,9 @@ export default function Nav() {
   return (
     <StyledNav>
       <Link href="/smart-lighting">Services</Link>
+      <Link href="/about-us">About</Link>
       <Link href="/projects">Projects</Link>
       <Link href="/">Gallery</Link>
-      <Link href="/about-us">About</Link>
-      <Link href="/">Blog</Link>
       <Link href="/">Technology</Link>
       <Link href="/">Contact</Link>
     </StyledNav>
@@ -28,9 +27,7 @@ const StyledNav = styled.nav`
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
     font-family: 'Raleway', sans-serif;
-
     position: relative;
     letter-spacing: 1px;
     &:hover {

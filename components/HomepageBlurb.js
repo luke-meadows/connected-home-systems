@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export default function HomepageBlurb() {
   return (
     <StyledBlurb>
-      <h3>YOUR HOME IS CAPABLE OF SO MUCH MORE</h3>
+      <h3>YOUR HOME has so much potential</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui debitis
         officiis alias cumque itaque error magni culpa voluptate dolorum, quo

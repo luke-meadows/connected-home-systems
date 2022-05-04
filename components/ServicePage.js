@@ -41,7 +41,7 @@ export default function ServicePage({ service }) {
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 6rem;
 `;
 
 const ImageContainer = styled.div`
@@ -53,7 +53,7 @@ const TextContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6rem;
+
   p {
     line-height: 2;
     color: var(--grey-text);

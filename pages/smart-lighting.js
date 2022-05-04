@@ -9,10 +9,12 @@ export default function smartLighting() {
     img2,
   };
   return (
-    <div style={{ marginTop: '6rem', padding: '6rem' }}>
-      <h2 style={{ marginBottom: '3rem' }}>Smart Lighting</h2>
-      <ServicePage service={service} />
+    <>
+      <div style={{ marginTop: '6rem', padding: '6rem' }}>
+        <h2 style={{ marginBottom: '4rem' }}>Smart Lighting</h2>
+        <ServicePage service={service} />
+      </div>
       <ContactSection />
-    </div>
+    </>
   );
 }
