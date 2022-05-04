@@ -34,6 +34,19 @@ export default function ServicePage({ service }) {
       <ImageContainer>
         <Image src={service.img2} layout="fill" objectFit="cover" />
       </ImageContainer>
+      <ImageContainer>
+        <Image src={service.img3} layout="fill" objectFit="cover" />
+      </ImageContainer>
+      <TextContainer>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
+          debitis magni quae natus eius adipisci sequi, nulla id amet. Rem ipsa
+          ut similique nulla omnis, perspiciatis, ullam molestias repellendus
+          aut ducimus quam eveniet et iusto amet earum non sint officia corrupti
+          nemo! Aspernatur natus facilis illo, quisquam odio impedit quis beatae
+          asperiores ipsam neque ab inventore alias adipisci. Ratione.
+        </p>
+      </TextContainer>
     </Grid>
   );
 }
