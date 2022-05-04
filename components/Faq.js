@@ -40,7 +40,7 @@ const Container = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 `;
 

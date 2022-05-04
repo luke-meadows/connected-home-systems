@@ -27,7 +27,7 @@ const Form = styled.form`
     border: none;
     display: inline-block;
     border-bottom: 1px solid black;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     width: 100%;
     font-size: 0.9rem;
     text-transform: uppercase;

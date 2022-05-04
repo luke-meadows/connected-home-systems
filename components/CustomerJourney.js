@@ -4,7 +4,7 @@ import img from '../public/imgs/living-room.png';
 export default function CustomerJourney() {
   return (
     <Journey>
-      <h2>The Process</h2>
+      <h2>The Journey</h2>
       <Grid>
         <ProcessImage style={{ aspectRatio: 1 }}>
           <Image src={img} layout="fill" objectFit="cover" />
@@ -61,6 +61,9 @@ export default function CustomerJourney() {
 
 const Journey = styled.div`
   padding: 0 6rem 6rem 6rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
 `;
 const Grid = styled.div`
   display: grid;

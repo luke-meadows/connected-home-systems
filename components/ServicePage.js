@@ -54,7 +54,7 @@ export default function ServicePage({ service }) {
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 6rem;
+  grid-column-gap: 6rem;
 `;
 
 const ImageContainer = styled.div`

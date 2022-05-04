@@ -18,6 +18,9 @@ export default function PageHero() {
 const Container = styled.div`
   margin-top: 6rem;
   padding: 6rem 6rem 3rem 6rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
   p {
     margin-top: 2rem;
     width: 80ch;
