@@ -87,15 +87,12 @@ const ProcessLine = styled.div`
     width: 4px;
     margin: 0 auto;
     height: 100%;
-    /* background: #000; */
     background: var(--teal);
   }
   .square {
     width: 20px;
     height: 20px;
-    /* background: var(--teal); */
-    background: #000;
-
+    background: var(--black);
     position: absolute;
     left: 50%;
     top: 50%;
