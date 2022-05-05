@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { portfolioData } from '../lib/portfolioData';
-export default function ProjectGrid() {
+export default function ProjectsGrid() {
   const ProjectGridItem = ({ item }) => {
     const [hovered, setHovered] = useState(false);
     return (

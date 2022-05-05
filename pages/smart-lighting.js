@@ -1,8 +1,7 @@
 import ContactSection from '../components/ContactSection';
 import ServicePage from '../components/ServicePage';
-import HeroText from '../components/HeroText';
 import { servicesData } from '../lib/servicesData';
-export default function smartLighting() {
+export default function SmartLighting() {
   const service = servicesData[0];
   return (
     <>

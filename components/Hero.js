@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import hero from '../public/video/hero.mp4';
-import HeroText from './HeroText';
 export default function Hero() {
   return (
     <StyledHero>
@@ -13,7 +11,7 @@ export default function Hero() {
         src={require('../public/video/hero.mp4')}
         type="video/mp4"
       />
-      <HeroText>Your Home Connected</HeroText>
+      <Text>Your Home Connected</Text>
     </StyledHero>
   );
 }
@@ -36,4 +34,29 @@ const HeroVideo = styled.video`
   object-fit: cover;
   pointer-events: none;
   position: absolute;
+`;
+
+const Text = styled.h1`
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 12px;
+  position: relative;
+  color: white;
+  color: ${(props) => (props.black ? 'black' : 'white')};
+
+  width: fit-content;
+  margin: 0 auto;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 2px;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: ${(props) => (props.black ? 'black' : 'white')};
+    transform-origin: bottom right;
+  }
 `;

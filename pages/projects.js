@@ -1,11 +1,30 @@
 import styled from 'styled-components';
-import PageHero from '../components/PageHero';
-import PortfolioGrid from '../components/PortfolioGrid';
-export default function projects() {
+import ProjectsGrid from '../components/ProjectsGrid';
+export default function Projects() {
   return (
     <div>
-      <PageHero />
-      <PortfolioGrid />
+      <Container>
+        <h2>Projects</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+          necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Deleniti, necessitatibus.
+        </p>
+      </Container>
+      <ProjectsGrid />
     </div>
   );
 }
+
+const Container = styled.div`
+  margin-top: 6rem;
+  padding: 6rem 6rem 3rem 6rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-top: 2rem;
+    width: 80ch;
+    line-height: 2;
+  }
+`;
