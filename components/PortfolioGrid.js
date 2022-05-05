@@ -22,8 +22,8 @@ export default function ProjectGrid() {
 
   return (
     <Grid>
-      {portfolioData.map((item) => (
-        <ProjectGridItem item={item} />
+      {portfolioData.map((item, i) => (
+        <ProjectGridItem key={i} item={item} />
       ))}
     </Grid>
   );
