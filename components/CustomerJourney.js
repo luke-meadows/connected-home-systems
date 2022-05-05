@@ -68,6 +68,7 @@ const Journey = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 45% 10% 45%;
+  grid-template-columns: auto 8rem auto;
 `;
 
 const ProcessText = styled.div`

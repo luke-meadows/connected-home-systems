@@ -26,7 +26,7 @@ const Question = ({ question, answer }) => {
 export default function Faq() {
   return (
     <Container>
-      <h2>FAQ's</h2>
+      <h2>FAQ&apos;s</h2>
       <div>
         <Question />
         <Question />
@@ -70,7 +70,7 @@ const QuestionAnswer = styled.div`
   overflow: hidden;
   border-bottom: 2px solid black;
   padding-bottom: 1rem;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 
   &.open {

@@ -25,7 +25,7 @@ const StyledBlurb = styled.div`
   margin: 0 auto;
   h3 {
     text-transform: uppercase;
-    text-align: center;
+    /* text-align: center; */
     letter-spacing: 3px;
     margin-bottom: 2rem;
   }
@@ -45,5 +45,6 @@ const StyledBlurb = styled.div`
     font-size: 0.9rem;
     cursor: pointer;
     margin-top: 2rem;
+    width: fit-content;
   }
 `;
