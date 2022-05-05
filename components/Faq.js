@@ -1,12 +1,26 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 const Question = ({ question, answer }) => {
+  const [open, setOpen] = useState(false);
   return (
-    <QuestionContainer>
-      <p>What kind of tech can I have installed?</p>
-      <span>
-        <i className="icon-plus" />
-      </span>
-    </QuestionContainer>
+    <QuestionAnswer
+      onClick={() => setOpen(!open)}
+      className={open ? 'open' : ''}
+    >
+      <QuestionContainer>
+        <p style={open ? { fontWeight: '600' } : {}}>
+          What kind of tech can I have installed?
+        </p>
+        <span>
+          <i className={open ? 'icon-minus' : 'icon-plus'} />
+        </span>
+      </QuestionContainer>
+      <p style={{ color: 'var(--teal)' }}>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio saepe
+        culpa voluptates velit quos facere voluptas distinctio officia dolores
+        inventore!
+      </p>
+    </QuestionAnswer>
   );
 };
 export default function Faq() {
@@ -37,17 +51,29 @@ const Container = styled.div`
 
 const QuestionContainer = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding-bottom: 1rem;
   margin-top: 1rem;
-  border-bottom: 2px solid black;
   color: var(--grey-text);
-  cursor: pointer;
+  p {
+    padding-bottom: 1rem;
+  }
   i {
     color: black;
     &:hover {
       color: var(--teal);
     }
+  }
+`;
+
+const QuestionAnswer = styled.div`
+  max-height: 3rem;
+  overflow: hidden;
+  border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+
+  &.open {
+    max-height: 10rem;
   }
 `;
