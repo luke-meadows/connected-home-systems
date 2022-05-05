@@ -4,10 +4,12 @@ export default function HomepageBlurb() {
     <StyledBlurb>
       <h3>YOUR HOME has so much potential</h3>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui debitis
-        officiis alias cumque itaque error magni culpa voluptate dolorum, quo
-        aperiam autem soluta distinctio natus, eligendi amet modi, porro eum
-        cupiditate quis sapiente.
+        The lights in your home can turn on by themselves when you enter the
+        room and then off again when you leave, your heating knows when and how
+        you like the temperature set by learning your routines. These and more,
+        are the capabilities of a smart home which are achievable through
+        independent products and multiple interfaces but our aim is to make the
+        smart home a simple home.
       </p>
       <button>Speak with our experts</button>
     </StyledBlurb>
@@ -42,5 +44,6 @@ const StyledBlurb = styled.div`
     border-radius: 2px;
     font-size: 0.9rem;
     cursor: pointer;
+    margin-top: 2rem;
   }
 `;
