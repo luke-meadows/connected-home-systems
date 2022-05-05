@@ -5,9 +5,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Connected Home Systems</title>
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

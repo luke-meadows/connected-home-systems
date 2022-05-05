@@ -1,9 +1,13 @@
+import Head from 'next/head';
 import styled from 'styled-components';
 import Footer from './Footer';
 import Header from './Header';
 export default function Page({ children }) {
   return (
     <StyledPage>
+      <Head>
+        <title>Connected Home Systems</title>
+      </Head>
       <Header />
       {children}
       <Footer />
