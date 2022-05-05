@@ -16,6 +16,6 @@ const TestimonialsContainer = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 `;

@@ -27,7 +27,7 @@ export default function AboutUsSection() {
 const StyledAbout = styled.div`
   padding: 6rem;
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
   p {
     line-height: 2;

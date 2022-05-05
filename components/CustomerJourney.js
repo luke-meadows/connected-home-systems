@@ -60,17 +60,14 @@ export default function CustomerJourney() {
 }
 
 const Journey = styled.div`
-  padding: 0 6rem 6rem 6rem;
+  padding: 0 6rem 0rem 6rem;
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 `;
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 45% 10% 45%;
-  margin: 3rem 0;
-  * {
-  }
 `;
 
 const ProcessText = styled.div`

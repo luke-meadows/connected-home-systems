@@ -9,6 +9,7 @@ export default function ContactForm() {
         <input type="text" placeholder="Confirm Email" />
       </div>
       <input type="address" placeholder="Project Address" />
+      <textarea placeholder="message" />
       <button type="submit">Send</button>
     </Form>
   );
@@ -17,12 +18,12 @@ export default function ContactForm() {
 const Form = styled.form`
   margin: 0 auto;
   .top {
-    grid-gap: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 2rem;
+    grid-column-gap: 4rem;
   }
-  input {
+  input,
+  textarea {
     background: none;
     border: none;
     display: inline-block;
@@ -34,6 +35,8 @@ const Form = styled.form`
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
     letter-spacing: 4px;
+    margin-bottom: 2rem;
+
     &::placeholder {
       color: black;
       opacity: 1;
@@ -43,7 +46,6 @@ const Form = styled.form`
     }
   }
   button {
-    margin-top: 2rem;
     border: 2px solid black;
     padding: 0.5rem 3rem;
     font-size: 0.9rem;
