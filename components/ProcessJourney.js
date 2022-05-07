@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import img from '../public/imgs/living-room.png';
-export default function CustomerJourney() {
+export default function ProcessJourney() {
   return (
     <Journey>
-      <h2>The Journey</h2>
+      <h2>The Process Journey</h2>
       <Grid>
         <ProcessImage style={{ aspectRatio: 1 }}>
           <Image src={img} layout="fill" objectFit="cover" />
