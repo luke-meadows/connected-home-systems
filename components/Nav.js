@@ -38,7 +38,7 @@ export default function Nav() {
           </div>
           <div className="bottom">
             <Link href="/home-automation">Home automation</Link>
-            <Link href="/design-and-build">Design and build</Link>
+            <Link href="/design-and-consultancy">Design and consultancy</Link>
             <Link href="/smart-lighting">Smart Lighting</Link>
             <Link href="/home-cinema">Home Cinema</Link>
             <Link href="/multiroom">Multiroom</Link>

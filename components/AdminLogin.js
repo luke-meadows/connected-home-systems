@@ -43,7 +43,7 @@ const Container = styled.div`
   padding: 6rem;
   form {
     width: 30rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   button {
     border: 2px solid black;
@@ -54,6 +54,7 @@ const Container = styled.div`
     font-weight: 700;
     letter-spacing: 4px;
     width: 100%;
+    background: none;
     &:hover {
       color: var(--teal);
       cursor: pointer;

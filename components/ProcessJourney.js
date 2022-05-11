@@ -62,7 +62,7 @@ export default function ProcessJourney() {
 const Journey = styled.div`
   padding: 0 6rem 0rem 6rem;
   h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 `;
 const Grid = styled.div`

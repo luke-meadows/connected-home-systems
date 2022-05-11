@@ -12,6 +12,7 @@ export default function ContactSection() {
 const ContactContainer = styled.div`
   padding: 6rem;
   background: var(--grey);
+
   h2 {
     font-weight: 700;
     text-transform: uppercase;

@@ -69,6 +69,5 @@ const TextContainer = styled.div`
 
   p {
     line-height: 2;
-    color: var(--grey-text);
   }
 `;

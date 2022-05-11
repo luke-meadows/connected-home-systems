@@ -8,7 +8,7 @@ export default function Admin() {
   const [user, setUser] = useState(null);
   useEffect(() => {
     console.log(auth.currentUser);
-  }, []);
+  }, [user]);
 
   return (
     <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>

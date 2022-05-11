@@ -24,7 +24,7 @@ export default function AdminDashboard({ setUser }) {
 }
 
 const Container = styled.div`
-  padding: 6rem;
+  padding: 3rem 6rem;
 `;
 
 const Tasks = styled.div`

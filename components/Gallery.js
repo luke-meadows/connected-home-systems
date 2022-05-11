@@ -91,7 +91,7 @@ export default function Gallery() {
 
 const Container = styled.div`
   h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 `;
 export const Controls = styled.div`

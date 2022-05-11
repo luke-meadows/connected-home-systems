@@ -35,6 +35,6 @@ export default function PhotosAdminDashboard() {
 const Container = styled.div`
   padding: 6rem;
   h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 `;

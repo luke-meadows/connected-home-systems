@@ -6,8 +6,8 @@ export default function designAndBuild() {
   const service = servicesData[1];
   return (
     <>
-      <div style={{ marginTop: '6rem', padding: '6rem' }}>
-        <h2 style={{ marginBottom: '4rem' }}>Design and Build</h2>
+      <div style={{ marginTop: '6rem', padding: '3rem 6rem 6rem 6rem' }}>
+        <h2 style={{ marginBottom: '2rem' }}>Design and consultancy</h2>
         <ServicePage service={service} title="Design and Build" />
       </div>
       <ContactSection />

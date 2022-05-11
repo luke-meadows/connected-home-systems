@@ -45,7 +45,7 @@ const ItemText = styled.div`
   p {
     line-height: 2rem;
     margin-bottom: 2rem;
-    color: var(--grey-text);
+    /* color: var(--grey-text); */
   }
   a {
     border-bottom: 1px solid black;
