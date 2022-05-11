@@ -44,10 +44,10 @@ const Text = styled.h1`
   letter-spacing: 12px;
   position: relative;
   color: white;
-  color: ${(props) => (props.black ? 'black' : 'white')};
-
   width: fit-content;
   margin: 0 auto;
+  border-radius: 2px;
+  padding: 1rem;
   &:after {
     content: '';
     position: absolute;
@@ -56,7 +56,8 @@ const Text = styled.h1`
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: ${(props) => (props.black ? 'black' : 'white')};
+    background-color: white;
+
     transform-origin: bottom right;
   }
 `;
