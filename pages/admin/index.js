@@ -10,13 +10,10 @@ export default function Admin() {
     console.log(auth.currentUser);
   }, []);
 
-  function logout() {
-    auth.signOut().then(setUser(null));
-  }
   return (
     <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>
       {!auth.currentUser && <AdminLogin setUser={setUser} />}
-      {auth.currentUser && <AdminDashboard />}
+      {auth.currentUser && <AdminDashboard setUser={setUser} />}
     </div>
   );
 }

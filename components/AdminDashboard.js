@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-export default function AdminDashboard() {
+import LogoutButton from './LogoutButton';
+export default function AdminDashboard({ setUser }) {
   return (
     <Container>
       <h2>Dashboard</h2>
+      <LogoutButton setUser={setUser} />
       <Tasks>
         <Link href="/admin/photos">
           <Task>
