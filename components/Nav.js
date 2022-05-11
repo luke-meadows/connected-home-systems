@@ -15,7 +15,7 @@ export default function Nav() {
       </div>
       <Link href="/about-us">About</Link>
       <Link href="/projects">Projects</Link>
-      <Link href="/">Gallery</Link>
+      <Link href="/gallery">Gallery</Link>
       <Link href="/">Technology</Link>
       <Link href="/">Contact</Link>
       {serviceDropdownActive && (

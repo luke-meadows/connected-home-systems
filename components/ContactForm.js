@@ -36,6 +36,7 @@ const Form = styled.form`
     font-weight: 700;
     letter-spacing: 4px;
     margin-bottom: 2rem;
+    resize: none;
 
     &::placeholder {
       color: black;
@@ -44,6 +45,9 @@ const Form = styled.form`
     &:focus {
       outline: none;
     }
+  }
+  textarea {
+    height: 2.2rem;
   }
   button {
     border: 2px solid black;

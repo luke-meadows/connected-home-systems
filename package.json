@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "emailjs": "^3.8.1",
-    "firebase": "^9.6.11",
+    "firebase": "^8.0.0",
     "next": "12.1.5",
     "next-videos": "^1.4.0",
     "react": "18.0.0",
