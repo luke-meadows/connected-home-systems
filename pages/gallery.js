@@ -1,43 +1,96 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { db } from '../firebase/firebase';
+import { db } from '../db/firebase';
+import firebase from 'firebase';
 import { galleryImgs } from '../lib/galleryImgs';
+import { useInView } from 'react-intersection-observer';
 export default function Gallery() {
   const [itemsOnView, setItemsOnView] = useState(15);
-
-  const filters = {
-    all: (item) => item,
-    ones: (item) => item === 1,
-  };
+  const [images, setImages] = useState([]);
+  const [imageCategory, setImageCategory] = useState('all');
+  const { ref, inView } = useInView({
+    threshold: 1,
+  });
 
   useEffect(() => {
-    db.collection('test').get((snapshot) => {
-      snapshot.forEach((shot) => console.log(shot.data()));
-    });
-  }, []);
+    let imgs = [];
+    async function fetchData() {
+      if (imageCategory == 'all') {
+        await db
+          .collection('images')
+          .orderBy('createdAt', 'desc')
+          .limit(itemsOnView)
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((shot) => imgs.push(shot.data()));
+          });
+        setImages(imgs);
+      } else {
+        await db
+          .collection('images')
+          .where('category', '==', imageCategory)
+          .orderBy('createdAt', 'desc')
+          .limit(itemsOnView)
+          .get()
+          .then((snapshot) => {
+            snapshot.forEach((shot) => imgs.push(shot.data()));
+          });
+        setImages(imgs);
+      }
+    }
+    fetchData();
+    return () => fetchData;
+  }, [itemsOnView, imageCategory]);
+
+  useEffect(() => {
+    if (!images.length) return;
+    console.log(inView.toString());
+    if (inView) setItemsOnView(itemsOnView + 15);
+  }, [inView]);
+
+  function handleCategoryChange(e) {
+    const { name } = e.currentTarget.dataset;
+    setImageCategory(name);
+    setItemsOnView(15);
+  }
+
+  const Control = ({ name, heading }) => {
+    return (
+      <p
+        data-name={name}
+        onClick={handleCategoryChange}
+        className={imageCategory === name ? 'active' : ''}
+      >
+        {heading}
+      </p>
+    );
+  };
 
   return (
     <Container>
       <h2>Gallery</h2>
       <Controls>
-        <p className="active">All</p>
-        <p>Smart Lighting</p>
-        <p>Home Cinema</p>
-        <p>Home Automation</p>
+        <Control name="all" heading="All" />
+        <Control name="smart-lighting" heading="Smart Lighting" />
+        <Control name="home-cinema" heading="Home Cinema" />
+        <Control name="home-automation" heading="Home Automation" />
       </Controls>
       <Images>
-        {galleryImgs.filter(filters.all).map((x, i) => (
-          <ImageContainer key={i}>{x}</ImageContainer>
+        {images.map((x, i) => (
+          <ImageContainer key={i}>{x.url}</ImageContainer>
         ))}
       </Images>
-      <div id="intersection-observer" />
+      <div style={{ height: '6rem' }} ref={ref} />
     </Container>
   );
 }
 
 const Container = styled.div`
   margin-top: 6rem;
-  padding: 6rem;
+  padding: 6rem 6rem 0 6rem;
+  h2 {
+    margin-bottom: 3rem;
+  }
 `;
 const Controls = styled.div`
   display: flex;
@@ -51,6 +104,7 @@ const Controls = styled.div`
     font-family: 'Raleway', sans-serif;
     position: relative;
     font-size: 0.8rem;
+    cursor: pointer;
   }
   .active {
     &:after {
@@ -70,9 +124,13 @@ const Images = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
+  min-height: 20rem;
 `;
 
 const ImageContainer = styled.div`
   aspect-ratio: 1;
-  border: 1px solid blue;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
