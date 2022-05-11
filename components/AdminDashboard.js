@@ -1,12 +1,15 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 export default function AdminDashboard() {
   return (
     <Container>
       <h2>Dashboard</h2>
       <Tasks>
-        <Task>
-          <h3>Photos</h3>
-        </Task>
+        <Link href="/admin/photos">
+          <Task>
+            <h3>Photos</h3>
+          </Task>
+        </Link>
         <Task>
           <h3>Blog Posts</h3>
         </Task>

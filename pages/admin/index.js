@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import AdminDashboard from '../components/AdminDashboard';
-import AdminLogin from '../components/AdminLogin';
-import { auth } from '../db/firebase';
+import AdminDashboard from '../../components/AdminDashboard';
+import AdminLogin from '../../components/AdminLogin';
+import { auth } from '../../db/firebase';
 
 export default function Admin() {
   const [user, setUser] = useState(null);
