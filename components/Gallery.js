@@ -96,13 +96,12 @@ const Container = styled.div`
 `;
 export const Controls = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   p {
     margin-right: 2rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1rem;
     font-family: 'Raleway', sans-serif;
     position: relative;
     font-size: 0.8rem;
