@@ -54,6 +54,29 @@ export default function ProcessJourney() {
             <Image src={img} layout="fill" objectFit="cover" />
           </div>
         </ProcessImage>
+        <ProcessImage style={{ aspectRatio: 1 }}>
+          <Image src={img} layout="fill" objectFit="cover" />
+        </ProcessImage>
+        <ProcessLine>
+          <div className="line" />
+          <div className="square" />
+        </ProcessLine>
+        <ProcessText style={{ aspectRatio: 1 }}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error saepe
+            mollitia placeat harum! Quibusdam, enim! Vitae maiores nesciunt modi
+            perferendis voluptates commodi. Nihil sint consequuntur recusandae
+            totam ipsa saepe, in ab magnam! Ducimus nisi labore illo, vel unde,
+            mollitia, dolore consectetur aspernatur voluptates sunt esse
+            architecto commodi vitae eligendi! Cum similique sunt, maxime minima
+            repudiandae distinctio obcaecati impedit officia maiores vitae iusto
+            totam error voluptates, ut, ipsa saepe tempore. Doloremque
+            asperiores sequi, possimus quo praesentium hic eius alias sint. Odit
+            adipisci aliquam unde sit beatae obcaecati corrupti error veritatis
+            quia. Debitis sed ex asperiores optio quisquam distinctio magnam.
+            Quaerat, in.
+          </p>
+        </ProcessText>
       </Grid>
     </Journey>
   );

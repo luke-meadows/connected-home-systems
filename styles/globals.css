@@ -15,6 +15,8 @@ body {
   --grey2: #bdbdbd;
   --grey-text: #454545;
   --black-bg: #151313;
+  --black-button: rgb(48, 48, 48);
+  --blue: rgb(58, 58, 234);
   color: var(--black);
 }
 

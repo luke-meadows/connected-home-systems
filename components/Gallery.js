@@ -133,4 +133,6 @@ const ImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
+  border-radius: 2px;
+  overflow: hidden;
 `;

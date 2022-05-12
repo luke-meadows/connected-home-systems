@@ -4,8 +4,16 @@ import LogoutButton from './LogoutButton';
 export default function AdminDashboard({ setUser }) {
   return (
     <Container>
-      <h2>Dashboard</h2>
-      <LogoutButton setUser={setUser} />
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <h2>Dashboard</h2>
+        <LogoutButton setUser={setUser} />
+      </div>
       <Tasks>
         <Link href="/admin/photos">
           <Task>
@@ -28,7 +36,7 @@ const Container = styled.div`
 `;
 
 const Tasks = styled.div`
-  margin-top: 3rem;
+  margin-top: 6rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;

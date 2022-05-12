@@ -13,6 +13,7 @@ export default function AdminLogin({ setUser }) {
       .signInWithEmailAndPassword(credentials.email, credentials.password)
       .then(async (userCredential) => {
         setUser(userCredential.user);
+        2;
       });
   }
   return (
