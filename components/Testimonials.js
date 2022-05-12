@@ -10,7 +10,7 @@ export default function Testimonials() {
 }
 
 const TestimonialsContainer = styled.div`
-  padding: 6rem 3rem;
+  padding: 0rem 3rem 6rem 3rem;
   h2 {
     padding: 0 3.5rem;
     font-weight: 700;

@@ -22,32 +22,6 @@ const Form = styled.form`
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 4rem;
   }
-  input,
-  textarea {
-    background: none;
-    border: none;
-    display: inline-block;
-    border-bottom: 1px solid black;
-    padding: 0.5rem 0;
-    width: 100%;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-bottom: 2rem;
-    resize: none;
-    &::placeholder {
-      color: black;
-      opacity: 1;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-  textarea {
-    height: 2.2rem;
-  }
   button {
     border: 2px solid black;
     padding: 0.5rem 3rem;

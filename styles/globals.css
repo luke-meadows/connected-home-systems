@@ -67,7 +67,6 @@ textarea {
   border: none;
   display: inline-block;
   border-bottom: 1px solid black;
-  border-bottom: 1px solid white;
   padding: 0.5rem 0;
   width: 100%;
   font-size: 0.9rem;
@@ -84,7 +83,6 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   color: black;
-  color: white;
   opacity: 1;
 }
 input:focus,

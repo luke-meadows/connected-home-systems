@@ -53,7 +53,7 @@ const QuestionContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 1rem;
-  color: var(--grey-text);
+
   p {
     padding-bottom: 1rem;
   }

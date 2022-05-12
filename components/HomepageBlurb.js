@@ -17,7 +17,7 @@ export default function HomepageBlurb() {
 }
 
 const StyledBlurb = styled.div`
-  padding: 6rem;
+  padding: 6rem 6rem 0 6rem;
   width: 60rem;
   display: flex;
   align-items: center;

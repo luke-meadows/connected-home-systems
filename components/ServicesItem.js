@@ -23,6 +23,7 @@ const ServicesItemContainer = styled.div`
   height: 80vh;
   display: flex;
   flex-direction: ${(props) => (props.idx % 2 > 0 ? 'row' : 'row-reverse')};
+  margin: 6rem 0;
 `;
 
 const ImageContainer = styled.div`

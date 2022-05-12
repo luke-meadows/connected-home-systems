@@ -66,7 +66,6 @@ export default function Gallery() {
 
   return (
     <Container>
-      <h2>Gallery</h2>
       <Controls>
         <Control name="all" heading="All" />
         <Control name="smart-lighting" heading="Smart Lighting" />
@@ -124,7 +123,7 @@ export const Controls = styled.div`
 const Images = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 2rem;
   min-height: 20rem;
 `;
 
