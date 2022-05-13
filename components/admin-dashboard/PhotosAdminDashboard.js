@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Gallery, { Controls } from './Gallery';
+import Gallery, { Controls } from '../gallery/Gallery';
 import ManagePhotos from './ManagePhotos';
 export default function PhotosAdminDashboard() {
   const [view, setView] = useState('manage');
@@ -15,6 +15,7 @@ export default function PhotosAdminDashboard() {
         onClick={handleCategoryChange}
         className={view === name ? 'active' : ''}
       >
+        kw
         {heading}
       </p>
     );

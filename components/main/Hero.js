@@ -8,7 +8,7 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src={require('../public/video/hero.mp4')}
+        src={require('../../public/video/hero.mp4')}
         type="video/mp4"
       />
       <Text>Your Home Connected</Text>

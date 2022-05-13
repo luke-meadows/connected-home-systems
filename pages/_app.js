@@ -1,6 +1,6 @@
-import Page from '../components/Page';
 import '../styles/globals.css';
 import '../styles/fontello/css/fontello.css';
+import Page from '../components/main/Page';
 
 function MyApp({ Component, pageProps }) {
   return (

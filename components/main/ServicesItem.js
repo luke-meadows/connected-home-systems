@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import home from '../public/imgs/home.png';
 export default function ServicesItem({ item, idx }) {
   return (
     <ServicesItemContainer idx={idx}>

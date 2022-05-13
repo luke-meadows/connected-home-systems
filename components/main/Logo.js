@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LogoImage from '../public/logo.svg';
+import LogoImage from '../../public/logo.svg';
 import styled from 'styled-components';
 import Link from 'next/link';
 export default function Logo({ width }) {

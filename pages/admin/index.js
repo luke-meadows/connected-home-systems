@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import AdminDashboard from '../../components/AdminDashboard';
-import AdminLogin from '../../components/AdminLogin';
+import AdminDashboard from '../../components/admin-dashboard/AdminDashboard';
+import AdminLogin from '../../components/admin-dashboard/AdminDashboard';
 import { auth } from '../../db/firebase';
 
 export default function Admin() {

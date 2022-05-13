@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ProjectsGrid from '../components/ProjectsGrid';
+import ProjectsGrid from '../components/projects/ProjectsGrid';
 export default function Projects() {
   return (
     <div>

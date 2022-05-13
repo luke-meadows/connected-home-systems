@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { db } from '../db/firebase';
+import { db } from '../../db/firebase';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 export default function Gallery() {

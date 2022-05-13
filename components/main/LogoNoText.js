@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LogoImage from '../public/logoNoText.svg';
+import LogoImage from '../../public/logoNoText.svg';
 import styled from 'styled-components';
 export default function LogoNoText({ width }) {
   return (

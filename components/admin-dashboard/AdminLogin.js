@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { auth } from '../db/firebase';
+import { auth } from '../../db/firebase';
 export default function AdminLogin({ setUser }) {
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   function handleInputChange(e) {

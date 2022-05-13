@@ -1,9 +1,9 @@
-import ContactSection from '../components/ContactSection';
-import Faq from '../components/Faq';
-import Hero from '../components/Hero';
-import HomepageBlurb from '../components/HomepageBlurb';
-import HomepageServicesGrid from '../components/HomepageServicesGrid';
-import Testimonials from '../components/Testimonials';
+import ContactSection from '../components/main/ContactSection';
+import Faq from '../components/main/Faq';
+import Hero from '../components/main/Hero';
+import HomepageBlurb from '../components/main/HomepageBlurb';
+import HomepageServicesGrid from '../components/main/HomepageServicesGrid';
+import Testimonials from '../components/main/Testimonials';
 
 export default function Home() {
   return (

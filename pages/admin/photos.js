@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { auth } from '../../db/firebase';
-import AdminLogin from '../../components/AdminLogin';
-import PhotosAdminDashboard from '../../components/PhotosAdminDashboard';
+import AdminLogin from '../../components/admin-dashboard/AdminLogin';
+import PhotosAdminDashboard from '../../components/admin-dashboard/PhotosAdminDashboard';
 export default function AdminPhotos() {
   const [user, setUser] = useState(null);
   return (

@@ -1,4 +1,4 @@
-import { homepageServicesData } from '../lib/homepageServicesData';
+import { homepageServicesData } from '../../lib/homepageServicesData';
 
 import ServicesItem from './ServicesItem';
 export default function HomepageServicesGrid() {

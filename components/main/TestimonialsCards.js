@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { testimonialsData } from '../lib/testimonialsData';
+import { testimonialsData } from '../../lib/testimonialsData';
 import Stars from './Stars';
 export default function TestimonialsCards() {
   return (

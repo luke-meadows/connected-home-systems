@@ -1,5 +1,5 @@
-import ContactSection from '../components/ContactSection';
-import ServicePage from '../components/ServicePage';
+import ContactSection from '../components/main/ContactSection';
+import ServicePage from '../components/services/ServicePage';
 import { servicesData } from '../lib/servicesData';
 export default function Networks() {
   const service = servicesData[2];

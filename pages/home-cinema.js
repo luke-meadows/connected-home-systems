@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-
+import ContactSection from '../components/main/ContactSection';
+import ServicePage from '../components/services/ServicePage';
 export default function HomeCinema() {
   return (
     <AboutUsPage style={{ margin: '20rem 6rem' }}>
