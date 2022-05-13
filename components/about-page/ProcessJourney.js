@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import img from '../public/imgs/living-room.png';
+import img from '../../public/imgs/living-room.png';
 export default function ProcessJourney() {
   return (
     <Journey>
