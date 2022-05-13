@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 import { auth } from '../../db/firebase';
 import AdminLogin from '../../components/admin-dashboard/AdminLogin';
 import PhotosAdminDashboard from '../../components/admin-dashboard/PhotosAdminDashboard';
+
 export default function AdminPhotos() {
   const [user, setUser] = useState(null);
   return (
-    <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>
-      {!auth.currentUser && <AdminLogin setUser={setUser} />}
-      {auth.currentUser && <PhotosAdminDashboard />}
-    </div>
+    <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}></div>
   );
 }

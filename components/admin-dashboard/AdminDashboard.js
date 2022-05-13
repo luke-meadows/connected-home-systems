@@ -12,7 +12,6 @@ export default function AdminDashboard({ setUser }) {
         }}
       >
         <h2>Dashboard</h2>
-        <LogoutButton setUser={setUser} />
       </div>
       <Tasks>
         <Link href="/admin/photos">

@@ -5,14 +5,11 @@ import { auth } from '../../db/firebase';
 
 export default function Admin() {
   const [user, setUser] = useState(null);
-  useEffect(() => {
-    console.log(auth.currentUser);
-  }, [user]);
-
+  console.log(auth.currentUser);
   return (
     <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>
       {!auth.currentUser && <AdminLogin setUser={setUser} />}
-      {auth.currentUser && <AdminDashboard setUser={setUser} />}
+      {auth.currentUser && <AdminDashboard />}
     </div>
   );
 }
