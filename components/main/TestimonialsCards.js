@@ -34,16 +34,16 @@ const Container = styled.div`
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   margin: 0rem 1rem;
 `;
 
 const Card = styled.div`
-  aspect-ratio: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 0 1rem;
+
   h4 {
     font-weight: 700;
     text-transform: uppercase;
@@ -53,5 +53,9 @@ const Card = styled.div`
     color: gray;
     font-size: 0.8rem;
     font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-top: 1rem;
   }
 `;

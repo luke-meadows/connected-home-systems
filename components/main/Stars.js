@@ -11,6 +11,7 @@ export default function Stars({ quantity }) {
 
 const Container = styled.div`
   display: flex;
+  margin-left: -0.3rem;
   i {
     color: var(--teal);
   }
