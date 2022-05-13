@@ -3,7 +3,7 @@ import TestimonialsCards from './TestimonialsCards';
 export default function Testimonials() {
   return (
     <TestimonialsContainer>
-      <h2>Testimonials</h2>
+      <h2>Customer Reviews</h2>
       <TestimonialsCards />
     </TestimonialsContainer>
   );

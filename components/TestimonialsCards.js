@@ -42,7 +42,7 @@ const Card = styled.div`
   aspect-ratio: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 1rem;
   h4 {
     font-weight: 700;

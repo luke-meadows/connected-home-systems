@@ -27,12 +27,12 @@ const ServicesItemContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: 70%;
+  width: 60%;
   position: relative;
 `;
 
 const ItemText = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   justify-content: center;
   flex-direction: column;
