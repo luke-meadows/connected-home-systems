@@ -19,7 +19,7 @@ export default function ServicesItem({ item, idx }) {
 
 const ServicesItemContainer = styled.div`
   overflow: hidden;
-  height: 80vh;
+  height: 65vh;
   display: flex;
   flex-direction: ${(props) => (props.idx % 2 > 0 ? 'row' : 'row-reverse')};
   margin: 6rem 0;

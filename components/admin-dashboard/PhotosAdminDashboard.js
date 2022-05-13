@@ -15,7 +15,6 @@ export default function PhotosAdminDashboard() {
         onClick={handleCategoryChange}
         className={view === name ? 'active' : ''}
       >
-        kw
         {heading}
       </p>
     );

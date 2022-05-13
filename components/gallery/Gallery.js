@@ -75,11 +75,7 @@ export default function Gallery() {
       <Images>
         {images.map((x, i) => (
           <ImageContainer key={i}>
-            <Image
-              src="https://images.unsplash.com/photo-1532182772104-90f63a50fec5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-              layout="fill"
-              objectFit="cover"
-            />
+            <Image src={x.url} layout="fill" objectFit="cover" />
           </ImageContainer>
         ))}
       </Images>
@@ -95,7 +91,7 @@ const Container = styled.div`
 `;
 export const Controls = styled.div`
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
   p {
     margin-right: 2rem;
     font-weight: 500;

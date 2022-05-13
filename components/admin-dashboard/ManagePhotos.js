@@ -1,8 +1,12 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import firebase from 'firebase';
 import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
+import { db } from '../../db/firebase';
+
 export default function ManagePhotos() {
-  const [preview, setPreview] = useState();
+  const [preview, setPreview] = useState(undefined);
   const [photoCategory, setPhotoCategory] = useState(null);
   const [inputs, setInputs] = useState({
     image: '',
@@ -37,6 +41,59 @@ export default function ManagePhotos() {
     setPhotoCategory(category);
   }
 
+  function uploadImage(image) {
+    return new Promise((resolve, reject) => {
+      const uuid = uuidv4();
+      const task = firebase
+        .storage()
+        .ref()
+        .child(`images/` + uuid + '.jpg')
+        .put(image);
+      const taskInProgress = (snapshot) => {
+        console.log(`transferred: ${snapshot.bytesTransferred}`);
+      };
+
+      const taskError = (snapshot) => {
+        console.log(snapshot);
+        reject('rejected');
+      };
+      const taskComplete = async () => {
+        const URL = task.snapshot.ref.getDownloadURL();
+        resolve(URL);
+      };
+      task.on('state_changed', taskInProgress, taskError, taskComplete);
+    });
+  }
+
+  async function uploadDocToDb(imageData) {
+    const imagesRef = db.collection('images').doc();
+    imagesRef.set({
+      ...imageData,
+    });
+  }
+
+  const ref = useRef();
+  async function handleImageUpload() {
+    // 1. disable form
+    ref.current.classList.add('inactive');
+    // 2. get image from state and upload it to firestore
+    await uploadImage(inputs.image)
+      // 3. get the url from image upload and store it in images collection with timestamp and category
+      .then(async (URL) => {
+        await uploadDocToDb({
+          url: URL,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          category: photoCategory,
+        });
+      })
+      .then(() => {
+        setPreview(undefined);
+        setPhotoCategory(null);
+        setInputs({ image: '' });
+        ref.current.classList.remove('inactive');
+      });
+  }
+
   return (
     <div
       style={{
@@ -44,7 +101,7 @@ export default function ManagePhotos() {
         display: 'flex',
       }}
     >
-      <form action="">
+      <form>
         {preview ? (
           <ImageContainer>
             <i className="icon-cancel-1" onClick={handleCancel} />
@@ -93,7 +150,13 @@ export default function ManagePhotos() {
             </p>
           </div>
         </div>
-        <Upload className={!photoCategory ? 'inactive' : ''}>Upload</Upload>
+        <button
+          ref={ref}
+          onClick={handleImageUpload}
+          className={!photoCategory ? 'inactive' : ''}
+        >
+          Upload
+        </button>
       </RadioButtons>
     </div>
   );
@@ -179,21 +242,22 @@ const RadioButtons = styled.div`
     opacity: 0.5;
     pointer-events: none;
   }
-`;
-
-const Upload = styled.button`
-  margin-top: 4rem;
-  background: var(--teal);
-  border: 2px solid var(--teal);
-  padding: 0.5rem 3rem;
-  font-size: 1rem;
-  font-family: 'Raleway', sans-serif;
-  width: fit-content;
-  border-radius: 2px;
-  color: var(--white);
-  cursor: pointer;
-  &.inactive {
-    opacity: 0.5;
-    pointer-events: none;
+  button {
+    margin-top: 4rem;
+    background: var(--teal);
+    border: 2px solid var(--teal);
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    width: fit-content;
+    border-radius: 2px;
+    color: var(--white);
+    cursor: pointer;
+    &.inactive {
+      opacity: 0.5;
+      pointer-events: none;
+    }
   }
 `;
+
+const Upload = styled.button``;
