@@ -17,7 +17,7 @@ export default function Nav() {
       <Link href="/projects">Projects</Link>
       <Link href="/gallery">Gallery</Link>
       <Link href="/">Technology</Link>
-      <Link href="/admin">Contact</Link>
+      <Link href="/contact">Contact</Link>
       {serviceDropdownActive && (
         <ServicesDropdown
           onMouseLeave={() => {
