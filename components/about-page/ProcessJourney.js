@@ -27,8 +27,8 @@ export default function ProcessJourney() {
         <ProcessText style={{ aspectRatio: 1 }}>
           <h3>Design</h3>
           <p>
-            This is Critical for success. If it's not designed correctly it will
-            fail.
+            This is Critical for success. If it&apos;s not designed correctly it
+            will fail.
           </p>
           <p style={{ fontWeight: 600, marginTop: '1rem' }}>This includes:</p>
 
