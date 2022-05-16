@@ -37,13 +37,13 @@ export default function Nav() {
             />
           </div>
           <div className="bottom">
-            <Link href="/home-automation">Home automation</Link>
             <Link href="/design-and-consultancy">Design and consultancy</Link>
+            <Link href="/smart-home">Smart Home</Link>
             <Link href="/smart-lighting">Smart Lighting</Link>
-            <Link href="/home-cinema">Home Cinema</Link>
+            <Link href="/home-cinema">Home Cinema / Media Rooms</Link>
             <Link href="/multiroom">Multiroom</Link>
-            <Link href="/control">Control</Link>
-            <Link href="/networks">Networks</Link>
+            <Link href="/networks">Home Networks</Link>
+            <Link href="/service-and-maintenance">Service and Maintenance</Link>
           </div>
         </ServicesDropdown>
       )}

@@ -6,6 +6,9 @@ import PhotosAdminDashboard from '../../components/admin-dashboard/PhotosAdminDa
 export default function AdminPhotos() {
   const [user, setUser] = useState(null);
   return (
-    <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}></div>
+    <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>
+      {!auth.currentUser && <AdminLogin setUser={setUser} />}
+      {auth.currentUser && <PhotosAdminDashboard />}
+    </div>
   );
 }

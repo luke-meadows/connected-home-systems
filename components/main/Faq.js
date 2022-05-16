@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-const Question = ({ question, answer }) => {
+import { faqs } from '../../lib/faq';
+const Question = ({ faq }) => {
   const [open, setOpen] = useState(false);
   return (
     <QuestionAnswer
@@ -8,18 +9,12 @@ const Question = ({ question, answer }) => {
       className={open ? 'open' : ''}
     >
       <QuestionContainer>
-        <p style={open ? { fontWeight: '600' } : {}}>
-          What kind of tech can I have installed?
-        </p>
+        <p style={open ? { fontWeight: '600' } : {}}>{faq.question}</p>
         <span>
           <i className={open ? 'icon-minus' : 'icon-plus'} />
         </span>
       </QuestionContainer>
-      <p style={{ color: 'var(--teal)' }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio saepe
-        culpa voluptates velit quos facere voluptas distinctio officia dolores
-        inventore!
-      </p>
+      <p style={{ color: 'var(--teal)', marginRight: '2rem' }}>{faq.answer}</p>
     </QuestionAnswer>
   );
 };
@@ -28,11 +23,9 @@ export default function Faq() {
     <Container>
       <h2>FAQ&apos;s</h2>
       <div>
-        <Question />
-        <Question />
-        <Question />
-        <Question />
-        <Question />
+        {faqs.map((faq, i) => (
+          <Question key={i} faq={faq} />
+        ))}
       </div>
     </Container>
   );

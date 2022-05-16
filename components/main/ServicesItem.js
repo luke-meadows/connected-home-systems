@@ -41,6 +41,7 @@ const ItemText = styled.div`
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 2rem;
+    line-height: 1.5;
   }
   p {
     line-height: 2rem;

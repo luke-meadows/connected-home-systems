@@ -9,31 +9,10 @@ export default function ServicePage({ service, title }) {
           <Image src={service.img1} layout="fill" objectFit="cover" />
         </ImageContainer>
         <TextContainer>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
-            debitis magni quae natus eius adipisci sequi, nulla id amet. Rem
-            ipsa ut similique nulla omnis, perspiciatis, ullam molestias
-            repellendus aut ducimus quam eveniet et iusto amet earum non sint
-            officia corrupti nemo! Aspernatur natus facilis illo, quisquam odio
-            impedit quis beatae asperiores ipsam neque ab inventore alias
-            adipisci. Ratione.
-          </p>
+          <p>{service.text1}</p>
         </TextContainer>
         <TextContainer>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
-            debitis magni quae natus eius adipisci sequi, nulla id amet. Rem
-            ipsa ut similique nulla omnis, perspiciatis, ullam molestias
-            repellendus aut ducimus quam eveniet et iusto amet earum non sint
-            officia corrupti nemo! Aspernatur natus facilis illo, quisquam odio
-            impedit quis beatae asperiores ipsam neque ab inventore alias
-            adipisci. Ratione doloremque dolore odio suscipit, obcaecati maxime
-            voluptatum impedit porro, praesentium iure, nemo animi cupiditate?
-            Culpa assumenda impedit quos veritatis vitae officia, dolores
-            praesentium, repellendus distinctio atque, fuga illum consequuntur
-            recusandae in ratione voluptas illo possimus voluptate aliquid
-            quisquam quibusdam quasi enim?
-          </p>
+          <p>{service.text2}</p>
         </TextContainer>
         <ImageContainer>
           <Image src={service.img2} layout="fill" objectFit="cover" />
@@ -42,15 +21,7 @@ export default function ServicePage({ service, title }) {
           <Image src={service.img3} layout="fill" objectFit="cover" />
         </ImageContainer>
         <TextContainer>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
-            debitis magni quae natus eius adipisci sequi, nulla id amet. Rem
-            ipsa ut similique nulla omnis, perspiciatis, ullam molestias
-            repellendus aut ducimus quam eveniet et iusto amet earum non sint
-            officia corrupti nemo! Aspernatur natus facilis illo, quisquam odio
-            impedit quis beatae asperiores ipsam neque ab inventore alias
-            adipisci. Ratione.
-          </p>
+          <p>{service.text3}</p>
         </TextContainer>
       </Grid>
     </div>

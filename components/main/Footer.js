@@ -1,6 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
-import Logo from './Logo';
+import Control4 from '../../public/imgs/control4.png';
 import LogoNoText from './LogoNoText';
 export default function Footer() {
   return (
@@ -36,7 +37,12 @@ export default function Footer() {
         <Link href="/">Instagram</Link>
         <Link href="/">Twitter</Link>
       </Column>
-      <LogoNoText width={1} />
+      <div>
+        <LogoNoText width={1} />
+        <ImageContainer>
+          <Image src={Control4} layout="responsive" />
+        </ImageContainer>
+      </div>
     </StyledFooter>
   );
 }
@@ -69,4 +75,10 @@ const Column = styled.div`
       color: var(--teal);
     }
   }
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  cursor: pointer;
+  margin-top: 2rem;
 `;
