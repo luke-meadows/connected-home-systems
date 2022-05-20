@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from 'styled-components';
 import ServicePageImageCarousel from './ServicePageImageCarousel';
+
 export default function ServicePage({ service, title }) {
   return (
     <div>
@@ -39,7 +40,6 @@ const Grid = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  /* aspect-ratio: 1; */
   height: 25rem;
   position: relative;
   border-radius: 2px;
@@ -51,7 +51,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   p {
     line-height: 2;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 `;
 

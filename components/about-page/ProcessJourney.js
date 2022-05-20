@@ -72,7 +72,7 @@ export default function ProcessJourney() {
           <h3>Maintenance</h3>
           <p>
             Ensuring the hardware is kept up to date and continues to function
-            as it was designed to
+            as it was designed to.
           </p>
         </ProcessText>
         <ProcessLine>

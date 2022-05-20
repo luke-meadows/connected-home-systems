@@ -17,6 +17,6 @@ const ContactContainer = styled.div`
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 `;
