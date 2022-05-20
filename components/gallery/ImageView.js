@@ -1,6 +1,6 @@
 import ImageGallery from 'react-image-gallery';
 import styled from 'styled-components';
-export default function ImageView({ items }) {
+export default function ImageView({ items, setImageViewActive }) {
   return (
     <Container>
       <ImageGallery
@@ -8,7 +8,7 @@ export default function ImageView({ items }) {
         style={{ border: '3px solid blue' }}
         items={items}
       />
-      <i className="icon-cancel" />
+      <i className="icon-cancel-1" onClick={() => setImageViewActive(false)} />
     </Container>
   );
 }
@@ -64,7 +64,14 @@ const Container = styled.div`
   }
   i {
     position: absolute;
-    right: 5rem;
+    right: 6rem;
+    top: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    &:hover {
+      color: var(--teal);
+    }
   }
   .image-gallery {
     height: calc(100vh - 6rem);

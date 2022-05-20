@@ -95,7 +95,12 @@ export default function Gallery({ category = 'all' }) {
   console.log(galleryImages);
   return (
     <Container>
-      {imageViewActive && <ImageView items={galleryImages} />}
+      {imageViewActive && (
+        <ImageView
+          setImageViewActive={setImageViewActive}
+          items={galleryImages}
+        />
+      )}
       <Controls>
         <Control name="all" heading="All" />
         <Control name="smart-lighting" heading="Smart Lighting" />
