@@ -3,12 +3,27 @@ import styled from 'styled-components';
 import { db } from '../../db/firebase';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
+import ImageView from './ImageView';
 export default function Gallery({ category = 'all' }) {
   const [itemsOnView, setItemsOnView] = useState(15);
   const [images, setImages] = useState([]);
+  const [galleryImages, setGalleryImages] = useState([]);
+  const [imageViewActive, setImageViewActive] = useState(false);
   const [imageCategory, setImageCategory] = useState(category);
+  const [activeImageUrl, setActiveImageUrl] = useState('');
   const { ref, inView } = useInView({
     threshold: 1,
+  });
+
+  const handleScroll = (e) => {
+    e.preventDefault();
+    if (!imageViewActive) return;
+    window.scrollTo(window.scrollY, 0);
+    console.log('scroll event', window.scrollY);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   });
 
   useEffect(() => {
@@ -23,7 +38,11 @@ export default function Gallery({ category = 'all' }) {
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
           });
+        const newImages = imgs.map((imageData) => {
+          return { original: imageData.url, thumbnail: imageData.url };
+        });
         setImages(imgs);
+        setGalleryImages(newImages);
       } else {
         await db
           .collection('images')
@@ -34,7 +53,11 @@ export default function Gallery({ category = 'all' }) {
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
           });
+        const newImages = images.map((imageData) => {
+          return { original: imageData.url, thumbnail: imageData.url };
+        });
         setImages(imgs);
+        setGalleryImages(newImages);
       }
     }
     fetchData();
@@ -64,8 +87,15 @@ export default function Gallery({ category = 'all' }) {
     );
   };
 
+  function handleNextPrevClick() {
+    const currentIdx = images.findIndex((i) => i.url === activeImageUrl);
+    setActiveImageUrl(images[currentIdx + 1].url);
+    console.log(currentIdx);
+  }
+  console.log(galleryImages);
   return (
     <Container>
+      {imageViewActive && <ImageView items={galleryImages} />}
       <Controls>
         <Control name="all" heading="All" />
         <Control name="smart-lighting" heading="Smart Lighting" />
@@ -75,7 +105,14 @@ export default function Gallery({ category = 'all' }) {
       <Images>
         {images.map((x, i) => (
           <ImageContainer key={i}>
-            <Image src={x.url} layout="fill" objectFit="cover" />
+            <Image
+              src={x.url}
+              layout="fill"
+              objectFit="cover"
+              onClick={() => {
+                setImageViewActive(true), setActiveImageUrl(x.url);
+              }}
+            />
           </ImageContainer>
         ))}
       </Images>
@@ -131,4 +168,5 @@ const ImageContainer = styled.div`
   position: relative;
   border-radius: 2px;
   overflow: hidden;
+  cursor: pointer;
 `;

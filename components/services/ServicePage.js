@@ -28,6 +28,7 @@ export default function ServicePage({ service, title }) {
           <Image src={service.img1} layout="fill" objectFit="cover" />
         </ImageContainer>
       </Grid>
+      <h3 style={{ margin: '6rem 0 2rem 0' }}>Past Projects</h3>
       <ServicePageImageCarousel service="smart-lighting" />
     </div>
   );

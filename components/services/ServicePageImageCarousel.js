@@ -37,7 +37,6 @@ export default function ServicePageImageCarousel({ service }) {
 }
 
 const Grid = styled.div`
-  margin-top: 6rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
