@@ -107,7 +107,10 @@ const ProcessText = styled.div`
   justify-content: center;
   flex-direction: column;
   h3 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+  ul {
+    padding-left: 0.5rem;
   }
   p,
   li {

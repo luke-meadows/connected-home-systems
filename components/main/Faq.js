@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { faqs } from '../../lib/faq';
@@ -14,7 +15,9 @@ const Question = ({ faq }) => {
           <i className={open ? 'icon-minus' : 'icon-plus'} />
         </span>
       </QuestionContainer>
-      <p style={{ color: 'var(--teal)', marginRight: '2rem' }}>{faq.answer}</p>
+      <p style={{ color: 'var(--teal)', marginRight: '2rem' }}>
+        {faq.answer} {faq.link && <Link href={faq.link}>here</Link>}
+      </p>
     </QuestionAnswer>
   );
 };
@@ -68,5 +71,9 @@ const QuestionAnswer = styled.div`
 
   &.open {
     max-height: 10rem;
+  }
+  a {
+    text-decoration: underline;
+    font-style: italic;
   }
 `;

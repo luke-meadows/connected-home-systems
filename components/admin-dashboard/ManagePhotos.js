@@ -164,7 +164,7 @@ export default function ManagePhotos() {
 
 const AddPhoto = styled.div`
   border: 1px solid black;
-  margin: 4rem 0;
+  /* margin: 4rem 0; */
   width: 20rem;
   height: 20rem;
   display: flex;
@@ -183,7 +183,7 @@ const AddPhoto = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  margin: 4rem 0;
+  /* margin: 4rem 0; */
   width: 20rem;
   height: 20rem;
   position: relative;
@@ -199,10 +199,10 @@ const ImageContainer = styled.div`
 `;
 
 const RadioButtons = styled.div`
-  margin: 4rem;
+  margin: 0 4rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: space-between;
   width: fit-content;
   height: 20rem;
@@ -243,7 +243,7 @@ const RadioButtons = styled.div`
     pointer-events: none;
   }
   button {
-    margin-top: 4rem;
+    margin-top: 2rem;
     background: var(--teal);
     border: 2px solid var(--teal);
     padding: 0.5rem 3rem;

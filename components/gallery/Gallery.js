@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { db } from '../../db/firebase';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
-export default function Gallery() {
+export default function Gallery({ category = 'all' }) {
   const [itemsOnView, setItemsOnView] = useState(15);
   const [images, setImages] = useState([]);
-  const [imageCategory, setImageCategory] = useState('all');
+  const [imageCategory, setImageCategory] = useState(category);
   const { ref, inView } = useInView({
     threshold: 1,
   });
@@ -91,7 +91,7 @@ const Container = styled.div`
 `;
 export const Controls = styled.div`
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   p {
     margin-right: 2rem;
     font-weight: 500;

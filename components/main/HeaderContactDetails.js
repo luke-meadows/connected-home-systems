@@ -2,11 +2,11 @@ import styled from 'styled-components';
 export default function HeaderContactDetails() {
   return (
     <StyledDetails>
-      <div className="row">
+      <div className="row top">
         <i className="icon-phone" />
         <p>+447 41488 2844</p>
       </div>
-      <div className="row">
+      <div className="row bottom">
         <i className="icon-facebook" />
         <i className="icon-instagram" />
         <i className="icon-twitter" />
@@ -26,6 +26,12 @@ const StyledDetails = styled.div`
       color: var(--teal);
       cursor: pointer;
     }
+  }
+  .top {
+    margin-bottom: 0.25rem;
+  }
+  .bottom {
+    margin-top: 0.25rem;
   }
   .row {
     display: flex;

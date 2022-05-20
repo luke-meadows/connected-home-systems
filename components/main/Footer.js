@@ -23,13 +23,13 @@ export default function Footer() {
       </ColumnContainer>
       <Column>
         <h4>Services</h4>
+        <Link href="/">Design and Consultancy</Link>
         <Link href="/">Smart Home</Link>
-        <Link href="/">Design and Build</Link>
+        <Link href="/">Smart Lighting</Link>
+        <Link href="/">Home Cinema and Media Room</Link>
         <Link href="/">Multiroom</Link>
-        <Link href="/">Cinema and Media Room</Link>
-        <Link href="/">Control</Link>
-        <Link href="/">Network</Link>
-        <Link href="/">CCTV</Link>
+        <Link href="/">Home Networks</Link>
+        <Link href="/">Service and Maintenance</Link>
       </Column>
       <Column>
         <h4>Socials</h4>
