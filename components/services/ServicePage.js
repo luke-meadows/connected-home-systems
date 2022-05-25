@@ -63,5 +63,6 @@ const Tick = styled.div`
   }
   p {
     margin-bottom: 0;
+    font-weight: 400;
   }
 `;
