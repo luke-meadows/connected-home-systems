@@ -4,10 +4,10 @@ export default function AboutUsSection() {
     <StyledAbout>
       <h2>About us</h2>
       <p>
-        For over 15 years we have been improving people's homes and lifestyles,
-        solving problems through technology. Over this time, we built long term
-        relationships with hundreds of clients who benefit from our innovation,
-        experience and expertise.
+        For over 15 years we have been improving people&apos;s homes and
+        lifestyles, solving problems through technology. Over this time, we
+        built long term relationships with hundreds of clients who benefit from
+        our innovation, experience and expertise.
       </p>
       <p>
         With our knowledge and experience we can offer a complete range of
@@ -20,12 +20,12 @@ export default function AboutUsSection() {
         Technology today is becoming more and more advanced. Your TV now
         connects to the internet allowing for video streaming; games consoles
         enable you to play against your global friends; your music system can
-        stream thousands of albums that you don't own; the lights in your home
-        can turn on when you enter a room and off again when you leave and your
-        heating knows when and how you like the temperature set by learning your
-        routines. These are just some of the capabilities of a smart home which
-        are achievable through independent products and multiple interfaces but
-        our aim is to make the smart home a simple home.{' '}
+        stream thousands of albums that you don&apos;t own; the lights in your
+        home can turn on when you enter a room and off again when you leave and
+        your heating knows when and how you like the temperature set by learning
+        your routines. These are just some of the capabilities of a smart home
+        which are achievable through independent products and multiple
+        interfaces but our aim is to make the smart home a simple home.
       </p>
       <p>
         Simple to use, a truly smart home should be intuitive and effortless. No
@@ -35,7 +35,7 @@ export default function AboutUsSection() {
         press of a single button. We can design systems that enable control over
         every aspect of a smart home from a single user interface, these systems
         are fully adaptable so as things change the system can be reprogrammed
-        to suit.{' '}
+        to suit.
       </p>
       <p>
         All of this technology is all well and good, but it relies on a solid
