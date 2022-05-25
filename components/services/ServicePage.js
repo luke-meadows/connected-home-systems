@@ -9,11 +9,11 @@ export default function ServicePage({ service }) {
       <Grid>
         <TextContainer>
           {service.text.map((text) => (
-            <p>{text}</p>
+            <p key={text}>{text}</p>
           ))}
           <div style={{ margin: '0.5rem 0' }} />
           {service.bullets.map((bullet) => (
-            <Tick>
+            <Tick key={bullet}>
               <i className="icon-ok-circled" />
               <p>{bullet}</p>
             </Tick>
