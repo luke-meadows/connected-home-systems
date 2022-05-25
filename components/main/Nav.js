@@ -65,8 +65,8 @@ const StyledNav = styled.nav`
     margin: 0 1rem;
     text-transform: uppercase;
     font-size: 0.8rem;
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+
     position: relative;
     letter-spacing: 1px;
     &:hover {

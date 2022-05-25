@@ -10,7 +10,6 @@ export default function Gallery({ category = 'all' }) {
   const [galleryImages, setGalleryImages] = useState([]);
   const [imageViewActive, setImageViewActive] = useState(false);
   const [imageCategory, setImageCategory] = useState(category);
-  const [activeImageUrl, setActiveImageUrl] = useState('');
   const { ref, inView } = useInView({
     threshold: 1,
   });
@@ -18,7 +17,7 @@ export default function Gallery({ category = 'all' }) {
   const handleScroll = (e) => {
     e.preventDefault();
     if (!imageViewActive) return;
-    window.scrollTo(window.scrollY, 0);
+    window.scrollTo(0, window.scrollY);
     console.log('scroll event', window.scrollY);
   };
   useEffect(() => {
@@ -87,12 +86,15 @@ export default function Gallery({ category = 'all' }) {
     );
   };
 
-  function handleNextPrevClick() {
-    const currentIdx = images.findIndex((i) => i.url === activeImageUrl);
-    setActiveImageUrl(images[currentIdx + 1].url);
-    console.log(currentIdx);
+  function handleImageClick(x) {
+    const idx = galleryImages.findIndex((img) => img.thumbnail === x.url);
+    setGalleryImages([
+      ...galleryImages.slice(idx, images.length),
+      ...galleryImages.slice(0, idx),
+    ]);
+    setImageViewActive(true);
   }
-  console.log(galleryImages);
+
   return (
     <Container>
       {imageViewActive && (
@@ -114,9 +116,7 @@ export default function Gallery({ category = 'all' }) {
               src={x.url}
               layout="fill"
               objectFit="cover"
-              onClick={() => {
-                setImageViewActive(true), setActiveImageUrl(x.url);
-              }}
+              onClick={() => handleImageClick(x)}
             />
           </ImageContainer>
         ))}
@@ -125,7 +125,6 @@ export default function Gallery({ category = 'all' }) {
     </Container>
   );
 }
-
 const Container = styled.div`
   h2 {
     margin-bottom: 2rem;
@@ -135,11 +134,10 @@ export const Controls = styled.div`
   display: flex;
   margin-bottom: 2rem;
   p {
-    margin-right: 2rem;
-    font-weight: 500;
+    margin-right: 1rem;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: 'Raleway', sans-serif;
     position: relative;
     font-size: 0.8rem;
     cursor: pointer;

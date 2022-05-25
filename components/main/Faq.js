@@ -38,9 +38,6 @@ const Container = styled.div`
   padding: 6rem;
   margin: 0 auto;
   h2 {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 4px;
     margin-bottom: 2rem;
   }
 `;

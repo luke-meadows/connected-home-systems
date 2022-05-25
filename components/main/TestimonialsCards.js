@@ -44,11 +44,6 @@ const Card = styled.div`
   justify-content: space-between;
   padding: 0 1rem;
 
-  h4 {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
   .location {
     color: gray;
     font-size: 0.8rem;

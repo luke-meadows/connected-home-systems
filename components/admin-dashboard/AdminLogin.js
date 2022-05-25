@@ -25,14 +25,14 @@ export default function AdminLogin({ setUser }) {
           onChange={handleInputChange}
           value={credentials.email}
           type="text"
-          placeholder="username"
+          placeholder="Email"
         />
         <input
           name="password"
           onChange={handleInputChange}
           value={credentials.password}
           type="password"
-          placeholder="password"
+          placeholder="Password"
         />
         <button type="submit">Submit</button>
       </form>
@@ -50,11 +50,7 @@ const Container = styled.div`
     border: 2px solid black;
     padding: 0.5rem 3rem;
     font-size: 0.9rem;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    letter-spacing: 4px;
-    width: 100%;
+
     background: none;
     &:hover {
       color: var(--teal);

@@ -11,15 +11,14 @@ export default function Hero() {
         src={require('../../public/video/hero.mp4')}
         type="video/mp4"
       />
-      <Text>Your Home Connected</Text>
+      {/* <Text>Your Home Connected</Text> */}
     </StyledHero>
   );
 }
 
 const StyledHero = styled.section`
-  height: 100vh;
-  min-height: 500px;
   height: calc(100vh - 6rem);
+  min-height: 500px;
   background-size: cover;
   position: relative;
   margin-top: 6rem;
@@ -39,7 +38,7 @@ const HeroVideo = styled.video`
 const Text = styled.h1`
   margin-top: 2rem;
   font-size: 2.5rem;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   font-weight: 700;
   letter-spacing: 12px;
   position: relative;

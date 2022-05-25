@@ -21,8 +21,8 @@ const ServicesItemContainer = styled.div`
   overflow: hidden;
   height: 65vh;
   display: flex;
-  flex-direction: ${(props) => (props.idx % 2 > 0 ? 'row' : 'row-reverse')};
-  margin: 6rem 0;
+  flex-direction: ${(props) => (props.idx % 2 > 0 ? 'row-reverse' : 'row')};
+  margin-bottom: 6rem;
 `;
 
 const ImageContainer = styled.div`
@@ -37,16 +37,14 @@ const ItemText = styled.div`
   flex-direction: column;
   padding: 6rem;
   h3 {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     line-height: 1.5;
+    color: var(--teal);
   }
   p {
     line-height: 2rem;
-    margin-bottom: 2rem;
-    /* color: var(--grey-text); */
+    margin-bottom: 1rem;
+    font-weight: 300;
   }
   a {
     border-bottom: 1px solid black;

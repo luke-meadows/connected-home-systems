@@ -9,7 +9,7 @@ export default function ContactForm() {
         <input type="text" placeholder="Confirm Email" />
       </div>
       <input type="address" placeholder="Project Address" />
-      <textarea placeholder="message" />
+      <textarea placeholder="Message" />
       <button type="submit">Send</button>
     </Form>
   );
@@ -26,10 +26,6 @@ const Form = styled.form`
     border: 2px solid black;
     padding: 0.5rem 3rem;
     font-size: 0.9rem;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    letter-spacing: 4px;
     &:hover {
       color: var(--teal);
       cursor: pointer;

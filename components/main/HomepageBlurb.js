@@ -2,14 +2,19 @@ import styled from 'styled-components';
 export default function HomepageBlurb() {
   return (
     <StyledBlurb>
-      <h3>YOUR HOME has so much potential</h3>
+      <h2>Your home has so much potential</h2>
       <p>
-        The lights in your home can turn on by themselves when you enter the
-        room and then off again when you leave, your heating knows when and how
-        you like the temperature set by learning your routines. These and more,
-        are the capabilities of a smart home which are achievable through
-        independent products and multiple interfaces but our aim is to make the
-        smart home a simple home.
+        Your home should work for you, it should respond to you, know what you
+        like and what you don&apos;t. Now it CAN! When you enter the room the
+        lights turn on by themselves and turn off when you leave. Your heating
+        knows when and how you like the temperature set by learning your
+        routines. These are just a few of the capabilities of a smart home which
+        you can achieve with Connected Home Systems.{' '}
+        <strong>
+          With our technology, we can solve your problem and make the smart home
+          a simple home.
+        </strong>
+        .
       </p>
       <button>Speak with our experts</button>
     </StyledBlurb>
@@ -17,22 +22,19 @@ export default function HomepageBlurb() {
 }
 
 const StyledBlurb = styled.div`
-  padding: 6rem 6rem 0 6rem;
+  padding: 8rem 6rem;
   width: 60rem;
   display: flex;
-  align-items: center;
+
   flex-direction: column;
-  margin: 0 auto;
-  h3 {
-    text-transform: uppercase;
-    /* text-align: center; */
-    letter-spacing: 3px;
+  h2 {
     margin-bottom: 2rem;
+    font-weight: 500;
   }
   p {
-    font-weight: 500;
     margin: 0 auto;
     line-height: 2;
+    word-spacing: 1px;
   }
 
   button {

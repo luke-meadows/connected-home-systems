@@ -60,15 +60,14 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
   h4 {
-    font-size: 1.1rem;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     font-weight: 500;
-    letter-spacing: 5px;
-    margin-bottom: 1rem;
+    color: var(--teal);
   }
   a {
     color: var(--grey2);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: 0.25rem 0;
     font-weight: 300;
     &:hover {
