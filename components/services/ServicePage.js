@@ -1,9 +1,10 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+import Loading from '../main/Loading';
 import ServicePageImageCarousel from './ServicePageImageCarousel';
 
 export default function ServicePage({ service }) {
-  if (!service) return <p>Loading</p>;
+  if (!service) return <Loading />;
   return (
     <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
       <h2 style={{ marginBottom: '3rem' }}>{service.title}</h2>

@@ -9,7 +9,7 @@ export default function ServicesItem({ item, idx }) {
       <ItemText>
         <h3>{item.title}</h3>
         <p>{item.text}</p>
-        <a href="">
+        <a href={`/services/${item.category}`}>
           <span> Learn More</span>
         </a>
       </ItemText>
