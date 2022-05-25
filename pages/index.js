@@ -3,6 +3,7 @@ import Faq from '../components/main/Faq';
 import Hero from '../components/main/Hero';
 import HomepageBlurb from '../components/main/HomepageBlurb';
 import HomepageServicesGrid from '../components/main/HomepageServicesGrid';
+import Partners from '../components/main/Partners';
 import Testimonials from '../components/main/Testimonials';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <Testimonials />
       <ContactSection />
       <Faq />
+      <Partners />
     </div>
   );
 }

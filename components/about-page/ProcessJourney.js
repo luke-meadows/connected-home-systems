@@ -30,7 +30,7 @@ export default function ProcessJourney() {
             This is Critical for success. If it&apos;s not designed correctly it
             will fail.
           </p>
-          <p style={{ fontWeight: 600, marginTop: '1rem' }}>This includes:</p>
+          <p style={{ fontWeight: 500, marginTop: '1rem' }}>This includes:</p>
 
           <ul>
             <li>Correct cabling infrastructure.</li>
