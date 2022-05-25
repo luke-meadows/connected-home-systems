@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ServicePageImageCarousel from './ServicePageImageCarousel';
 
 export default function ServicePage({ service }) {
-  if (!service) <p>Loading</p>;
+  if (!service) return <p>Loading</p>;
   return (
     <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
       <h2 style={{ marginBottom: '3rem' }}>{service.title}</h2>
