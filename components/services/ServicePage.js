@@ -2,46 +2,40 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import ServicePageImageCarousel from './ServicePageImageCarousel';
 
-export default function ServicePage({ service, title }) {
+export default function ServicePage({ service }) {
   return (
-    <div>
-      <h2 style={{ marginBottom: '3rem' }}>{title}</h2>
+    <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
+      <h2 style={{ marginBottom: '3rem' }}>{service.title}</h2>
       <Grid>
         <TextContainer>
-          <p>{service.text1}</p>
-          <p>{service.text2}</p>
-          <p>{service.text3}</p>
-          <Tick>
-            <i className="icon-ok-circled" />
-            <p>Fully controllable.</p>
-          </Tick>
-          <Tick>
-            <i className="icon-ok-circled" />
-            <p>Wide range of options to choose from.</p>
-          </Tick>
-          <Tick>
-            <i className="icon-ok-circled" />
-            <p>Fully controllable.</p>
-          </Tick>
+          {service.text.map((text) => (
+            <p>{text}</p>
+          ))}
+          <div style={{ margin: '0.5rem 0' }} />
+          {service.bullets.map((bullet) => (
+            <Tick>
+              <i className="icon-ok-circled" />
+              <p>{bullet}</p>
+            </Tick>
+          ))}
         </TextContainer>
         <ImageContainer>
-          <Image src={service.img1} layout="fill" objectFit="cover" />
+          <Image src={service.img} layout="fill" objectFit="cover" />
         </ImageContainer>
       </Grid>
-      <h3 style={{ margin: '6rem 0 2rem 0' }}>Past Projects</h3>
-      <ServicePageImageCarousel service="smart-lighting" />
+      <ServicePageImageCarousel service={service.category} />
     </div>
   );
 }
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 6fr 4fr;
+  justify-content: space-around;
   gap: 3rem;
 `;
 
 const ImageContainer = styled.div`
-  height: 25rem;
   position: relative;
   border-radius: 2px;
   overflow: hidden;

@@ -10,11 +10,10 @@ export default function HomepageBlurb() {
         knows when and how you like the temperature set by learning your
         routines. These are just a few of the capabilities of a smart home which
         you can achieve with Connected Home Systems.{' '}
-        <strong>
+        <span style={{ fontWeight: '500' }}>
           With our technology, we can solve your problem and make the smart home
           a simple home.
-        </strong>
-        .
+        </span>
       </p>
       <button>Speak with our experts</button>
     </StyledBlurb>

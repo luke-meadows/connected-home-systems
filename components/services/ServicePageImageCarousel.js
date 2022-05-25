@@ -20,19 +20,22 @@ export default function ServicePageImageCarousel({ service }) {
     }
     fetchData();
     return () => fetchData;
-  }, []);
+  }, [service]);
   if (!images.length) return <div />;
   return (
-    <Grid>
-      {images.map((image, i) => {
-        console.log(image.url);
-        return (
-          <ImageContainer key={i}>
-            <Image src={image.url} layout="fill" objectFit="cover" />
-          </ImageContainer>
-        );
-      })}
-    </Grid>
+    <div>
+      <h3 style={{ margin: '6rem 0 2rem 0' }}>Past Projects</h3>
+      <Grid>
+        {images.map((image, i) => {
+          console.log(image.url);
+          return (
+            <ImageContainer key={i}>
+              <Image src={image.url} layout="fill" objectFit="cover" />
+            </ImageContainer>
+          );
+        })}
+      </Grid>
+    </div>
   );
 }
 

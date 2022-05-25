@@ -1,8 +1,15 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 export default function Nav() {
   const [serviceDropdownActive, setServiceDropdownActive] = useState(false);
+  const router = useRouter();
+  function handleClick(e) {
+    const { category } = e.currentTarget.dataset;
+    router.push(`/services/${category}`, undefined, { shallow: true });
+  }
   return (
     <StyledNav>
       <div
@@ -37,13 +44,55 @@ export default function Nav() {
             />
           </div>
           <div className="bottom">
-            <Link href="/design-and-consultancy">Design and consultancy</Link>
-            <Link href="/smart-home">Smart Home</Link>
-            <Link href="/smart-lighting">Smart Lighting</Link>
-            <Link href="/home-cinema">Home Cinema / Media Rooms</Link>
-            <Link href="/multiroom">Multiroom</Link>
-            <Link href="/networks">Home Networks</Link>
-            <Link href="/service-and-maintenance">Service and Maintenance</Link>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="design-and-consultancy"
+            >
+              Design and consultancy
+            </div>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="smart-home"
+            >
+              Smart Home
+            </div>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="smart-lighting"
+            >
+              Smart Lighting
+            </div>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="home-cinema"
+            >
+              Home Cinema / Media Rooms
+            </div>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="multiroom"
+            >
+              Multiroom
+            </div>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="networks"
+            >
+              Home Networks
+            </div>
+            <div
+              className="link"
+              onClick={handleClick}
+              data-category="service-and-maintenance"
+            >
+              Service and Maintenance
+            </div>
           </div>
         </ServicesDropdown>
       )}
@@ -127,12 +176,16 @@ const ServicesDropdown = styled.div`
     border-bottom: 1px solid var(--grey);
     border-right: 1px solid var(--grey);
   }
-  a {
+  .link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
     background-color: white;
     padding: 0.5rem;
     margin: 0;
     width: 100%;
     justify-content: flex-start;
+    cursor: pointer;
     &:after {
       height: 0px;
     }
