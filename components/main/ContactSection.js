@@ -14,8 +14,6 @@ const ContactContainer = styled.div`
   background: var(--grey);
 
   h2 {
-    /* font-weight: 700; */
-    /* text-transform: uppercase; */
-    /* letter-spacing: 4px; */
+    margin-bottom: 3rem;
   }
 `;

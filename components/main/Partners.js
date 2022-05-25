@@ -30,13 +30,13 @@ export default function Partners() {
               key={partner.name}
               style={{
                 display: 'flex',
-
-                // justifyContent: 'center',
               }}
             >
-              <ImageContainer>
-                <Image src={partner.logo} layout="fill" objectFit="contain" />
-              </ImageContainer>
+              <a href={partner.url} target="blank">
+                <ImageContainer>
+                  <Image src={partner.logo} layout="fill" objectFit="contain" />
+                </ImageContainer>
+              </a>
             </SwiperSlide>
           );
         })}
