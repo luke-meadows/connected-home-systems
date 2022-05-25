@@ -2,7 +2,7 @@ import styled from 'styled-components';
 export default function AboutUsSection() {
   return (
     <StyledAbout>
-      <h2>About us</h2>
+      <h2 className="">About us</h2>
       <p>
         For over 15 years we have been improving people&apos;s homes and
         lifestyles, solving problems through technology. Over this time, we
