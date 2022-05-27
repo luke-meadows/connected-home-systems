@@ -4,7 +4,15 @@ import firebase from 'firebase';
 import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import { db } from '../../db/firebase';
-
+const categoriesData = [
+  'design-and-consultancy',
+  'smart-home',
+  'smart-lighting',
+  'home-cinema',
+  'multiroom',
+  'networks',
+  'service-and-maintenance',
+];
 export default function ManagePhotos() {
   const [preview, setPreview] = useState(undefined);
   const [photoCategory, setPhotoCategory] = useState(null);
@@ -127,27 +135,18 @@ export default function ManagePhotos() {
         <div>
           <h3>Choose Category</h3>
           <div className="buttons">
-            <p
-              onClick={selectPhotoCategory}
-              data-category="smart-lighting"
-              className={photoCategory === 'smart-lighting' ? 'active' : ''}
-            >
-              Smart Lighting
-            </p>
-            <p
-              onClick={selectPhotoCategory}
-              data-category="home-cinema"
-              className={photoCategory === 'home-cinema' ? 'active' : ''}
-            >
-              Home Cinema
-            </p>
-            <p
-              onClick={selectPhotoCategory}
-              data-category="home-automation"
-              className={photoCategory === 'home-automation' ? 'active' : ''}
-            >
-              Home Automation
-            </p>
+            {categoriesData.map((category) => {
+              return (
+                <p
+                  key={category}
+                  onClick={selectPhotoCategory}
+                  data-category={category}
+                  className={photoCategory === category ? 'active' : ''}
+                >
+                  {category.replaceAll('-', ' ')}
+                </p>
+              );
+            })}
           </div>
         </div>
         <button
@@ -214,8 +213,10 @@ const RadioButtons = styled.div`
   .buttons {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     p {
       margin-right: 1rem;
+      margin-bottom: 1rem;
       padding: 1rem;
       border: 1px solid var(--black);
       font-weight: 500;

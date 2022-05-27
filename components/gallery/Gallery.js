@@ -107,7 +107,9 @@ export default function Gallery({ category = 'all' }) {
         <Control name="all" heading="All" />
         <Control name="smart-lighting" heading="Smart Lighting" />
         <Control name="home-cinema" heading="Home Cinema" />
-        <Control name="home-automation" heading="Home Automation" />
+        <Control name="smart-home" heading="smart-home" />
+        <Control name="multiroom" heading="Multiroom" />
+        <Control name="networks" heading="Home Networks" />
       </Controls>
       <Images>
         {images.map((x, i) => (
@@ -134,7 +136,7 @@ export const Controls = styled.div`
   display: flex;
   margin-bottom: 2rem;
   p {
-    margin-right: 1rem;
+    margin-right: 2rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1px;
