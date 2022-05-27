@@ -1,32 +1,41 @@
+import Image from 'next/image';
 import styled from 'styled-components';
+import LogoImage from '../../public/logoNoText.svg';
+
 export default function HomepageBlurb() {
   return (
-    <StyledBlurb>
-      <h2>Your home has so much potential</h2>
-      <p>
-        Your home should work for you, it should respond to you, know what you
-        like and what you don&apos;t. Now it CAN! When you enter the room the
-        lights turn on by themselves and turn off when you leave. Your heating
-        knows when and how you like the temperature set by learning your
-        routines. These are just a few of the capabilities of a smart home which
-        you can achieve with Connected Home Systems.{' '}
-        <span style={{ fontWeight: '500' }}>
-          With our technology, we can solve your problem and make the smart home
-          a simple home.
-        </span>
-      </p>
-      <button>Speak with our experts</button>
-    </StyledBlurb>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <StyledBlurb>
+        <h2>Your home has so much potential</h2>
+        <p>
+          Your home should work for you, it should respond to you, know what you
+          like and what you don&apos;t. Now it CAN! When you enter the room the
+          lights turn on by themselves and turn off when you leave. Your heating
+          knows when and how you like the temperature set by learning your
+          routines. These are just a few of the capabilities of a smart home
+          which you can achieve with Connected Home Systems.{' '}
+          <span style={{ fontWeight: '500' }}>
+            With our technology, we can solve your problem and make the smart
+            home a simple home.
+          </span>
+        </p>
+        <button>Speak with our experts</button>
+      </StyledBlurb>
+
+      <ImageContainerInner>
+        <Image src={LogoImage} layout="fill" objectFit="contain" />
+      </ImageContainerInner>
+    </div>
   );
 }
 
 const StyledBlurb = styled.div`
-  padding: 8rem 6rem;
+  padding: 10rem 6rem;
   width: 60rem;
   display: flex;
   flex-direction: column;
   h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
   }
   p {
@@ -47,4 +56,11 @@ const StyledBlurb = styled.div`
     margin-top: 2rem;
     width: fit-content;
   }
+`;
+
+const ImageContainerInner = styled.div`
+  position: relative;
+  height: 20rem;
+  width: 20rem;
+  opacity: 0.8;
 `;

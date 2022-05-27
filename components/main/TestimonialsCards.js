@@ -42,10 +42,9 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   padding: 2rem;
-  background: var(--grey);
+  background: var(--grey-trans);
   border-radius: 5px;
   .location {
-    color: gray;
     font-size: 0.8rem;
     font-style: italic;
     margin-left: 0.5rem;

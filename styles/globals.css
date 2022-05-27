@@ -17,6 +17,7 @@ body {
   --green: #81e2ab;
   --grey: #e8e8e8;
   --grey2: #bdbdbd;
+  --grey-trans: hsla(0, 0%, 87%, 0.669);
   --grey-text: #454545;
   --black-bg: #151313;
   --black-button: rgb(48, 48, 48);

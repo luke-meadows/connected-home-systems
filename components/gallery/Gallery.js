@@ -46,7 +46,7 @@ export default function Gallery({ category = 'all' }) {
         await db
           .collection('images')
           .orderBy('createdAt', 'desc')
-          .limit(itemsOnView)
+          .limit(30)
           .get()
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
@@ -86,7 +86,7 @@ export default function Gallery({ category = 'all' }) {
   function handleCategoryChange(e) {
     const { name } = e.currentTarget.dataset;
     setImageCategory(name);
-    setItemsOnView(15);
+    setItemsOnView(16);
   }
 
   const Control = ({ name, heading }) => {

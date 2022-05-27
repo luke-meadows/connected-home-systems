@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function ServicesItem({ item, idx }) {
   return (
     <ServicesItemContainer idx={idx}>
-      <ImageContainer>
+      <ImageContainer idx={idx}>
         <Image src={item.img} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ItemText>
@@ -21,25 +21,34 @@ const ServicesItemContainer = styled.div`
   overflow: hidden;
   height: 65vh;
   display: flex;
-  flex-direction: ${(props) => (props.idx % 2 > 0 ? 'row-reverse' : 'row')};
-  margin-bottom: 6rem;
+  /* flex-direction: ${(props) =>
+    props.idx % 2 > 0 ? 'row-reverse' : 'row-reverse'}; */
+  margin-bottom: 3rem;
 `;
 
 const ImageContainer = styled.div`
-  width: 60%;
+  /* border-top-left-radius: ${(props) => (props.idx % 2 > 0 ? '3px' : '0')}; */
+  border-top-right-radius: ${(props) => (props.idx % 2 > 0 ? '3px' : '3px')};
+  /* border-bottom-left-radius: ${(props) =>
+    props.idx % 2 > 0 ? '3px' : '0'}; */
+  border-bottom-right-radius: ${(props) => (props.idx % 2 > 0 ? '3px' : '3px')};
+
+  overflow: hidden;
+  width: 50%;
   position: relative;
 `;
 
 const ItemText = styled.div`
-  width: 40%;
+  width: 50%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 6rem;
+  padding: 0 6rem 0 3rem;
   h3 {
     margin-bottom: 1rem;
     line-height: 1.5;
     color: var(--teal);
+    font-size: 1.5rem;
   }
   p {
     line-height: 2rem;
@@ -47,13 +56,15 @@ const ItemText = styled.div`
     font-weight: 300;
   }
   a {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--black);
+    color: var(--black);
     padding-bottom: 0.4rem;
     width: fit-content;
     font-style: italic;
     font-size: 0.9rem;
     &:hover {
       color: var(--teal);
+      border-bottom: 1px solid var(--teal);
     }
   }
 `;

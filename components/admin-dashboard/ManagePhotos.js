@@ -43,12 +43,16 @@ export default function ManagePhotos() {
     inputs.image = '';
     setPreview(undefined);
   }
-  useEffect(() => {
-    console.log(photoCategories);
-  }, [photoCategories]);
+
   function selectPhotoCategory(e) {
     const { category } = e.currentTarget.dataset;
-    setPhotoCategories([...photoCategories, category]);
+    if (photoCategories.includes(category)) {
+      console.log('includes');
+      const newArr = photoCategories.filter((newCat) => newCat !== category);
+      setPhotoCategories(newArr);
+    } else {
+      setPhotoCategories([...photoCategories, category]);
+    }
   }
 
   function uploadImage(image) {
@@ -100,7 +104,7 @@ export default function ManagePhotos() {
       })
       .then(() => {
         setPreview(undefined);
-        setPhotoCategories(null);
+        setPhotoCategories([]);
         setInputs({ image: '' });
         ref.current.classList.remove('inactive');
       });
