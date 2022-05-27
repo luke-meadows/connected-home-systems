@@ -10,12 +10,14 @@ const Question = ({ faq }) => {
       className={open ? 'open' : ''}
     >
       <QuestionContainer>
-        <p style={open ? { fontWeight: '600' } : {}}>{faq.question}</p>
+        <p style={open ? { fontWeight: '500' } : {}}>{faq.question}</p>
         <span>
           <i className={open ? 'icon-minus' : 'icon-plus'} />
         </span>
       </QuestionContainer>
-      <p style={{ color: 'var(--teal)', marginRight: '2rem' }}>
+      <p
+        style={{ color: 'var(--teal)', marginRight: '2rem', lineHeight: '1.5' }}
+      >
         {faq.answer} {faq.link && <Link href={faq.link}>here</Link>}
       </p>
     </QuestionAnswer>

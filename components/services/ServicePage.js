@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import Loading from '../main/Loading';
 import ServicePageImageCarousel from './ServicePageImageCarousel';
@@ -13,6 +14,24 @@ export default function ServicePage({ service }) {
           {service.text.map((text) => (
             <p key={text}>{text}</p>
           ))}
+          {service.category === 'service-and-maintenance' && (
+            <p>
+              * conditions apply….. Interested in our service and maintenance
+              packages? Contact us{' '}
+              <Link href="/contact">
+                <span
+                  style={{
+                    fontStyle: 'italic',
+                    fontWeight: '500',
+                    color: 'var(--teal)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  here….
+                </span>
+              </Link>
+            </p>
+          )}
           <div style={{ margin: '0.5rem 0' }} />
           {service.bullets.map((bullet) => (
             <Tick key={bullet}>

@@ -9,14 +9,18 @@ export default function ProcessJourney() {
     <Journey>
       <h2>The Process Journey</h2>
       <Grid>
-        <ProcessImage style={{ aspectRatio: 1 }}>
+        <ProcessImage
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <Image src={Expectations} layout="fill" objectFit="cover" />
         </ProcessImage>
         <ProcessLine>
           <div className="line" />
           <div className="square" />
         </ProcessLine>
-        <ProcessText style={{ aspectRatio: 1 }}>
+        <ProcessText
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <h3>Expectations</h3>
           <p>
             from the outset we are open about the specification of the equipment
@@ -24,7 +28,9 @@ export default function ProcessJourney() {
             improvement.
           </p>
         </ProcessText>
-        <ProcessText style={{ aspectRatio: 1 }}>
+        <ProcessText
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <h3>Design</h3>
           <p>
             This is Critical for success. If it&apos;s not designed correctly it
@@ -46,19 +52,25 @@ export default function ProcessJourney() {
           <div className="line" />
           <div className="square" />
         </ProcessLine>
-        <ProcessImage style={{ aspectRatio: 1 }}>
+        <ProcessImage
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <div>
             <Image src={Design} layout="fill" objectFit="cover" />
           </div>
         </ProcessImage>
-        <ProcessImage style={{ aspectRatio: 1 }}>
+        <ProcessImage
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <Image src={Installation} layout="fill" objectFit="cover" />
         </ProcessImage>
         <ProcessLine>
           <div className="line" />
           <div className="square" />
         </ProcessLine>
-        <ProcessText style={{ aspectRatio: 1 }}>
+        <ProcessText
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <h3>Installation</h3>
           <p>
             If there is interior work to be completed we will discuss this with
@@ -68,7 +80,9 @@ export default function ProcessJourney() {
             specification ready for use and implementation.
           </p>
         </ProcessText>
-        <ProcessText style={{ aspectRatio: 1 }}>
+        <ProcessText
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
           <h3>Maintenance</h3>
           <p>
             Ensuring the hardware is kept up to date and continues to function
@@ -79,10 +93,10 @@ export default function ProcessJourney() {
           <div className="line" />
           <div className="square" />
         </ProcessLine>
-        <ProcessImage style={{ aspectRatio: 1 }}>
-          <div>
-            <Image src={Maintenance} layout="fill" objectFit="cover" />
-          </div>
+        <ProcessImage
+          style={{ aspectRatio: 1, borderRadius: '2px', overflow: 'hidden' }}
+        >
+          <Image src={Maintenance} layout="fill" objectFit="cover" />
         </ProcessImage>
       </Grid>
     </Journey>
