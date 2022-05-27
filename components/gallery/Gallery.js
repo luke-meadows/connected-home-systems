@@ -26,6 +26,19 @@ export default function Gallery({ category = 'all' }) {
     return () => window.removeEventListener('scroll', handleScroll);
   });
 
+  function removeDuplicateImages(imgs) {
+    const uniqueArray = imgs.filter((value, index) => {
+      const _value = JSON.stringify(value.url);
+      return (
+        index ===
+        imgs.findIndex((obj) => {
+          return JSON.stringify(obj.url) === _value;
+        })
+      );
+    });
+    return uniqueArray;
+  }
+
   useEffect(() => {
     let imgs = [];
     async function fetchData() {
@@ -38,10 +51,11 @@ export default function Gallery({ category = 'all' }) {
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
           });
-        const newImages = imgs.map((imageData) => {
+
+        const newImages = removeDuplicateImages(imgs).map((imageData) => {
           return { original: imageData.url, thumbnail: imageData.url };
         });
-        setImages(imgs);
+        setImages(removeDuplicateImages(imgs));
         setGalleryImages(newImages);
       } else {
         await db
@@ -53,10 +67,10 @@ export default function Gallery({ category = 'all' }) {
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
           });
-        const newImages = images.map((imageData) => {
+        const newImages = removeDuplicateImages(imgs).map((imageData) => {
           return { original: imageData.url, thumbnail: imageData.url };
         });
-        setImages(imgs);
+        setImages(removeDuplicateImages(imgs));
         setGalleryImages(newImages);
       }
     }
@@ -108,7 +122,7 @@ export default function Gallery({ category = 'all' }) {
         <Control name="all" heading="All" />
         <Control name="smart-lighting" heading="Smart Lighting" />
         <Control name="home-cinema" heading="Home Cinema" />
-        <Control name="smart-home" heading="smart-home" />
+        <Control name="smart-home" heading="Smart Home" />
         <Control name="multiroom" heading="Multiroom" />
         <Control name="networks" heading="Home Networks" />
       </Controls>
@@ -161,8 +175,8 @@ export const Controls = styled.div`
 
 const Images = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   min-height: 20rem;
 `;
 

@@ -15,7 +15,7 @@ const categoriesData = [
 ];
 export default function ManagePhotos() {
   const [preview, setPreview] = useState(undefined);
-  const [photoCategory, setPhotoCategory] = useState(null);
+  const [photoCategories, setPhotoCategories] = useState([]);
   const [inputs, setInputs] = useState({
     image: '',
   });
@@ -43,10 +43,12 @@ export default function ManagePhotos() {
     inputs.image = '';
     setPreview(undefined);
   }
-
+  useEffect(() => {
+    console.log(photoCategories);
+  }, [photoCategories]);
   function selectPhotoCategory(e) {
     const { category } = e.currentTarget.dataset;
-    setPhotoCategory(category);
+    setPhotoCategories([...photoCategories, category]);
   }
 
   function uploadImage(image) {
@@ -88,15 +90,17 @@ export default function ManagePhotos() {
     await uploadImage(inputs.image)
       // 3. get the url from image upload and store it in images collection with timestamp and category
       .then(async (URL) => {
-        await uploadDocToDb({
-          url: URL,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-          category: photoCategory,
+        await photoCategories.forEach(async (category) => {
+          await uploadDocToDb({
+            url: URL,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            category: category,
+          });
         });
       })
       .then(() => {
         setPreview(undefined);
-        setPhotoCategory(null);
+        setPhotoCategories(null);
         setInputs({ image: '' });
         ref.current.classList.remove('inactive');
       });
@@ -141,7 +145,11 @@ export default function ManagePhotos() {
                   key={category}
                   onClick={selectPhotoCategory}
                   data-category={category}
-                  className={photoCategory === category ? 'active' : ''}
+                  className={
+                    photoCategories?.findIndex((item) => item === category) > -1
+                      ? 'active'
+                      : ''
+                  }
                 >
                   {category.replaceAll('-', ' ')}
                 </p>
@@ -152,7 +160,7 @@ export default function ManagePhotos() {
         <button
           ref={ref}
           onClick={handleImageUpload}
-          className={!photoCategory ? 'inactive' : ''}
+          className={photoCategories?.length ? '' : 'inactive'}
         >
           Upload
         </button>
