@@ -47,7 +47,6 @@ export default function ManagePhotos() {
   function selectPhotoCategory(e) {
     const { category } = e.currentTarget.dataset;
     if (photoCategories.includes(category)) {
-      console.log('includes');
       const newArr = photoCategories.filter((newCat) => newCat !== category);
       setPhotoCategories(newArr);
     } else {
@@ -155,7 +154,7 @@ export default function ManagePhotos() {
                       : ''
                   }
                 >
-                  {category.replaceAll('-', ' ')}
+                  {category.replace(/-/g, ' ')}
                 </p>
               );
             })}

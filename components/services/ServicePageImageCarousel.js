@@ -4,6 +4,16 @@ import styled from 'styled-components';
 import { db } from '../../db/firebase';
 export default function ServicePageImageCarousel({ service }) {
   const [images, setImages] = useState([]);
+  const arrowStyles = {
+    borderRadius: '50%',
+    height: '1.5rem',
+    width: '1.5rem',
+    border: '1px solid var(--black)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+  };
   useEffect(() => {
     let imgs = [];
     async function fetchData() {
@@ -11,7 +21,7 @@ export default function ServicePageImageCarousel({ service }) {
         .collection('images')
         .where('category', '==', service)
         .orderBy('createdAt', 'desc')
-        .limit(5)
+        .limit(4)
         .get()
         .then((snapshot) => {
           snapshot.forEach((shot) => imgs.push(shot.data()));
@@ -24,7 +34,40 @@ export default function ServicePageImageCarousel({ service }) {
   if (!images.length) return <div />;
   return (
     <div>
-      <h3 style={{ margin: '6rem 0 2rem 0' }}>Past Projects</h3>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          margin: '6rem 0 2rem 0',
+        }}
+      >
+        <h3>Past Projects</h3>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ ...arrowStyles, marginRight: ' 0.25rem' }}>
+            <i
+              className="icon-left-dir"
+              style={{ marginRight: '0.1rem', color: 'rgba(0,0,0,0.8)' }}
+            />
+          </div>
+          <div
+            style={{
+              ...arrowStyles,
+              marginLeft: ' 0.25rem',
+            }}
+          >
+            <i
+              className="icon-right-dir"
+              style={{ marginLeft: '0.1rem', color: 'rgba(0,0,0,0.8)' }}
+            />
+          </div>
+        </div>
+      </div>
       <Grid>
         {images.map((image, i) => {
           console.log(image.url);
@@ -41,12 +84,12 @@ export default function ServicePageImageCarousel({ service }) {
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   cursor: pointer;
-  aspect-ratio: 1;
+  height: 10rem;
 `;

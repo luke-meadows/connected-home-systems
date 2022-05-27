@@ -15,7 +15,7 @@ const TestimonialsContainer = styled.div`
   position: relative;
   h2 {
     padding: 0 2.8rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 `;
 
