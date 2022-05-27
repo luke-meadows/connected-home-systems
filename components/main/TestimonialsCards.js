@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { testimonialsData } from '../../lib/testimonialsData';
+import { reviews } from '../../lib/reviews';
+
 import Stars from './Stars';
 export default function TestimonialsCards() {
   return (
@@ -7,12 +8,13 @@ export default function TestimonialsCards() {
       <i className="icon-left-dir" />
 
       <CardContainer>
-        {testimonialsData.map((item, i) => {
+        {reviews.map((item, i) => {
           return (
             <Card key={i}>
-              <h4>{item.name}</h4>
+              <h4>
+                {item.name} <span className="location">West Midlands</span>
+              </h4>
               <p>{item.comment}</p>
-              <p className="location">{item.location}</p>
               <Stars quantity={item.stars} />
             </Card>
           );
@@ -33,25 +35,25 @@ const Container = styled.div`
 `;
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
   margin: 0rem 1rem;
 `;
 
 const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0 1rem;
-
+  padding: 2rem;
+  background: var(--grey);
+  border-radius: 5px;
   .location {
     color: gray;
     font-size: 0.8rem;
     font-style: italic;
-    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    font-weight: 300;
   }
   p {
-    margin-top: 1rem;
+    margin: 1rem 0 0.5rem 0;
     line-height: 1.2;
+    font-size: 0.85rem;
   }
 `;

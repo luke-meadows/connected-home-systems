@@ -20,6 +20,7 @@ export default function Gallery({ category = 'all' }) {
     window.scrollTo(0, window.scrollY);
     console.log('scroll event', window.scrollY);
   };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
