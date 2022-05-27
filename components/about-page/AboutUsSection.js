@@ -74,7 +74,7 @@ export default function AboutUsSection() {
 }
 
 const StyledAbout = styled.div`
-  padding: 4rem 6rem 4rem 6rem;
+  padding: 3rem 6rem 4rem 6rem;
   h2 {
     margin-bottom: 3rem;
   }

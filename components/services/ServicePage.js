@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Loading from '../main/Loading';
+
 import ServicePageImageCarousel from './ServicePageImageCarousel';
 
 export default function ServicePage({ service }) {

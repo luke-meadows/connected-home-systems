@@ -1,41 +1,99 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Control4 from '../../public/imgs/control4.png';
 import LogoNoText from './LogoNoText';
 export default function Footer() {
+  const router = useRouter();
+  function handleServiceClick(e) {
+    const { service } = e.currentTarget.dataset;
+    router.push(`/services/${service}`, undefined, { shallow: true });
+  }
+
   return (
     <StyledFooter>
       <ColumnContainer>
         <Column>
           <h4>Connected Home Systems</h4>
-          <Link href="/">Contact us</Link>
-          <Link href="/">Portfolio</Link>
-          <Link href="/">About us</Link>
+          <Link href="/contact">Contact us</Link>
+          <Link href="/projects">Projects</Link>
+          <Link href="/about-us">About us</Link>
         </Column>
         <div style={{ margin: '2rem 0' }} />
         <Column>
-          <h4>Recent Projects</h4>
+          {/* <h4>Recent Projects</h4>
           <Link href="/">Warwick</Link>
           <Link href="/">Tamworth</Link>
-          <Link href="/">Stratford</Link>
+          <Link href="/">Stratford</Link> */}
         </Column>
       </ColumnContainer>
       <Column>
         <h4>Services</h4>
-        <Link href="/">Design and Consultancy</Link>
-        <Link href="/">Smart Home</Link>
-        <Link href="/">Smart Lighting</Link>
-        <Link href="/">Home Cinema and Media Room</Link>
-        <Link href="/">Multiroom</Link>
-        <Link href="/">Home Networks</Link>
-        <Link href="/">Service and Maintenance</Link>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="design-and-consultancy"
+        >
+          Design and Consultancy
+        </p>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="smart-home"
+        >
+          Smart Home
+        </p>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="smart-lighting"
+        >
+          Smart Lighting
+        </p>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="home-cinema"
+        >
+          Home Cinema and Media Room
+        </p>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="multiroom"
+        >
+          Multiroom
+        </p>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="networks"
+        >
+          Home Networks
+        </p>
+        <p
+          className="link"
+          onClick={handleServiceClick}
+          data-service="service-and-maintenance"
+        >
+          Service and Maintenance
+        </p>
       </Column>
       <Column>
         <h4>Socials</h4>
-        <Link href="/">Facebook</Link>
-        <Link href="/">Instagram</Link>
-        <Link href="/">Twitter</Link>
+        <a target="blank" href="https://www.facebook.com/connectedhomesystems">
+          Facebook
+        </a>
+        <a
+          target="blank"
+          href="/https://www.instagram.com/connected_home_systems/"
+        >
+          Instagram
+        </a>
+        <a target="blank" href="/https://twitter.com/ConnectedJon">
+          Twitter
+        </a>
       </Column>
       <div>
         <LogoNoText width={1} />
@@ -65,11 +123,13 @@ const Column = styled.div`
     font-weight: 500;
     color: var(--teal);
   }
-  a {
+  a,
+  .link {
     color: var(--grey2);
     font-size: 1rem;
     margin: 0.25rem 0;
     font-weight: 300;
+    cursor: pointer;
     &:hover {
       color: var(--teal);
     }

@@ -24,7 +24,6 @@ const StyledBlurb = styled.div`
   padding: 8rem 6rem;
   width: 60rem;
   display: flex;
-
   flex-direction: column;
   h2 {
     margin-bottom: 2rem;
