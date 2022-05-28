@@ -14,7 +14,15 @@ export default function Partners() {
         background: 'var(--grey)',
       }}
     >
-      <h2>Our trusted partners</h2>
+      <h2
+        style={{
+          color: 'var(--black)',
+          fontWeight: '400',
+          marginBottom: '2rem',
+        }}
+      >
+        Our trusted partners
+      </h2>
       <Swiper
         slidesPerView={6}
         spaceBetween={10}

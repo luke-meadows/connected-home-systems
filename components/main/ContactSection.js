@@ -3,17 +3,37 @@ import ContactForm from './ContactForm';
 export default function ContactSection() {
   return (
     <ContactContainer>
-      <h2>Contact us</h2>
+      <div className="text">
+        <h2>Book an initial consultation</h2>
+        <p>
+          We'd love to discuss your project, book an initial consultation free
+          of charge by sending us your details below.
+        </p>
+      </div>
       <ContactForm />
     </ContactContainer>
   );
 }
 
 const ContactContainer = styled.div`
-  padding: 6rem;
+  padding: 4rem 6rem 6rem 6rem;
   background: var(--grey);
-
+  .text {
+    /* display: flex; */
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
   h2 {
-    margin-bottom: 3rem;
+    font-weight: 400;
+    line-height: 2;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 0.3rem;
+    font-weight: 300;
   }
 `;

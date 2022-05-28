@@ -42,7 +42,7 @@ export default function ServicePageImageCarousel({ service }) {
           margin: '6rem 0 2rem 0',
         }}
       >
-        <h3>Past Projects</h3>
+        <h3 style={{ color: 'var(--black)' }}>Past Projects</h3>
         <div
           style={{
             display: 'flex',
@@ -92,4 +92,6 @@ const ImageContainer = styled.div`
   position: relative;
   cursor: pointer;
   height: 10rem;
+  border-radius: 2px;
+  overflow: hidden;
 `;

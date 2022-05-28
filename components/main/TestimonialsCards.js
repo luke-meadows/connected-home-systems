@@ -36,23 +36,29 @@ const Container = styled.div`
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   margin: 0rem 1rem;
 `;
 
 const Card = styled.div`
   padding: 2rem;
-  background: var(--grey-trans);
+
+  background: var(--grey);
   border-radius: 5px;
+  box-shadow: var(--bs);
   .location {
     font-size: 0.8rem;
     font-style: italic;
     margin-left: 0.5rem;
     font-weight: 300;
+    color: var(--black);
   }
   p {
     margin: 1rem 0 0.5rem 0;
     line-height: 1.2;
     font-size: 0.85rem;
+  }
+  h4 {
+    color: var(--black);
   }
 `;

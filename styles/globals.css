@@ -8,7 +8,6 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --white: rgb(255, 255, 255);
   --black: rgb(13, 13, 13);
-
   --teal: #31787a;
   --teal-trans: #31777ac8;
   --green: #81e2ab;
@@ -21,6 +20,7 @@ body {
   --blue: rgb(58, 58, 234);
   color: var(--black);
   font-smooth: always;
+  --bs: 0px 10px 13px -7px rgba(0, 0, 0, 0.35);
 }
 
 h1,
@@ -31,6 +31,7 @@ h5,
 h6 {
   font-family: 'Ubuntu', sans-serif;
   color: rgb(13, 13, 13);
+  color: var(--teal);
 }
 
 h3 {

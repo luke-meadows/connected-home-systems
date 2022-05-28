@@ -4,18 +4,19 @@ import TestimonialsCards from './TestimonialsCards';
 export default function Testimonials() {
   return (
     <TestimonialsContainer>
-      <h2>Customer Reviews</h2>
+      <p className="customers">What our customers say about us...</p>
       <TestimonialsCards />
     </TestimonialsContainer>
   );
 }
 
 const TestimonialsContainer = styled.div`
-  padding: 3rem 3rem 6rem 3rem;
+  padding: 6rem 3rem 9rem 3rem;
   position: relative;
-  h2 {
+  .customers {
     padding: 0 2.8rem;
     margin-bottom: 3rem;
+    font-size: 2rem;
   }
 `;
 

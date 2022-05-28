@@ -9,7 +9,13 @@ export default function ServicePage({ service }) {
   if (!service) return <Loading />;
   return (
     <div style={{ padding: '3rem 0rem 6rem 6rem' }}>
-      <h2 style={{ margin: '0 auto 3rem auto', maxWidth: '100rem' }}>
+      <h2
+        style={{
+          margin: '0 auto 3rem auto',
+          maxWidth: '100rem',
+          color: 'var(--teal)',
+        }}
+      >
         {service.title}
       </h2>
       <Grid>

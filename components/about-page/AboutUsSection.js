@@ -9,7 +9,7 @@ export default function AboutUsSection() {
       <div
         style={{
           position: 'relative',
-          minWidth: '40%',
+          minWidth: '30%',
           marginLeft: '2rem',
           float: 'right',
           borderRadius: '2px',

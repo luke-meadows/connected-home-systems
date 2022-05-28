@@ -41,6 +41,8 @@ const Container = styled.div`
   margin: 0 auto;
   h2 {
     margin-bottom: 2rem;
+    font-weight: 400;
+    color: var(--black);
   }
 `;
 

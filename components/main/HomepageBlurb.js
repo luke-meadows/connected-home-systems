@@ -1,25 +1,12 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import LogoImage from '../../public/logoNoText.svg';
-import cinema from '../../public/imgs/service-icons/Cinema icon.png';
-import lighting from '../../public/imgs/service-icons/Lighting Icon.png';
-import control from '../../public/imgs/service-icons/Control Icon.png';
-import multiroom from '../../public/imgs/service-icons/Multiroom icon.png';
-import network from '../../public/imgs/service-icons/Network icon.png';
-
-const icons = [
-  { title: 'Smart Lighting', img: lighting },
-  { title: 'Home Cinema', img: cinema },
-  { title: 'Multiroom', img: multiroom },
-  { title: 'Control', img: control },
-  { title: 'Network', img: network },
-];
+import BlurbImage from '../../public/blurb-image.png';
 
 export default function HomepageBlurb() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <Container>
       <StyledBlurb>
-        <h2 style={{ color: 'var(--teal' }}>Your home has so much potential</h2>
+        <h2>Your home has so much potential!</h2>
         <p>
           Your home should work for you, it should respond to you, know what you
           like and what you don&apos;t. Now it CAN! When you enter the room the
@@ -37,45 +24,38 @@ export default function HomepageBlurb() {
 
       <div
         style={{
-          width: 'calc(100% - 60rem)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          flexDirection: 'column',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            width: ' 30rem',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-          }}
-        >
-          {icons.map((icon) => {
-            return (
-              <Icon key={icon.title}>
-                <div style={{ position: 'relative', width: '6rem' }}>
-                  <Image src={icon.img} layout="responsive" />
-                </div>
-                <p>{icon.title}</p>
-              </Icon>
-            );
-          })}
+        <div>
+          <ImageContainerInner>
+            <Image src={BlurbImage} layout="responsive" objectFit="contain" />
+          </ImageContainerInner>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
+const Container = styled.div`
+  padding: 6rem 6rem 6rem 6rem;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+`;
 const StyledBlurb = styled.div`
-  padding: 10rem 0rem 10rem 6rem;
-  width: 50rem;
+  width: 55rem;
   display: flex;
   flex-direction: column;
+  margin-right: 6rem;
   h2 {
     margin-bottom: 1rem;
     font-weight: 500;
+    font-weight: 400;
+    /* color: var(--black); */
+    font-size: 2rem;
   }
   p {
     margin: 0 auto;
@@ -97,15 +77,7 @@ const StyledBlurb = styled.div`
   }
 `;
 
-const Icon = styled.div`
-  margin: 0 1.5rem 3rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  p {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    font-weight: 400;
-  }
+const ImageContainerInner = styled.div`
+  position: relative;
+  width: 25rem;
 `;
