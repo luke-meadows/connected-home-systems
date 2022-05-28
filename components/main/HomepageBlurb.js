@@ -40,10 +40,9 @@ export default function HomepageBlurb() {
 }
 
 const Container = styled.div`
-  padding: 6rem 6rem 6rem 6rem;
+  padding: 3rem 6rem 6rem 6rem;
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
 `;
 const StyledBlurb = styled.div`
   width: 55rem;
@@ -54,7 +53,6 @@ const StyledBlurb = styled.div`
     margin-bottom: 1rem;
     font-weight: 500;
     font-weight: 400;
-    /* color: var(--black); */
     font-size: 2rem;
   }
   p {

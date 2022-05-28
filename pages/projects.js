@@ -18,7 +18,7 @@ export default function Projects() {
 
 const Container = styled.div`
   margin-top: 6rem;
-  padding: 4rem 6rem 3rem 6rem;
+  padding: 3rem 6rem 3rem 6rem;
   h2 {
     margin-bottom: 2rem;
   }

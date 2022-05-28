@@ -76,8 +76,7 @@ const ImageContainer = styled.div`
   position: relative;
   border-radius: 2px;
   overflow: hidden;
-  /* aspect-ratio: 1; */
-  min-width: 50rem;
+  min-width: 40vw;
   height: 30rem;
 `;
 

@@ -35,7 +35,7 @@ const Container = styled.div`
 `;
 const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin: 0rem 1rem;
 `;

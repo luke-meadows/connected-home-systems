@@ -8,10 +8,9 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src={require('../../public/video/hero.mp4')}
+        src="https://firebasestorage.googleapis.com/v0/b/connected-home-systems-713cb.appspot.com/o/video%2Fhero2.mp4?alt=media&token=aa5d00fc-1d07-4c18-8684-010e3d69e6f4"
         type="video/mp4"
       />
-      {/* <Text>Your Home Connected</Text> */}
     </StyledHero>
   );
 }
