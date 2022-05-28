@@ -6,8 +6,8 @@ export default function ContactSection() {
       <div className="text">
         <h2>Book an initial consultation</h2>
         <p>
-          We'd love to discuss your project, book an initial consultation free
-          of charge by sending us your details below.
+          We&apos;d love to discuss your project, book an initial consultation
+          free of charge by sending us your details below.
         </p>
       </div>
       <ContactForm />

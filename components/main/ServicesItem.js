@@ -61,7 +61,7 @@ const ItemText = styled.div`
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease-in-out;
     box-sizing: border-box;
     &:hover {
       color: var(--teal);
