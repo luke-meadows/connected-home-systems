@@ -21,8 +21,6 @@ const ServicesItemContainer = styled.div`
   overflow: hidden;
   height: 65vh;
   display: flex;
-  /* flex-direction: ${(props) =>
-    props.idx % 2 > 0 ? 'row-reverse' : 'row-reverse'}; */
   margin-bottom: 3rem;
 `;
 

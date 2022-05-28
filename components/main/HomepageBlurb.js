@@ -54,7 +54,7 @@ export default function HomepageBlurb() {
         >
           {icons.map((icon) => {
             return (
-              <Icon>
+              <Icon key={icon.title}>
                 <div style={{ position: 'relative', width: '6rem' }}>
                   <Image src={icon.img} layout="responsive" />
                 </div>

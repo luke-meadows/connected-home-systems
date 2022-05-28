@@ -112,10 +112,9 @@ const StyledNav = styled.nav`
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85em;
     font-weight: 400;
-
+    color: var(--black);
     position: relative;
     letter-spacing: 1px;
     &:hover {
@@ -156,6 +155,7 @@ const ServicesDropdown = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+
   .top {
     height: 6rem;
     cursor: pointer;
@@ -175,10 +175,11 @@ const ServicesDropdown = styled.div`
     border-left: 1px solid var(--grey);
     border-bottom: 1px solid var(--grey);
     border-right: 1px solid var(--grey);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   .link {
-    text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 0.85em;
     font-weight: 400;
     background-color: white;
     padding: 0.5rem;
