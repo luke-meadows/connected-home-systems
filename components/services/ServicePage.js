@@ -8,7 +8,7 @@ import ServicePageImageCarousel from './ServicePageImageCarousel';
 export default function ServicePage({ service }) {
   if (!service) return <Loading />;
   return (
-    <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
+    <div style={{ padding: '3rem 0rem 6rem 6rem' }}>
       <h2 style={{ margin: '0 auto 3rem auto', maxWidth: '100rem' }}>
         {service.title}
       </h2>
@@ -70,7 +70,9 @@ const ImageContainer = styled.div`
   position: relative;
   border-radius: 2px;
   overflow: hidden;
-  aspect-ratio: 1;
+  /* aspect-ratio: 1; */
+  min-width: 50rem;
+  height: 30rem;
 `;
 
 const TextContainer = styled.div`

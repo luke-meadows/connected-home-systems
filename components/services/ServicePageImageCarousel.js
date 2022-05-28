@@ -33,7 +33,7 @@ export default function ServicePageImageCarousel({ service }) {
   }, [service]);
   if (!images.length) return <div />;
   return (
-    <div>
+    <div style={{ marginRight: '6rem' }}>
       <div
         style={{
           display: 'flex',
