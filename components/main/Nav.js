@@ -112,10 +112,12 @@ const StyledNav = styled.nav`
     align-items: center;
     justify-content: center;
     margin: 0 1rem;
-    font-size: 0.9em;
+    font-size: 0.8rem;
     font-weight: 400;
     color: var(--black);
     position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     &:hover {
       color: var(--teal);
       cursor: pointer;

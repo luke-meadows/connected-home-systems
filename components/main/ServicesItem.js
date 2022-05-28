@@ -50,16 +50,19 @@ const ItemText = styled.div`
   }
   p {
     line-height: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-weight: 300;
   }
   a {
-    border-bottom: 1px solid var(--black);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
     color: var(--black);
-    padding-bottom: 0.4rem;
+    padding-bottom: 0.3rem;
     width: fit-content;
-    font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.5s ease;
+    box-sizing: border-box;
     &:hover {
       color: var(--teal);
       border-bottom: 1px solid var(--teal);
