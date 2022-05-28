@@ -179,7 +179,7 @@ const ServicesDropdown = styled.div`
   .link {
     text-transform: uppercase;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 400;
     background-color: white;
     padding: 0.5rem;
     margin: 0;
@@ -188,6 +188,10 @@ const ServicesDropdown = styled.div`
     cursor: pointer;
     &:after {
       height: 0px;
+    }
+    &:hover {
+      color: var(--teal);
+      cursor: pointer;
     }
   }
 `;

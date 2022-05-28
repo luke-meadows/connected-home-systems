@@ -9,7 +9,9 @@ export default function ServicePage({ service }) {
   if (!service) return <Loading />;
   return (
     <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
-      <h2 style={{ marginBottom: '3rem' }}>{service.title}</h2>
+      <h2 style={{ margin: '0 auto 3rem auto', maxWidth: '100rem' }}>
+        {service.title}
+      </h2>
       <Grid>
         <TextContainer>
           {service.text.map((text) => (
@@ -42,7 +44,12 @@ export default function ServicePage({ service }) {
           ))}
         </TextContainer>
         <ImageContainer>
-          <Image src={service.img} layout="fill" objectFit="cover" />
+          <Image
+            src={service.img}
+            layout="fill"
+            objectFit="cover"
+            objectPosition={service.position || ''}
+          />
         </ImageContainer>
       </Grid>
       <ServicePageImageCarousel service={service.category} />
@@ -55,12 +62,15 @@ const Grid = styled.div`
   grid-template-columns: 6fr 4fr;
   justify-content: space-around;
   gap: 3rem;
+  max-width: 100rem;
+  margin: 0 auto;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   border-radius: 2px;
   overflow: hidden;
+  aspect-ratio: 1;
 `;
 
 const TextContainer = styled.div`

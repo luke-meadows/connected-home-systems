@@ -29,6 +29,9 @@ const StyledDetails = styled.div`
   }
   .top {
     margin-bottom: 0.25rem;
+    p {
+      font-weight: 400;
+    }
   }
   .bottom {
     margin-top: 0.25rem;
