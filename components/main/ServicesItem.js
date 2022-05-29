@@ -38,7 +38,7 @@ const ItemText = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-left: 3rem;
+
   h3 {
     line-height: 2;
     color: var(--black);

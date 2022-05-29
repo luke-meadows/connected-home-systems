@@ -44,12 +44,12 @@ export default function ProjectPage() {
         </HeaderStyles>
         <Top>
           <div>
-            <p className="header">Job specification: </p>
+            <p className="header">Job specification</p>
             {data.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
             <Spacer />
-            <p className="header">Technology we installed: </p>
+            <p className="header">Technology we installed</p>
             <IconsContainer>
               {data.services.map((service) => {
                 const img = serviceIcons[service];
@@ -59,7 +59,7 @@ export default function ProjectPage() {
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
-                      marginRight: '2rem',
+                      marginRight: '2.5rem',
                     }}
                   >
                     <IconContainer key={service}>
@@ -74,12 +74,13 @@ export default function ProjectPage() {
               })}
             </IconsContainer>
             <Spacer />
+            <Spacer />
           </div>
           <ImageContainer>
             <Image src={IMG} layout="responsive" objectFit="cover" />
           </ImageContainer>
         </Top>
-        <p className="header">Images: </p>
+        <p className="header">Images</p>
         <Grid>
           {Object.values(serviceIcons).map((icon) => {
             return (
