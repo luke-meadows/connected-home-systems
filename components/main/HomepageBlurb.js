@@ -64,14 +64,16 @@ const StyledBlurb = styled.div`
   button {
     outline: none;
     border: none;
-    background-color: var(--teal);
-    padding: 1rem;
-    color: white;
-    border-radius: 2px;
+    background-color: var(--white);
+    color: var(--teal);
+    padding: 0.7rem;
+    border: 1px solid var(--teal);
+    border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: fit-content;
+    font-weight: 500;
   }
 `;
 

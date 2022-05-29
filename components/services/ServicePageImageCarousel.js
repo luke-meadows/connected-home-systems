@@ -33,7 +33,7 @@ export default function ServicePageImageCarousel({ service }) {
   }, [service]);
   if (!images.length) return <div />;
   return (
-    <div style={{ marginRight: '6rem' }}>
+    <div>
       <div
         style={{
           display: 'flex',
@@ -42,7 +42,9 @@ export default function ServicePageImageCarousel({ service }) {
           margin: '6rem 0 2rem 0',
         }}
       >
-        <h3 style={{ color: 'var(--black)' }}>Past Projects</h3>
+        <h3 style={{ color: 'var(--black)', fontWeight: '400' }}>
+          Past Projects
+        </h3>
         <div
           style={{
             display: 'flex',
@@ -85,7 +87,7 @@ export default function ServicePageImageCarousel({ service }) {
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 const ImageContainer = styled.div`

@@ -11,9 +11,9 @@ export default function Page({ children }) {
       <Header />
       {children}
       <Footer />
-      <Chat>
+      {/* <Chat>
         <i className="icon-comment" />
-      </Chat>
+      </Chat> */}
     </StyledPage>
   );
 }

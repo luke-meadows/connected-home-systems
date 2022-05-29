@@ -23,9 +23,19 @@ const Form = styled.form`
     grid-column-gap: 4rem;
   }
   button {
-    border: 2px solid black;
-    padding: 0.5rem 3rem;
+    outline: none;
+    border: none;
+    background-color: var(--grey);
+    color: var(--black);
+    padding: 0.7rem;
+    border: 1px solid var(--black);
+    border-radius: 5px;
     font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    width: fit-content;
+    font-weight: 500;
+    min-width: 10rem;
     &:hover {
       color: var(--teal);
       cursor: pointer;

@@ -8,7 +8,7 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src="https://uc23b8eee03251f2c9ebeb8d880a.dl.dropboxusercontent.com/cd/0/inline/BmJGz8Wf4biXUHrSuX9MrO6VwGGV_dEaGA96x3KEHOxmae6H5UJDA6EHMMs10_CW6SSoR0N27xFcdV4TY835r8kOe6ZZUFQQHSsegHoUkjDedE3jugLzsKDv9j6aMBPY7kaNCgXbNtdeMjml1mUOcQbp-BWOXzTecy9NvgNag1izIA/file#"
+        src="https://res.cloudinary.com/drbnfmacg/video/upload/v1653841626/hero_ia7mqh.mp4"
         type="video/mp4"
       />
     </StyledHero>

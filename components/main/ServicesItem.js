@@ -21,19 +21,16 @@ const ServicesItemContainer = styled.div`
   overflow: hidden;
   height: 65vh;
   display: flex;
-  margin-bottom: 3rem;
+  margin: 0rem 6rem 3rem 6rem;
 `;
 
 const ImageContainer = styled.div`
-  /* border-top-left-radius: ${(props) => (props.idx % 2 > 0 ? '3px' : '0')}; */
-  border-top-right-radius: ${(props) => (props.idx % 2 > 0 ? '3px' : '3px')};
-  /* border-bottom-left-radius: ${(props) =>
-    props.idx % 2 > 0 ? '3px' : '0'}; */
-  border-bottom-right-radius: ${(props) => (props.idx % 2 > 0 ? '3px' : '3px')};
-
+  border: 3px;
   overflow: hidden;
   width: 50%;
   position: relative;
+  border-radius: 3px;
+  margin-right: 3rem;
 `;
 
 const ItemText = styled.div`
@@ -41,12 +38,12 @@ const ItemText = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0 6rem 0 3rem;
+  margin-left: 3rem;
   h3 {
     line-height: 2;
-    color: var(--teal);
-    font-size: 1.5rem;
-    font-weight: 500;
+    color: var(--black);
+    font-size: 1.8rem;
+    font-weight: 400;
   }
   p {
     line-height: 2rem;
@@ -54,15 +51,19 @@ const ItemText = styled.div`
     font-weight: 300;
   }
   a {
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
-    color: var(--black);
-    padding-bottom: 0.3rem;
-    width: fit-content;
+    outline: none;
+    border: none;
+    background-color: var(--white);
+    color: var(--teal);
+    padding: 0.5rem 0.7rem 0.6rem 0.7rem;
+    /* color: white; */
+    border: 1px solid var(--teal);
+    border-radius: 5px;
     font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.2s ease-in-out;
-    box-sizing: border-box;
+    cursor: pointer;
+    width: fit-content;
+    font-weight: 400;
+
     &:hover {
       color: var(--teal);
       border-bottom: 1px solid var(--teal);
