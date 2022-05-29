@@ -82,9 +82,9 @@ export default function ProjectPage() {
         </Top>
         <p className="header">Images</p>
         <Grid>
-          {Object.values(serviceIcons).map((icon) => {
+          {Object.values(serviceIcons).map((icon, i) => {
             return (
-              <GalleryImageContainer>
+              <GalleryImageContainer key={i}>
                 <Image src={icon} layout="fill" objectFit="contain" />
               </GalleryImageContainer>
             );

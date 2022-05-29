@@ -14,7 +14,7 @@ export default function TestimonialsCards() {
               <h4>
                 {item.name} <span className="location">West Midlands</span>
               </h4>
-              <p>"{item.comment}"</p>
+              <p>&quot;{item.comment}&quot;</p>
               <Stars quantity={item.stars} />
             </Card>
           );

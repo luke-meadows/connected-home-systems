@@ -77,8 +77,9 @@ const ImageContainer = styled.div`
   position: relative;
   border-radius: 3px;
   overflow: hidden;
-  min-width: 40vw;
+  min-width: 30vw;
   height: 30rem;
+  aspect-ratio: 1;
 `;
 
 const TextContainer = styled.div`

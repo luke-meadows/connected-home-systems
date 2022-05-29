@@ -14,31 +14,6 @@ export default function Gallery({ category = 'all' }) {
     threshold: 1,
   });
 
-  const handleScroll = (e) => {
-    e.preventDefault();
-    if (!imageViewActive) return;
-    window.scrollTo(0, window.scrollY);
-    console.log('scroll event', window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  });
-
-  function removeDuplicateImages(imgs) {
-    const uniqueArray = imgs.filter((value, index) => {
-      const _value = JSON.stringify(value.url);
-      return (
-        index ===
-        imgs.findIndex((obj) => {
-          return JSON.stringify(obj.url) === _value;
-        })
-      );
-    });
-    return uniqueArray;
-  }
-
   useEffect(() => {
     let imgs = [];
     async function fetchData() {
@@ -57,6 +32,7 @@ export default function Gallery({ category = 'all' }) {
         });
         setImages(imgs);
         setGalleryImages(newImages);
+        console.log({ newImages });
       } else {
         await db
           .collection('images')
