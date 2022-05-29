@@ -1,6 +1,24 @@
+import { delBasePath } from 'next/dist/shared/lib/router/router';
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import ProjectsGrid from '../components/projects/ProjectsGrid';
+import ProjectsGrid from '../../components/projects/ProjectsGrid';
+import { db } from '../../db/firebase';
 export default function Projects() {
+  useEffect(() => {
+    let projects = [];
+    const getProjects = async () => {
+      db.collection('projects')
+        .get()
+        .then((snapshot) => {
+          snapshot.forEach((shot) => projects.push(shot.data()));
+        });
+      console.log(projects);
+    };
+
+    getProjects();
+    return () => getProjects();
+  });
+
   return (
     <div>
       <Container>

@@ -34,7 +34,6 @@ const Container = styled.div`
   .image-gallery-slide img {
     width: 100vw;
     height: 80vh;
-    box-shadow: var(--bs);
   }
   .image-gallery-right-nav {
     right: 5rem;
@@ -44,7 +43,6 @@ const Container = styled.div`
       outline: none;
     }
     &:hover {
-      /* color: var(--teal); */
     }
     svg {
       height: 5rem;
