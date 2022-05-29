@@ -71,7 +71,7 @@ const StyledBlurb = styled.div`
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 1.8rem;
     width: fit-content;
     font-weight: 500;
   }

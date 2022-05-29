@@ -159,7 +159,7 @@ const GalleryImageContainer = styled.div`
   overflow: hidden;
   box-shadow: var(--bs2);
 `;
-const Spacer = styled.div`
+export const Spacer = styled.div`
   height: 2rem;
 `;
 

@@ -16,7 +16,11 @@ const Question = ({ faq }) => {
         </span>
       </QuestionContainer>
       <p
-        style={{ color: 'var(--teal)', marginRight: '2rem', lineHeight: '1.5' }}
+        style={{
+          color: 'var(--teal)',
+          marginRight: '2rem',
+          lineHeight: '1.5',
+        }}
       >
         {faq.answer} {faq.link && <Link href={faq.link}>here</Link>}
       </p>
@@ -69,7 +73,7 @@ const QuestionAnswer = styled.div`
   padding-bottom: 1rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-
+  font-weight: 500;
   &.open {
     max-height: 10rem;
   }

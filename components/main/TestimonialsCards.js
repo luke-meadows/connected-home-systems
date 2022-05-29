@@ -14,7 +14,7 @@ export default function TestimonialsCards() {
               <h4>
                 {item.name} <span className="location">West Midlands</span>
               </h4>
-              <p>{item.comment}</p>
+              <p>"{item.comment}"</p>
               <Stars quantity={item.stars} />
             </Card>
           );
@@ -60,5 +60,6 @@ const Card = styled.div`
   }
   h4 {
     color: var(--black);
+    font-weight: 500;
   }
 `;

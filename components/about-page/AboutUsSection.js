@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import Jon from '../../public/imgs/about-us/about-us.jpg';
 import Image from 'next/image';
+import { Spacer } from '../../pages/projects/[id]';
 
 export default function AboutUsSection() {
   return (
     <StyledAbout>
-      <h2 className="">About us - the what and the why</h2>
+      <h2 className="">About us</h2>
       <div
         style={{
           position: 'relative',
@@ -19,6 +20,7 @@ export default function AboutUsSection() {
         <Image src={Jon} layout="responsive" objectPosition="cover" />
       </div>
       <div>
+        <p className="header">The what:</p>
         <p>
           For over 15 years we have been improving people&apos;s homes and
           lifestyles, solving problems through technology. Over this time, we
@@ -32,6 +34,9 @@ export default function AboutUsSection() {
           available by offering sound professional advice and the right
           products, backed up with expert installation and after care service.
         </p>
+        <Spacer />
+        <p className="header">The why:</p>
+
         <p>
           Technology today is becoming more and more advanced. Your TV now
           connects to the internet allowing for video streaming; games consoles
@@ -81,5 +86,10 @@ const StyledAbout = styled.div`
   p {
     line-height: 2;
     margin-bottom: 1rem;
+  }
+  .header {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
   }
 `;

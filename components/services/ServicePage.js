@@ -11,9 +11,10 @@ export default function ServicePage({ service }) {
     <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
       <h2
         style={{
-          margin: '0 auto 3rem auto',
+          margin: '0 auto 2rem auto',
           maxWidth: '100rem',
-          color: 'var(--teal)',
+          color: 'var(--black)',
+          fontWeight: '400',
         }}
       >
         {service.title}
