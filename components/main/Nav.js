@@ -159,7 +159,6 @@ const ServicesDropdown = styled.div`
 
   .top {
     height: 6rem;
-    cursor: pointer;
     display: flex;
     .left {
       width: 6rem;

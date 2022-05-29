@@ -74,7 +74,8 @@ const Grid = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   overflow: hidden;
   min-width: 40vw;
   height: 30rem;

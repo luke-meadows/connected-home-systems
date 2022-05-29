@@ -43,10 +43,10 @@ const ItemText = styled.div`
   flex-direction: column;
   padding: 0 6rem 0 3rem;
   h3 {
-    margin-bottom: 1rem;
-    line-height: 1.5;
+    line-height: 2;
     color: var(--teal);
     font-size: 1.5rem;
+    font-weight: 500;
   }
   p {
     line-height: 2rem;

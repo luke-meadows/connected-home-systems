@@ -94,4 +94,5 @@ const ImageContainer = styled.div`
   height: 10rem;
   border-radius: 2px;
   overflow: hidden;
+  box-shadow: var(--bs);
 `;

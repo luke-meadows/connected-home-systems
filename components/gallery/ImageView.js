@@ -9,6 +9,7 @@ export default function ImageView({ items, setImageViewActive }) {
         items={items}
         showThumbnails={false}
         showFullscreenButton={false}
+        loading="lazy"
       />
       <i className="icon-cancel-1" onClick={() => setImageViewActive(false)} />
     </Container>
@@ -43,23 +44,27 @@ const Container = styled.div`
       outline: none;
     }
     &:hover {
-      color: var(--teal);
+      /* color: var(--teal); */
+    }
+    svg {
+      height: 5rem;
     }
   }
   .image-gallery-left-nav {
     left: 5rem;
     color: var(--black);
     box-shadow: transparent;
-
+    svg {
+      height: 5rem;
+    }
     &:focus {
       outline: none;
     }
     &:hover {
-      color: var(--teal);
+      /* color: var(--teal); */
     }
   }
   .image-gallery-fullscreen-button {
-    /* display: none; */
     right: 5rem;
   }
 

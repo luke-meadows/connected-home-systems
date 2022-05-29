@@ -189,4 +189,5 @@ const ImageContainer = styled.div`
   border-radius: 2px;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: var(--bs);
 `;
