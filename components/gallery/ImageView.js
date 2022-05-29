@@ -7,6 +7,8 @@ export default function ImageView({ items, setImageViewActive }) {
         originalHeight="200px"
         style={{ border: '3px solid blue' }}
         items={items}
+        showThumbnails={false}
+        showFullscreenButton={false}
       />
       <i className="icon-cancel-1" onClick={() => setImageViewActive(false)} />
     </Container>
@@ -14,7 +16,7 @@ export default function ImageView({ items, setImageViewActive }) {
 }
 
 const Container = styled.div`
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,19 +26,19 @@ const Container = styled.div`
   left: 0;
   top: 6rem;
   z-index: 1;
-
   p {
     color: white;
     padding: 0 2rem;
   }
   .image-gallery-slide img {
     width: 100vw;
-    height: 60vh;
-
-    margin-bottom: 3rem;
+    height: 80vh;
+    box-shadow: var(--bs);
   }
   .image-gallery-right-nav {
     right: 5rem;
+    color: var(--black);
+
     &:focus {
       outline: none;
     }
@@ -46,6 +48,9 @@ const Container = styled.div`
   }
   .image-gallery-left-nav {
     left: 5rem;
+    color: var(--black);
+    box-shadow: transparent;
+
     &:focus {
       outline: none;
     }
@@ -54,7 +59,7 @@ const Container = styled.div`
     }
   }
   .image-gallery-fullscreen-button {
-    display: none;
+    /* display: none; */
     right: 5rem;
   }
 
@@ -66,7 +71,8 @@ const Container = styled.div`
     position: absolute;
     right: 6rem;
     top: 1.5rem;
-    color: white;
+    color: var(--black);
+
     font-size: 1.5rem;
     cursor: pointer;
     &:hover {
