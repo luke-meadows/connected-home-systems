@@ -61,6 +61,7 @@ export default function ProjectPage() {
                       alignItems: 'center',
                       marginRight: '2.5rem',
                     }}
+                    key={service}
                   >
                     <IconContainer key={service}>
                       <Image src={img} layout="responsive" alt="" />
