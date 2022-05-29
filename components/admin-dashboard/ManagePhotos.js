@@ -93,12 +93,10 @@ export default function ManagePhotos() {
     await uploadImage(inputs.image)
       // 3. get the url from image upload and store it in images collection with timestamp and category
       .then(async (URL) => {
-        await photoCategories.forEach(async (category) => {
-          await uploadDocToDb({
-            url: URL,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-            category: category,
-          });
+        await uploadDocToDb({
+          url: URL,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          categories: [...photoCategories],
         });
       })
       .then(() => {
@@ -183,12 +181,13 @@ const AddPhoto = styled.div`
   flex-direction: column;
   padding: 2rem;
   cursor: pointer;
+  font-family: 'Ubuntu', sans-serif;
+
   i {
     font-size: 2rem;
   }
   p {
-    font-family: 'Raleway';
-    font-weight: 500;
+    font-weight: 400;
   }
 `;
 

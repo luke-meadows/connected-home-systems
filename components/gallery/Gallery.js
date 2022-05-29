@@ -46,31 +46,31 @@ export default function Gallery({ category = 'all' }) {
         await db
           .collection('images')
           .orderBy('createdAt', 'desc')
-          .limit(30)
+          .limit(itemsOnView)
           .get()
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
           });
 
-        const newImages = removeDuplicateImages(imgs).map((imageData) => {
+        const newImages = imgs.map((imageData) => {
           return { original: imageData.url, thumbnail: imageData.url };
         });
-        setImages(removeDuplicateImages(imgs));
+        setImages(imgs);
         setGalleryImages(newImages);
       } else {
         await db
           .collection('images')
-          .where('category', '==', imageCategory)
+          .where('categories', 'array-contains', imageCategory)
           .orderBy('createdAt', 'desc')
           .limit(itemsOnView)
           .get()
           .then((snapshot) => {
             snapshot.forEach((shot) => imgs.push(shot.data()));
           });
-        const newImages = removeDuplicateImages(imgs).map((imageData) => {
+        const newImages = imgs.map((imageData) => {
           return { original: imageData.url, thumbnail: imageData.url };
         });
-        setImages(removeDuplicateImages(imgs));
+        setImages(imgs);
         setGalleryImages(newImages);
       }
     }

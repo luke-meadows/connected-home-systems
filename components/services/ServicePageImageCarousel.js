@@ -19,7 +19,7 @@ export default function ServicePageImageCarousel({ service }) {
     async function fetchData() {
       await db
         .collection('images')
-        .where('category', '==', service)
+        .where('categories', 'array-contains', service)
         .orderBy('createdAt', 'desc')
         .limit(4)
         .get()

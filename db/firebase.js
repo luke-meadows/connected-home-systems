@@ -1,13 +1,13 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBJwbqK_N6bHu0ssGA1pVKvzRPg2DfQk0c',
-  authDomain: 'connected-home-systems-713cb.firebaseapp.com',
-  projectId: 'connected-home-systems-713cb',
-  storageBucket: 'connected-home-systems-713cb.appspot.com',
-  messagingSenderId: '338388480826',
-  appId: '1:338388480826:web:c266acc0af3cceb2545603',
-  measurementId: 'G-RN1XJBJJ01',
+  apiKey: 'AIzaSyBv4URYaXzaD81duIReGjd6C9y5mYYtDow',
+  authDomain: 'chs-db.firebaseapp.com',
+  projectId: 'chs-db',
+  storageBucket: 'chs-db.appspot.com',
+  messagingSenderId: '26280138791',
+  appId: '1:26280138791:web:af2d285e07cfe9d5b45602',
+  measurementId: 'G-KSCQ1HRHX1',
 };
 
 // Initialize Firebase
