@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import ImageView from './ImageView';
 export default function Gallery({ category = 'all' }) {
-  const [itemsOnView, setItemsOnView] = useState(15);
+  const [itemsOnView, setItemsOnView] = useState(8);
   const [images, setImages] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
   const [imageViewActive, setImageViewActive] = useState(false);
@@ -80,13 +80,13 @@ export default function Gallery({ category = 'all' }) {
 
   useEffect(() => {
     if (!images.length) return;
-    if (inView) setItemsOnView(itemsOnView + 15);
+    if (inView) setItemsOnView(itemsOnView + 8);
   }, [inView]);
 
   function handleCategoryChange(e) {
     const { name } = e.currentTarget.dataset;
     setImageCategory(name);
-    setItemsOnView(16);
+    setItemsOnView(8);
   }
 
   const Control = ({ name, heading }) => {
