@@ -122,6 +122,7 @@ const ProcessText = styled.div`
   flex-direction: column;
   h3 {
     margin-bottom: 1rem;
+    color: var(--black);
   }
   ul {
     padding-left: 0.5rem;

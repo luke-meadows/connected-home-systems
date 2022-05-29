@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { portfolioData } from '../../lib/portfolioData';
@@ -12,9 +13,11 @@ export default function ProjectsGrid() {
       >
         <Image src={item.img} layout="fill" objectFit="cover" />
         {hovered && (
-          <div className="overlay">
-            <h3>{item.location}</h3>
-          </div>
+          <Link href={`/projects/coventry`}>
+            <div className="overlay">
+              <h3>{item.location}</h3>
+            </div>
+          </Link>
         )}
       </GridItem>
     );

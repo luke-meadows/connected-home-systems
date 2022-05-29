@@ -43,11 +43,8 @@ export default function ProjectPage() {
           <h2>{data.title}</h2>
         </HeaderStyles>
         <Top>
-          <ImageContainer>
-            <Image src={IMG} layout="responsive" objectFit="cover" />
-          </ImageContainer>
           <div>
-            <p className="header">Job spec: </p>
+            <p className="header">Job specification: </p>
             {data.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
@@ -76,8 +73,22 @@ export default function ProjectPage() {
                 );
               })}
             </IconsContainer>
+            <Spacer />
           </div>
+          <ImageContainer>
+            <Image src={IMG} layout="responsive" objectFit="cover" />
+          </ImageContainer>
         </Top>
+        <p className="header">Images: </p>
+        <Grid>
+          {Object.values(serviceIcons).map((icon) => {
+            return (
+              <GalleryImageContainer>
+                <Image src={icon} layout="fill" objectFit="contain" />
+              </GalleryImageContainer>
+            );
+          })}
+        </Grid>
       </PageContainer>
       <ContactSection />
     </>
@@ -88,6 +99,10 @@ const PageContainer = styled.div`
   min-height: calc(100vh - 6rem);
   margin-top: 6rem;
   padding: 3rem 6rem;
+  .header {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 `;
 
 const HeaderStyles = styled.div`
@@ -95,7 +110,7 @@ const HeaderStyles = styled.div`
   margin-bottom: 3rem;
   h2 {
     color: var(--black);
-    margin-bottom: 0;
+    margin-bottom: 3rem;
   }
   p {
     margin-bottom: 1rem;
@@ -111,10 +126,6 @@ const Top = styled.div`
     line-height: 1.5;
     margin-bottom: 1rem;
     max-width: 100ch;
-  }
-  .header {
-    font-size: 0.8rem;
-    font-weight: 500;
   }
 `;
 
@@ -134,12 +145,27 @@ const IconContainer = styled.div`
 `;
 const ImageContainer = styled.div`
   position: relative;
-  min-width: 25rem;
+  min-width: 30vw;
   border-radius: 2px;
   overflow: hidden;
-  margin-right: 3rem;
+  margin-left: 3rem;
+  aspect-ratio: 1;
 `;
-
+const GalleryImageContainer = styled.div`
+  position: relative;
+  aspect-ratio: 1;
+  border: 1px solid black;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: var(--bs2);
+`;
 const Spacer = styled.div`
   height: 2rem;
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2rem;
+  gap: 1rem;
 `;

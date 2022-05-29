@@ -93,7 +93,8 @@ const Grid = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   cursor: pointer;
-  height: 10rem;
+  max-height: 15rem;
+  height: 14rem;
   border-radius: 2px;
   overflow: hidden;
   box-shadow: var(--bs);
