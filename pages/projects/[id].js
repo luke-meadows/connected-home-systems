@@ -7,7 +7,39 @@ import Control from '../../public/imgs/ico/Control icon.jpg';
 import SmartLighting from '../../public/imgs/ico/Lighting Icon.jpg';
 import Multiroom from '../../public/imgs/ico/Multiroom icon.jpg';
 import Network from '../../public/imgs/ico/Network icon.jpg';
+import { useEffect, useState } from 'react';
+import { db } from '../../db/firebase';
+import ImageView from '../../components/gallery/ImageView';
 export default function ProjectPage() {
+  const [images, setImages] = useState(null);
+  const [galleryImages, setGalleryImages] = useState(null);
+  const [imageViewActive, setImageViewActive] = useState(false);
+
+  useEffect(() => {
+    let imgs = [];
+    async function getImages() {
+      await db
+        .collection('images')
+        .orderBy('createdAt', 'desc')
+        .limit(12)
+        .get()
+        .then((snapshot) => {
+          snapshot.forEach((shot) => imgs.push(shot.data()));
+        });
+      const newImages = imgs.map((imageData) => {
+        return { original: imageData.url, thumbnail: imageData.url };
+      });
+      setImages(imgs);
+      setGalleryImages(newImages);
+    }
+
+    return () => getImages();
+  }, []);
+
+  function handleImageClick(x) {
+    setImageViewActive(true);
+  }
+
   const serviceIcons = {
     'smart-lighting': SmartLighting,
     control: Control,
@@ -36,7 +68,13 @@ export default function ProjectPage() {
     ],
   };
   return (
-    <>
+    <div style={{ position: 'relative' }}>
+      {imageViewActive && (
+        <ImageView
+          setImageViewActive={setImageViewActive}
+          items={galleryImages}
+        />
+      )}
       <PageContainer>
         <HeaderStyles style={{}}>
           <p>{data.completionDate}</p>
@@ -83,17 +121,21 @@ export default function ProjectPage() {
         </Top>
         <p className="header">Images</p>
         <Grid>
-          {Object.values(serviceIcons).map((icon, i) => {
-            return (
-              <GalleryImageContainer key={i}>
-                <Image src={icon} layout="fill" objectFit="contain" />
-              </GalleryImageContainer>
-            );
-          })}
+          {images &&
+            images.map((icon, i) => {
+              return (
+                <GalleryImageContainer
+                  key={i}
+                  onClick={() => handleImageClick(i)}
+                >
+                  <Image src={icon.url} layout="fill" objectFit="cover" />
+                </GalleryImageContainer>
+              );
+            })}
         </Grid>
       </PageContainer>
       <ContactSection />
-    </>
+    </div>
   );
 }
 
@@ -156,10 +198,10 @@ const ImageContainer = styled.div`
 const GalleryImageContainer = styled.div`
   position: relative;
   aspect-ratio: 1;
-  border: 1px solid black;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: var(--bs2);
+  cursor: pointer;
 `;
 export const Spacer = styled.div`
   height: 2rem;

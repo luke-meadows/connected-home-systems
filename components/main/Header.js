@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <MainHeader>
-        <Logo width={400} />
+        <Logo />
         <Nav />
         <HeaderContactDetails />
       </MainHeader>
@@ -24,6 +24,10 @@ const StyledHeader = styled.header`
   background: var(--white);
   z-index: 2;
   border-bottom: 1px solid var(--grey);
+
+  @media only screen and (max-width: 800px) {
+    height: 4rem;
+  }
 `;
 
 const SocialsBanner = styled.div`
@@ -43,4 +47,7 @@ const MainHeader = styled.div`
   align-items: center;
   height: 100%;
   padding: 0 6rem;
+  @media only screen and (max-width: 800px) {
+    padding: 0 1rem;
+  }
 `;

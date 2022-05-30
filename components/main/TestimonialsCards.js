@@ -32,17 +32,34 @@ const Container = styled.div`
     font-size: 1.2rem;
     cursor: pointer;
   }
+  @media only screen and (max-width: 800px) {
+    .icon-right-dir {
+      display: none;
+    }
+    .icon-left-dir {
+      display: none;
+    }
+  }
 `;
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin: 0rem 1rem;
+  @media only screen and (max-width: 800px) {
+    display: flex;
+    grid-template-columns: 0;
+    grid-gap: 1rem;
+    margin: 0rem;
+    overflow-y: scroll;
+    .icon-right-dir {
+      display: none;
+    }
+  }
 `;
 
 const Card = styled.div`
   padding: 2rem;
-
   background: var(--grey);
   border-radius: 5px;
   box-shadow: var(--bs);
@@ -61,5 +78,8 @@ const Card = styled.div`
   h4 {
     color: var(--black);
     font-weight: 500;
+  }
+  @media only screen and (max-width: 800px) {
+    min-width: 80vw;
   }
 `;

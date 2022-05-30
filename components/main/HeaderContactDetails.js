@@ -2,15 +2,18 @@ import styled from 'styled-components';
 export default function HeaderContactDetails() {
   return (
     <StyledDetails>
-      <div className="row top">
-        <i className="icon-phone" />
-        <p>+447 41488 2844</p>
+      <div className="contact">
+        <div className="row top">
+          <i className="icon-phone" />
+          <p>+447 41488 2844</p>
+        </div>
+        <div className="row bottom">
+          <i className="icon-facebook" />
+          <i className="icon-instagram" />
+          <i className="icon-twitter" />
+        </div>
       </div>
-      <div className="row bottom">
-        <i className="icon-facebook" />
-        <i className="icon-instagram" />
-        <i className="icon-twitter" />
-      </div>
+      <i className="icon-menu" />
     </StyledDetails>
   );
 }
@@ -20,6 +23,17 @@ const StyledDetails = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  .icon-menu {
+    display: none;
+  }
+  @media only screen and (max-width: 800px) {
+    .contact {
+      display: none;
+    }
+    .icon-menu {
+      display: initial;
+    }
+  }
   i {
     font-size: 1.2rem;
     &:hover {

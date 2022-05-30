@@ -24,6 +24,9 @@ const StyledHero = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
 const HeroVideo = styled.video`

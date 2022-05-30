@@ -3,10 +3,13 @@ import styled from 'styled-components';
 export default function ServicesItem({ item, idx }) {
   return (
     <ServicesItemContainer idx={idx}>
-      <ImageContainer idx={idx}>
+      <ImageContainer idx={idx} className="web-image">
         <Image src={item.img} layout="fill" objectFit="cover" />
       </ImageContainer>
       <ItemText>
+        <ImageContainer className="mobile-image" idx={idx}>
+          <Image src={item.img} layout="fill" objectFit="cover" />
+        </ImageContainer>
         <h3>{item.title}</h3>
         <p>{item.text}</p>
         <a href={`/services/${item.category}`}>
@@ -22,6 +25,15 @@ const ServicesItemContainer = styled.div`
   height: 65vh;
   display: flex;
   margin: 0rem 6rem 3rem 6rem;
+  @media only screen and (max-width: 800px) {
+    padding: 2rem 1rem;
+    margin: 0;
+    position: relative;
+    height: fit-content;
+    .web-image {
+      display: none;
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -38,7 +50,6 @@ const ItemText = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   h3 {
     line-height: 2;
     color: var(--black);
@@ -56,7 +67,6 @@ const ItemText = styled.div`
     background-color: var(--white);
     color: var(--teal);
     padding: 0.5rem 0.7rem 0.6rem 0.7rem;
-    /* color: white; */
     border: 1px solid var(--teal);
     border-radius: 5px;
     font-size: 0.8rem;
@@ -67,6 +77,34 @@ const ItemText = styled.div`
     &:hover {
       color: var(--teal);
       border-bottom: 1px solid var(--teal);
+    }
+  }
+  .mobile-image {
+    display: none;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    display: initial;
+    .mobile-image {
+      display: initial;
+      position: relative;
+      margin-right: 1rem;
+      height: 10rem;
+      width: 15rem;
+      float: left;
+    }
+    h3 {
+      line-height: 1;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+      line-height: 1.8;
+
+      a {
+      }
     }
   }
 `;

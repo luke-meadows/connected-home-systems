@@ -8,9 +8,9 @@ export default function AdminPhotos() {
   console.log(auth.currentUser);
   return (
     <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>
-      {/* {!auth.currentUser && <AdminLogin setUser={setUser} />}
-      {auth.currentUser && <PhotosAdminDashboard />} */}
-      <PhotosAdminDashboard />
+      {!auth.currentUser && <AdminLogin setUser={setUser} />}
+      {auth.currentUser && <PhotosAdminDashboard />}
+      {/* <PhotosAdminDashboard /> */}
     </div>
   );
 }

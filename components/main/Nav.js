@@ -107,6 +107,9 @@ const StyledNav = styled.nav`
   flex: 1 1 0px;
   position: relative;
   height: 6rem;
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
   a {
     display: flex;
     align-items: center;

@@ -48,6 +48,16 @@ const Container = styled.div`
     font-weight: 400;
     color: var(--black);
   }
+  @media only screen and (max-width: 800px) {
+    padding: 3rem 1rem;
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+  }
 `;
 
 const QuestionContainer = styled.div`

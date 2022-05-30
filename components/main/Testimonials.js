@@ -13,23 +13,18 @@ export default function Testimonials() {
 const TestimonialsContainer = styled.div`
   padding: 6rem 3rem 9rem 3rem;
   position: relative;
+
   .customers {
     padding: 0 2.8rem;
     margin-bottom: 3rem;
     font-size: 2rem;
   }
-`;
-
-const ImageContainerInner = styled.div`
-  position: relative;
-  height: 35rem;
-  width: 35rem;
-`;
-const ImageContainerOuter = styled.div`
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: -1;
-  opacity: 0.3;
+  @media only screen and (max-width: 800px) {
+    padding: 3rem 1rem;
+    .customers {
+      padding: 0;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
 `;

@@ -95,12 +95,12 @@ export default function Footer() {
           Twitter
         </a>
       </Column>
-      <div>
+      <Logos>
         <LogoNoText width={1} />
         <ImageContainer>
           <Image src={Control4} layout="responsive" />
         </ImageContainer>
-      </div>
+      </Logos>
     </StyledFooter>
   );
 }
@@ -111,6 +111,12 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   color: white;
+  @media only screen and (max-width: 800px) {
+    padding: 3rem 2rem;
+    h4 {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const ColumnContainer = styled.div``;
@@ -134,10 +140,23 @@ const Column = styled.div`
       color: var(--teal);
     }
   }
+  @media only screen and (max-width: 800px) {
+    h4 {
+      font-size: 0.8rem;
+    }
+    .link,
+    a {
+      font-size: 0.6rem;
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   cursor: pointer;
   margin-top: 2rem;
+`;
+
+const Logos = styled.div`
+  display: none;
 `;

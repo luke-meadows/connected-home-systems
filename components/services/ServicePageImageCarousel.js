@@ -2,8 +2,11 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { db } from '../../db/firebase';
+import ImageView from '../gallery/ImageView';
 export default function ServicePageImageCarousel({ service }) {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(null);
+  const [galleryImages, setGalleryImages] = useState(null);
+  const [imageViewActive, setImageViewActive] = useState(false);
   const arrowStyles = {
     borderRadius: '50%',
     height: '1.5rem',
@@ -26,14 +29,24 @@ export default function ServicePageImageCarousel({ service }) {
         .then((snapshot) => {
           snapshot.forEach((shot) => imgs.push(shot.data()));
         });
+      const newImages = imgs.map((imageData) => {
+        return { original: imageData.url, thumbnail: imageData.url };
+      });
       setImages(imgs);
+      setGalleryImages(newImages);
     }
     fetchData();
     return () => fetchData;
   }, [service]);
-  if (!images.length) return <div />;
+  if (!images) return <div />;
   return (
     <div>
+      {imageViewActive && (
+        <ImageView
+          setImageViewActive={setImageViewActive}
+          items={galleryImages}
+        />
+      )}
       <div
         style={{
           display: 'flex',
@@ -72,9 +85,8 @@ export default function ServicePageImageCarousel({ service }) {
       </div>
       <Grid>
         {images.map((image, i) => {
-          console.log(image.url);
           return (
-            <ImageContainer key={i}>
+            <ImageContainer key={i} onClick={() => setImageViewActive(true)}>
               <Image src={image.url} layout="fill" objectFit="cover" />
             </ImageContainer>
           );

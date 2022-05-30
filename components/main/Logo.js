@@ -21,4 +21,7 @@ const StyledLogo = styled.div`
 const ImageContainer = styled.div`
   width: 200px;
   position: relative;
+  @media only screen and (max-width: 800px) {
+    width: 130px;
+  }
 `;

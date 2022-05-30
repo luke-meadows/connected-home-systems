@@ -43,22 +43,34 @@ const Container = styled.div`
   padding: 3rem 6rem 6rem 6rem;
   display: flex;
   align-items: center;
+  @media only screen and (max-width: 800px) {
+    padding: 8rem 1rem 6rem 1rem;
+  }
 `;
 const StyledBlurb = styled.div`
   width: 55rem;
   display: flex;
   flex-direction: column;
   margin-right: 6rem;
+  @media only screen and (max-width: 800px) {
+    min-width: 50vw;
+    margin-right: 1rem;
+  }
   h2 {
     margin-bottom: 1rem;
-    font-weight: 500;
     font-weight: 400;
     font-size: 2rem;
+    @media only screen and (max-width: 800px) {
+      font-size: 1.5rem;
+    }
   }
   p {
     margin: 0 auto;
     line-height: 2;
     word-spacing: 1px;
+    @media only screen and (max-width: 800px) {
+      font-size: 0.8rem;
+    }
   }
 
   button {
@@ -74,10 +86,18 @@ const StyledBlurb = styled.div`
     margin-top: 1.8rem;
     width: fit-content;
     font-weight: 500;
+    @media only screen and (max-width: 800px) {
+      font-size: 0.6rem;
+      margin-top: 1rem;
+      padding: 0.5rem;
+    }
   }
 `;
 
 const ImageContainerInner = styled.div`
   position: relative;
   width: 25rem;
+  @media only screen and (max-width: 800px) {
+    width: 40vw;
+  }
 `;
