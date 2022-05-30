@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Jon from '../../public/imgs/about-us/about-us.jpg';
+import Jon from '../../public/imgs/about-us/about-us.png';
 import Image from 'next/image';
 import { Spacer } from '../../pages/projects/[id]';
 
@@ -10,8 +10,9 @@ export default function AboutUsSection() {
       <div
         style={{
           position: 'relative',
-          minWidth: '30%',
-          marginLeft: '2rem',
+          width: '30%',
+          marginLeft: '4rem',
+          marginBottom: '2rem',
           float: 'right',
           borderRadius: '2px',
           overflow: 'hidden',

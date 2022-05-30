@@ -37,7 +37,7 @@ const ContactContainer = styled.div`
     font-weight: 300;
   }
   @media only screen and (max-width: 800px) {
-    padding: 2rem;
+    padding: 2rem 2rem 3rem 2rem;
     h2 {
       font-size: 1.5rem;
     }
@@ -51,7 +51,7 @@ const ContactContainer = styled.div`
     }
     input,
     textarea {
-      font-size: 0.8rem;
+      font-size: 16px;
     }
   }
 `;

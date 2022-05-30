@@ -16,7 +16,7 @@ export default function Hero() {
 }
 
 const StyledHero = styled.section`
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 4rem);
   min-height: 500px;
   background-size: cover;
   position: relative;
@@ -25,7 +25,8 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 800px) {
-    display: none;
+    /* display: none; */
+    margin-top: 4rem;
   }
 `;
 

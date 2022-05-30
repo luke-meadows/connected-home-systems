@@ -11,7 +11,7 @@ export default function ServicePage({ service }) {
     <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
       <h2
         style={{
-          margin: '0 auto 2rem auto',
+          margin: '0 auto 3rem auto',
           maxWidth: '100rem',
           color: 'var(--black)',
           fontWeight: '400',
@@ -78,8 +78,7 @@ const ImageContainer = styled.div`
   border-radius: 3px;
   overflow: hidden;
   min-width: 30vw;
-  height: 30rem;
-  aspect-ratio: 1;
+  height: 20rem;
 `;
 
 const TextContainer = styled.div`

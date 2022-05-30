@@ -8,6 +8,7 @@ const Question = ({ faq }) => {
     <QuestionAnswer
       onClick={() => setOpen(!open)}
       className={open ? 'open' : ''}
+      size={faq.size}
     >
       <QuestionContainer>
         <p style={open ? { fontWeight: '500' } : {}}>{faq.question}</p>
@@ -77,7 +78,7 @@ const QuestionContainer = styled.div`
 `;
 
 const QuestionAnswer = styled.div`
-  max-height: 3rem;
+  max-height: ${(props) => (props.size === 's' ? '3rem' : '3.8rem')};
   overflow: hidden;
   border-bottom: 2px solid black;
   padding-bottom: 1rem;
@@ -85,7 +86,7 @@ const QuestionAnswer = styled.div`
   cursor: pointer;
   font-weight: 500;
   &.open {
-    max-height: 10rem;
+    max-height: 15rem;
   }
   a {
     text-decoration: underline;

@@ -4,7 +4,12 @@ export default function ServicesItem({ item, idx }) {
   return (
     <ServicesItemContainer idx={idx}>
       <ImageContainer idx={idx} className="web-image">
-        <Image src={item.img} layout="fill" objectFit="cover" />
+        <Image
+          src={item.img}
+          layout="fill"
+          objectFit="cover"
+          objectPosition={item.position ? item.position : ''}
+        />
       </ImageContainer>
       <ItemText>
         <ImageContainer className="mobile-image" idx={idx}>
@@ -26,7 +31,7 @@ const ServicesItemContainer = styled.div`
   display: flex;
   margin: 0rem 6rem 3rem 6rem;
   @media only screen and (max-width: 800px) {
-    padding: 2rem 1rem;
+    padding: 2rem;
     margin: 0;
     position: relative;
     height: fit-content;
@@ -89,9 +94,10 @@ const ItemText = styled.div`
     .mobile-image {
       display: initial;
       position: relative;
+
       margin-right: 1rem;
-      height: 10rem;
-      width: 15rem;
+      height: 8rem;
+      width: 10rem;
       float: left;
     }
     h3 {

@@ -158,5 +158,7 @@ const ImageContainer = styled.div`
 `;
 
 const Logos = styled.div`
-  display: none;
+  @media only screen and (max-width: 800px) {
+    display: none;
+  }
 `;

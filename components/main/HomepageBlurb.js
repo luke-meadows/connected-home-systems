@@ -44,7 +44,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   @media only screen and (max-width: 800px) {
-    padding: 8rem 1rem 6rem 1rem;
+    padding: 6rem 2rem 4rem 2rem;
   }
 `;
 const StyledBlurb = styled.div`
