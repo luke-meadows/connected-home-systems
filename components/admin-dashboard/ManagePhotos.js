@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import Image from 'next/image';
 import { v4 as uuidv4 } from 'uuid';
 import { db } from '../../db/firebase';
+import { uploadImage } from '../../lib/uploadImage';
 const categoriesData = [
   'design-and-consultancy',
   'smart-home',
@@ -13,6 +14,7 @@ const categoriesData = [
   'networks',
   'service-and-maintenance',
 ];
+
 export default function ManagePhotos() {
   const [preview, setPreview] = useState(undefined);
   const [photoCategories, setPhotoCategories] = useState([]);
@@ -52,30 +54,6 @@ export default function ManagePhotos() {
     } else {
       setPhotoCategories([...photoCategories, category]);
     }
-  }
-
-  function uploadImage(image) {
-    return new Promise((resolve, reject) => {
-      const uuid = uuidv4();
-      const task = firebase
-        .storage()
-        .ref()
-        .child(`images/` + uuid + '.jpg')
-        .put(image);
-      const taskInProgress = (snapshot) => {
-        console.log(`transferred: ${snapshot.bytesTransferred}`);
-      };
-
-      const taskError = (snapshot) => {
-        console.log(snapshot);
-        reject('rejected');
-      };
-      const taskComplete = async () => {
-        const URL = task.snapshot.ref.getDownloadURL();
-        resolve(URL);
-      };
-      task.on('state_changed', taskInProgress, taskError, taskComplete);
-    });
   }
 
   async function uploadDocToDb(imageData) {

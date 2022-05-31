@@ -11,7 +11,15 @@ const Question = ({ faq }) => {
       size={faq.size}
     >
       <QuestionContainer>
-        <p style={open ? { fontWeight: '500' } : {}}>{faq.question}</p>
+        <p
+          style={
+            open
+              ? { fontWeight: '500', paddingRight: '0.5rem' }
+              : { paddingRight: '0.5rem' }
+          }
+        >
+          {faq.question}
+        </p>
         <span>
           <i className={open ? 'icon-minus' : 'icon-plus'} />
         </span>
@@ -78,7 +86,7 @@ const QuestionContainer = styled.div`
 `;
 
 const QuestionAnswer = styled.div`
-  max-height: ${(props) => (props.size === 's' ? '3rem' : '3.8rem')};
+  max-height: 3rem;
   overflow: hidden;
   border-bottom: 2px solid black;
   padding-bottom: 1rem;
@@ -91,5 +99,8 @@ const QuestionAnswer = styled.div`
   a {
     text-decoration: underline;
     font-style: italic;
+  }
+  @media only screen and (max-width: 800px) {
+    max-height: ${(props) => (props.size === 's' ? '3rem' : '4rem')};
   }
 `;

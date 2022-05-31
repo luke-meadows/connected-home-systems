@@ -32,7 +32,6 @@ export default function Gallery({ category = 'all' }) {
         });
         setImages(imgs);
         setGalleryImages(newImages);
-        console.log({ newImages });
       } else {
         await db
           .collection('images')

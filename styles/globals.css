@@ -19,6 +19,7 @@ body {
   --black-bg: #151313;
   --black-button: rgb(48, 48, 48);
   --blue: rgb(58, 58, 234);
+  --red: rgb(251, 79, 79);
   color: var(--black);
   font-smooth: always;
   --bs: 0px 10px 13px -7px rgba(0, 0, 0, 0.35);
