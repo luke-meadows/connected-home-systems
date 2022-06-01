@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { AddPhoto } from './ManagePhotos';
