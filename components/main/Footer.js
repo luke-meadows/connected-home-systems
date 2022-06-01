@@ -121,8 +121,8 @@ const StyledFooter = styled.footer`
       font-size: 1rem;
     }
   }
-  @media only screen and (min-width: 1500px) {
-    padding: 6rem 20rem;
+  @media only screen and (min-width: 1800px) {
+    padding: 6rem 30rem 6rem 6rem;
   }
 `;
 
