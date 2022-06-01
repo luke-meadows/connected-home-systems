@@ -3,14 +3,26 @@ export default function HeaderContactDetails() {
   return (
     <StyledDetails>
       <div className="contact">
-        <div className="row top">
+        {/* <div className="row top">
           <i className="icon-phone" />
           <p>+447 41488 2844</p>
-        </div>
+        </div> */}
         <div className="row bottom">
-          <i className="icon-facebook" />
-          <i className="icon-instagram" />
-          <i className="icon-twitter" />
+          <a
+            target="blank"
+            href="https://www.facebook.com/connectedhomesystems"
+          >
+            <i className="icon-facebook" />
+          </a>
+          <a
+            target="blank"
+            href="https://www.instagram.com/connected_home_systems/"
+          >
+            <i className="icon-instagram" />
+          </a>
+          <a target="blank" href="https://twitter.com/ConnectedJon">
+            <i className="icon-twitter" />
+          </a>
         </div>
       </div>
       <i className="icon-menu" />

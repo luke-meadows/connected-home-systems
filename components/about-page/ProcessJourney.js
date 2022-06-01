@@ -106,13 +106,16 @@ export default function ProcessJourney() {
 const Journey = styled.div`
   padding: 0 6rem 0rem 6rem;
   h2 {
-    margin-bottom: 3rem;
+    margin: 4rem 0 6rem 0;
+    text-align: center;
   }
 `;
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 45% 10% 45%;
   grid-template-columns: auto 8rem auto;
+  max-width: 70rem;
+  margin: 0 auto;
 `;
 
 const ProcessText = styled.div`

@@ -26,8 +26,7 @@ export default function ServicePage({ service }) {
           ))}
           {service.category === 'service-and-maintenance' && (
             <p>
-              * conditions apply….. Interested in our service and maintenance
-              packages? Contact us{' '}
+              Interested in our service and maintenance packages? Contact us{' '}
               <Link href="/contact">
                 <span
                   style={{

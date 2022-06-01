@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Jon from '../../public/imgs/about-us/about-us.png';
+import Van from '../../public/imgs/about-us/van.jpeg';
 import Image from 'next/image';
 import { Spacer } from '../../pages/projects/[id]';
 
@@ -18,7 +18,7 @@ export default function AboutUsSection() {
           overflow: 'hidden',
         }}
       >
-        <Image src={Jon} layout="responsive" objectPosition="cover" />
+        <Image src={Van} layout="responsive" objectPosition="cover" />
       </div>
       <div>
         <p className="header">The what:</p>

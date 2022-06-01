@@ -9,8 +9,7 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src="https://res.cloudinary.com/drbnfmacg/video/upload/v1653841626/hero_ia7mqh.mp4"
-        // src={require('../../public/Untitled.mp4')}
+        src="https://firebasestorage.googleapis.com/v0/b/chs-db.appspot.com/o/video%2Fhero2%20copy.mp4?alt=media&token=8a48f235-0c1f-45a4-868e-f62cd99f7a5d"
         type="video/mp4"
       />
     </StyledHero>
@@ -27,7 +26,7 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 800px) {
-    height: calc(100vh - 6rem);
+    height: calc(100vh - 4rem);
     margin-top: 4rem;
   }
 `;

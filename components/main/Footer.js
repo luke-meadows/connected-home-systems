@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import Control4 from '../../public/imgs/control4.png';
+import Cedia from '../../public/imgs/cedia.png';
 import LogoNoText from './LogoNoText';
 export default function Footer() {
   const router = useRouter();
@@ -87,11 +88,11 @@ export default function Footer() {
         </a>
         <a
           target="blank"
-          href="/https://www.instagram.com/connected_home_systems/"
+          href="https://www.instagram.com/connected_home_systems/"
         >
           Instagram
         </a>
-        <a target="blank" href="/https://twitter.com/ConnectedJon">
+        <a target="blank" href="https://twitter.com/ConnectedJon">
           Twitter
         </a>
       </Column>
@@ -99,6 +100,9 @@ export default function Footer() {
         <LogoNoText width={1} />
         <ImageContainer>
           <Image src={Control4} layout="responsive" />
+        </ImageContainer>
+        <ImageContainer>
+          <Image src={Cedia} layout="responsive" />
         </ImageContainer>
       </Logos>
     </StyledFooter>

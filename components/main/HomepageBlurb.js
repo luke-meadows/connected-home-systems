@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
 import BlurbImage from '../../public/blurb-image.png';
 
@@ -17,7 +18,9 @@ export default function HomepageBlurb() {
           technology, we can solve your problem and make the smart home a simple
           home.
         </p>
-        <button>Speak with our experts</button>
+        <Link href="/contact">
+          <button>Speak with our experts</button>
+        </Link>
       </StyledBlurb>
 
       <div

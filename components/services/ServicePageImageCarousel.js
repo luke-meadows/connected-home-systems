@@ -58,7 +58,7 @@ export default function ServicePageImageCarousel({ service }) {
         <h3 style={{ color: 'var(--black)', fontWeight: '400' }}>
           Past Projects
         </h3>
-        <div
+        {/* <div
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -80,8 +80,8 @@ export default function ServicePageImageCarousel({ service }) {
               className="icon-right-dir"
               style={{ marginLeft: '0.1rem', color: 'rgba(0,0,0,0.8)' }}
             />
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
       <Grid>
         {images.map((image, i) => {
