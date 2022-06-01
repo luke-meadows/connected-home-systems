@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { db } from '../../db/firebase';
 import CreateNewProject from './CreateNewProject';
 import { auth } from '../../db/firebase';
+import AdminDashboard from './AdminDashboard';
 
 export default function ProjectsAdminDashboard() {
   const [activeProject, setActiveProject] = useState(null);
