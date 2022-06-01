@@ -10,31 +10,33 @@ import Network from '../../public/imgs/ico/Network icon.jpg';
 import { useEffect, useState } from 'react';
 import { db } from '../../db/firebase';
 import ImageView from '../../components/gallery/ImageView';
+import { useRouter } from 'next/router';
 export default function ProjectPage() {
-  const [images, setImages] = useState(null);
-  const [galleryImages, setGalleryImages] = useState(null);
+  const [project, setProject] = useState(null);
   const [imageViewActive, setImageViewActive] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    const id = router.query.id;
+    let fetchedProject = {};
+    async function getProject() {
+      await db
+        .collection('projects')
+        .doc(`${id}`)
+        .get()
+        .then((doc) => {
+          fetchedProject = doc.data();
+        })
+        .then(() => {
+          setProject(fetchedProject);
+        });
+    }
+    getProject();
+    return () => getProject();
+  }, []);
 
   useEffect(() => {
-    let imgs = [];
-    async function getImages() {
-      await db
-        .collection('images')
-        .orderBy('createdAt', 'desc')
-        .limit(12)
-        .get()
-        .then((snapshot) => {
-          snapshot.forEach((shot) => imgs.push(shot.data()));
-        });
-      const newImages = imgs.map((imageData) => {
-        return { original: imageData.url, thumbnail: imageData.url };
-      });
-      setImages(imgs);
-      setGalleryImages(newImages);
-    }
-
-    return () => getImages();
-  }, []);
+    console.log(project);
+  }, [project]);
 
   function handleImageClick(x) {
     setImageViewActive(true);
@@ -67,6 +69,7 @@ export default function ProjectPage() {
       'home-cinema',
     ],
   };
+  if (!project) return <p>loading</p>;
   return (
     <div style={{ position: 'relative' }}>
       {imageViewActive && (
@@ -77,19 +80,19 @@ export default function ProjectPage() {
       )}
       <PageContainer>
         <HeaderStyles style={{}}>
-          <p>{data.completionDate}</p>
-          <h2>{data.title}</h2>
+          <p>{project?.date}</p>
+          <h2>{project?.title}</h2>
         </HeaderStyles>
         <Top>
           <div>
             <p className="header">Job specification</p>
-            {data.paragraphs.map((p, i) => (
+            {project?.text.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
             <Spacer />
             <p className="header">Technology we installed</p>
             <IconsContainer>
-              {data.services.map((service) => {
+              {project?.tech.map((service) => {
                 const img = serviceIcons[service];
                 return (
                   <div
@@ -121,17 +124,16 @@ export default function ProjectPage() {
         </Top>
         <p className="header">Images</p>
         <Grid>
-          {images &&
-            images.map((icon, i) => {
-              return (
-                <GalleryImageContainer
-                  key={i}
-                  onClick={() => handleImageClick(i)}
-                >
-                  <Image src={icon.url} layout="fill" objectFit="cover" />
-                </GalleryImageContainer>
-              );
-            })}
+          {project.photos.map((url, i) => {
+            return (
+              <GalleryImageContainer
+                key={i}
+                onClick={() => handleImageClick(i)}
+              >
+                <Image src={url} layout="fill" objectFit="cover" />
+              </GalleryImageContainer>
+            );
+          })}
         </Grid>
       </PageContainer>
       <ContactSection />
@@ -165,11 +167,11 @@ const HeaderStyles = styled.div`
 `;
 
 const Top = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 60% 40%;
   p {
     line-height: 1.5;
     margin-bottom: 1rem;
-    max-width: 100ch;
   }
 `;
 

@@ -1,21 +1,40 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { portfolioData } from '../../lib/portfolioData';
+import { db } from '../../db/firebase';
 export default function ProjectsGrid() {
-  const ProjectGridItem = ({ item }) => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    async function fetchProjects() {
+      let fetchedProjects = [];
+      await db
+        .collection('projects')
+        .get()
+        .then((snapshot) => {
+          snapshot.forEach((shot) => {
+            fetchedProjects.push({ ...shot.data(), id: shot.id });
+          });
+        });
+      setProjects(fetchedProjects);
+    }
+    fetchProjects();
+    return () => fetchProjects();
+  }, []);
+
+  const ProjectGridItem = ({ project }) => {
     const [hovered, setHovered] = useState(false);
     return (
       <GridItem
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
-        <Image src={item.img} layout="fill" objectFit="cover" />
+        <Image src={project.image} layout="fill" objectFit="cover" />
         {hovered && (
-          <Link href={`/projects/coventry`}>
+          <Link href={`/projects/${project.id}`}>
             <div className="overlay">
-              <h3>{item.location}</h3>
+              <h3>{project.title}</h3>
             </div>
           </Link>
         )}
@@ -25,9 +44,10 @@ export default function ProjectsGrid() {
 
   return (
     <Grid>
-      {portfolioData.map((item, i) => (
-        <ProjectGridItem key={i} item={item} />
-      ))}
+      {projects.length &&
+        projects.map((project, i) => (
+          <ProjectGridItem key={i} project={project} />
+        ))}
     </Grid>
   );
 }

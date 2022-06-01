@@ -7,21 +7,27 @@ export default function ProjectsAdminDashboard() {
   const [activeProject, setActiveProject] = useState(null);
   const [createNew, setCreateNew] = useState(false);
   const [projects, setProjects] = useState([]);
-  useEffect(() => {
-    async function fetchProjects() {
-      let fetchedProjects = [];
-      await db
-        .collection('projects')
-        .get()
-        .then((snapshot) => {
-          snapshot.forEach((shot) => fetchedProjects.push(shot.data()));
+  async function fetchProjects() {
+    let fetchedProjects = [];
+    await db
+      .collection('projects')
+      .get()
+      .then((snapshot) => {
+        snapshot.forEach((shot) => {
+          fetchedProjects.push({ ...shot.data(), id: shot.id });
         });
-      console.log(fetchedProjects);
-      setProjects(fetchedProjects);
-    }
+      });
+    setProjects(fetchedProjects);
+  }
+  useEffect(() => {
     fetchProjects();
     return () => fetchProjects();
   }, []);
+
+  function deleteProject(id) {
+    db.collection('projects').doc(id).delete();
+    fetchProjects();
+  }
   return (
     <Container>
       <h2>Projects</h2>
@@ -40,6 +46,7 @@ export default function ProjectsAdminDashboard() {
                   <p style={{ fontWeight: 400 }}>{project.title}</p>
                   {/* <p style={{ textAlign: 'right', cursor: 'pointer' }}>Edit</p> */}
                   <p
+                    onClick={() => deleteProject(project.id)}
                     style={{
                       textAlign: 'right',
                       cursor: 'pointer',
@@ -82,8 +89,8 @@ const Container = styled.div`
   .existing-project-list-item {
     padding: 0.5rem 0.75rem;
     display: grid;
-    grid-template-columns: 60% 20% 20%;
-    width: 30rem;
+    grid-template-columns: 80% 20%;
+    width: 20rem;
     max-width: 30rem;
     background: var(--grey);
     margin-bottom: 0.5rem;
