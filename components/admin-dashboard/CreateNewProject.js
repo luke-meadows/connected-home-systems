@@ -118,7 +118,12 @@ export default function CreateNewProject({ setCreateNew }) {
             value={inputs.date}
             onChange={handleChange}
           />
-          <label htmlFor="text">Text Content</label>
+          <label htmlFor="text">
+            Text Content{' '}
+            <span className="warning">
+              One press of the enter key will create new paragraph
+            </span>
+          </label>
           <textarea
             type="text"
             name="text"
@@ -188,6 +193,11 @@ export default function CreateNewProject({ setCreateNew }) {
 
 const Container = styled.div`
   margin-bottom: 6rem;
+  .warning {
+    color: var(--red);
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
   &.inactive {
     opacity: 0.2;
     pointer-events: none;
@@ -253,7 +263,7 @@ const FormContainer = styled.div`
     resize: vertical;
     height: 30rem;
     border: 1px solid black;
-    line-height: 3;
+    line-height: 1.5;
   }
 
   .tech-cat {
