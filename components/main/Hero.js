@@ -1,16 +1,40 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 export default function Hero() {
+  const [video1, setVideo1] = useState(true);
+  function handleVideoPlay(e) {
+    console.log(Math.floor(e.target.currentTime));
+    console.log(Math.floor(e.target.duration));
+    if (Math.floor(e.target.currentTime) === Math.floor(e.target.duration)) {
+      setVideo1(!video1);
+    }
+  }
   return (
     <StyledHero>
-      <HeroVideo
-        autoPlay
-        muted
-        loop
-        webkit-playsinline="true"
-        playsInline={true}
-        src="https://firebasestorage.googleapis.com/v0/b/connected-home-systems-713cb.appspot.com/o/video%2Fhero2.mp4?alt=media&token=aa5d00fc-1d07-4c18-8684-010e3d69e6f4"
-        type="video/mp4"
-      />
+      {video1 && (
+        <HeroVideo
+          autoPlay
+          muted
+          loop
+          webkit-playsinline="true"
+          playsInline={true}
+          src={require('../../public/Untitled.mp4')}
+          type="video/mp4"
+          onTimeUpdate={(e) => handleVideoPlay(e)}
+        />
+      )}
+      {!video1 && (
+        <HeroVideo
+          autoPlay
+          muted
+          loop
+          webkit-playsinline="true"
+          playsInline={true}
+          src={require('../../public/Untitled2.mp4')}
+          type="video/mp4"
+          onTimeUpdate={(e) => handleVideoPlay(e)}
+        />
+      )}
     </StyledHero>
   );
 }
@@ -25,8 +49,7 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 800px) {
-    height: calc(100vh - 4 rem);
-
+    height: calc(100vh - 6rem);
     margin-top: 4rem;
   }
 `;
