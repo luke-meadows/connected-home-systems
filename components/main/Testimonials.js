@@ -16,7 +16,7 @@ const TestimonialsContainer = styled.div`
 
   .customers {
     padding: 0 2.8rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     font-size: 2rem;
   }
   @media only screen and (max-width: 800px) {

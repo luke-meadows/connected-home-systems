@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBv4URYaXzaD81duIReGjd6C9y5mYYtDow',
@@ -20,4 +19,4 @@ const auth = firebase.auth();
 export { db, auth };
 
 // Initialize Analytics and get a reference to the service
-const analytics = getAnalytics(app);
+// const analytics = firebase.getAnalytics(app);

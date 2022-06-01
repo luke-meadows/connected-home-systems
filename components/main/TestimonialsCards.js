@@ -60,7 +60,7 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   padding: 2rem;
-  background: var(--grey);
+  background: var(--grey3);
   border-radius: 5px;
   box-shadow: var(--bs);
   .location {
@@ -68,7 +68,7 @@ const Card = styled.div`
     font-style: italic;
     margin-left: 0.5rem;
     font-weight: 300;
-    color: var(--black);
+    color: var(--teal);
   }
   p {
     margin: 1rem 0 0.5rem 0;

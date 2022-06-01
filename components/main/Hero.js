@@ -8,7 +8,7 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src="https://res.cloudinary.com/drbnfmacg/video/upload/v1653841626/hero_ia7mqh.mp4"
+        src="https://lukemeadowsdev.wistia.com/medias/z9uo9x02q3?embedType=iframe&videoWidth=640"
         type="video/mp4"
       />
     </StyledHero>

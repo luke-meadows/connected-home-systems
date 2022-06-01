@@ -35,15 +35,6 @@ export default function HomepageBlurb() {
           </ImageContainerInner>
         </div>
       </div>
-      <div>
-        <ImageContainerInner>
-          <Image
-            src="https://firebasestorage.googleapis.com/v0/b/chs-db.appspot.com/o/test%2Fresize_A%26B%2C%20Smart%20Home%20Systems%20-%20by%20Visually%20Rich%2003029.jpg?alt=media&token=a412cfd5-9f3a-480d-a8d3-372fcaeb01a0"
-            layout="fill"
-            objectFit="contain"
-          />
-        </ImageContainerInner>
-      </div>
     </Container>
   );
 }
@@ -106,7 +97,6 @@ const StyledBlurb = styled.div`
 const ImageContainerInner = styled.div`
   position: relative;
   width: 25rem;
-  height: 25rem;
   @media only screen and (max-width: 800px) {
     width: 40vw;
   }

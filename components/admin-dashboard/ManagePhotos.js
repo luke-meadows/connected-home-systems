@@ -148,7 +148,7 @@ export default function ManagePhotos() {
   );
 }
 
-const AddPhoto = styled.div`
+export const AddPhoto = styled.div`
   border: 1px solid black;
   /* margin: 4rem 0; */
   width: 20rem;
