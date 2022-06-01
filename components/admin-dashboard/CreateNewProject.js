@@ -111,7 +111,9 @@ export default function CreateNewProject({ setCreateNew }) {
             name="image"
             onChange={handleChange}
           />
-          <label htmlFor="date">Date: Format &quot;March 2022&quot;</label>
+          <label htmlFor="date">
+            Date <span className="warning"> Format &quot;March 2022&quot;</span>
+          </label>
           <textarea
             type="text"
             name="date"
