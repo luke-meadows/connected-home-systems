@@ -13,11 +13,9 @@ export default function HomepageBlurb() {
           lights turn on by themselves and turn off when you leave. Your heating
           knows when and how you like the temperature set by learning your
           routines. These are just a few of the capabilities of a smart home
-          which you can achieve with Connected Home Systems.{' '}
-          <span style={{ fontWeight: '500' }}>
-            With our technology, we can solve your problem and make the smart
-            home a simple home.
-          </span>
+          which you can achieve with Connected Home Systems. With our
+          technology, we can solve your problem and make the smart home a simple
+          home.
         </p>
         <button>Speak with our experts</button>
       </StyledBlurb>

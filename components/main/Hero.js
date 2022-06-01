@@ -8,7 +8,7 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src={require('../../public/hero.mp4')}
+        src="https://firebasestorage.googleapis.com/v0/b/connected-home-systems-713cb.appspot.com/o/video%2Fhero2.mp4?alt=media&token=aa5d00fc-1d07-4c18-8684-010e3d69e6f4"
         type="video/mp4"
       />
     </StyledHero>
@@ -16,7 +16,7 @@ export default function Hero() {
 }
 
 const StyledHero = styled.section`
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 6rem);
   min-height: 500px;
   background-size: cover;
   position: relative;
@@ -25,7 +25,8 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
   @media only screen and (max-width: 800px) {
-    /* display: none; */
+    height: calc(100vh - 4 rem);
+
     margin-top: 4rem;
   }
 `;
