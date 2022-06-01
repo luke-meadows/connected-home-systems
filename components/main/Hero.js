@@ -1,40 +1,18 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 export default function Hero() {
-  const [video1, setVideo1] = useState(true);
-  function handleVideoPlay(e) {
-    console.log(Math.floor(e.target.currentTime));
-    console.log(Math.floor(e.target.duration));
-    if (Math.floor(e.target.currentTime) === Math.floor(e.target.duration)) {
-      setVideo1(!video1);
-    }
-  }
   return (
     <StyledHero>
-      {video1 && (
-        <HeroVideo
-          autoPlay
-          muted
-          loop
-          webkit-playsinline="true"
-          playsInline={true}
-          src={require('../../public/Untitled.mp4')}
-          type="video/mp4"
-          onTimeUpdate={(e) => handleVideoPlay(e)}
-        />
-      )}
-      {!video1 && (
-        <HeroVideo
-          autoPlay
-          muted
-          loop
-          webkit-playsinline="true"
-          playsInline={true}
-          src={require('../../public/Untitled2.mp4')}
-          type="video/mp4"
-          onTimeUpdate={(e) => handleVideoPlay(e)}
-        />
-      )}
+      <HeroVideo
+        autoPlay
+        muted
+        loop
+        webkit-playsinline="true"
+        playsInline={true}
+        src="https://res.cloudinary.com/drbnfmacg/video/upload/v1653841626/hero_ia7mqh.mp4"
+        // src={require('../../public/Untitled.mp4')}
+        type="video/mp4"
+      />
     </StyledHero>
   );
 }

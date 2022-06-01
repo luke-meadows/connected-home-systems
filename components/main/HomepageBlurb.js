@@ -41,6 +41,8 @@ const Container = styled.div`
   padding: 3rem 6rem 6rem 6rem;
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  max-width: 1800px;
   @media only screen and (max-width: 800px) {
     padding: 2rem 2rem 2rem 2rem;
   }
