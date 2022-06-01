@@ -1,10 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { db } from '../../db/firebase';
 import CreateNewProject from './CreateNewProject';
 
 export default function ProjectsAdminDashboard() {
   const [activeProject, setActiveProject] = useState(null);
   const [createNew, setCreateNew] = useState(false);
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    async function fetchProjects() {
+      let fetchedProjects = [];
+      await db
+        .collection('projects')
+        .get()
+        .then((snapshot) => {
+          snapshot.forEach((shot) => fetchedProjects.push(shot.data()));
+        });
+      console.log(fetchedProjects);
+      setProjects(fetchedProjects);
+    }
+    fetchProjects();
+    return () => fetchProjects();
+  }, []);
   return (
     <Container>
       <h2>Projects</h2>
@@ -16,20 +33,24 @@ export default function ProjectsAdminDashboard() {
           >
             Create new project <i className="icon-plus" />
           </p>
-          <div className="existing-project-list-item">
-            <p style={{ fontWeight: 400 }}>Coventry</p>
-            <p style={{ textAlign: 'right', cursor: 'pointer' }}>Edit</p>
-            <p style={{ textAlign: 'right', cursor: 'pointer', color: 'red' }}>
-              Delete
-            </p>
-          </div>
-          <div className="existing-project-list-item">
-            <p style={{ fontWeight: 400 }}>Coventry</p>
-            <p style={{ textAlign: 'right', cursor: 'pointer' }}>Edit</p>
-            <p style={{ textAlign: 'right', cursor: 'pointer', color: 'red' }}>
-              Delete
-            </p>
-          </div>
+          {projects &&
+            projects.map((project) => {
+              return (
+                <div key={project.image} className="existing-project-list-item">
+                  <p style={{ fontWeight: 400 }}>{project.title}</p>
+                  {/* <p style={{ textAlign: 'right', cursor: 'pointer' }}>Edit</p> */}
+                  <p
+                    style={{
+                      textAlign: 'right',
+                      cursor: 'pointer',
+                      color: 'red',
+                    }}
+                  >
+                    Delete
+                  </p>
+                </div>
+              );
+            })}
         </>
       )}
       {activeProject && <p>Blog view component w/ option to delete</p>}

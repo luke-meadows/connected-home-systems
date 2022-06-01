@@ -117,6 +117,9 @@ const StyledFooter = styled.footer`
       font-size: 1rem;
     }
   }
+  @media only screen and (min-width: 1500px) {
+    padding: 6rem 20rem;
+  }
 `;
 
 const ColumnContainer = styled.div``;

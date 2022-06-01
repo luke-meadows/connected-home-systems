@@ -4,7 +4,14 @@ import { db } from '../../db/firebase';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import ImageView from './ImageView';
-export default function Gallery({ category = 'all' }) {
+export default function Gallery({
+  category = 'all',
+  selectedPhotos = [],
+  setSelectedPhotos = () => {},
+  setInputs = () => {},
+  preventFullscreen = false,
+  inputs = '',
+}) {
   const [itemsOnView, setItemsOnView] = useState(8);
   const [images, setImages] = useState([]);
   const [galleryImages, setGalleryImages] = useState([]);
@@ -77,6 +84,16 @@ export default function Gallery({ category = 'all' }) {
   };
 
   function handleImageClick(x) {
+    if (preventFullscreen) {
+      if (selectedPhotos.includes(x.url)) {
+        const newArr = selectedPhotos.filter((item) => item !== x.url);
+        setSelectedPhotos(newArr);
+      } else {
+        setSelectedPhotos([...selectedPhotos, x.url]);
+      }
+      setInputs({ ...inputs, photos: [...inputs.photos, x.url] });
+      return;
+    }
     const idx = galleryImages.findIndex((img) => img.thumbnail === x.url);
     setGalleryImages([
       ...galleryImages.slice(idx, images.length),
@@ -103,7 +120,10 @@ export default function Gallery({ category = 'all' }) {
       </Controls>
       <Images>
         {images.map((x, i) => (
-          <ImageContainer key={i}>
+          <ImageContainer
+            key={i}
+            className={selectedPhotos.includes(x.url) ? 'hl' : ''}
+          >
             <Image
               src={x.url}
               layout="fill"
@@ -165,4 +185,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
   cursor: pointer;
   box-shadow: var(--bs);
+  &.hl {
+    border: 10px solid var(--teal);
+  }
 `;

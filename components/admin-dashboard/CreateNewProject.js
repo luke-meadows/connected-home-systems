@@ -1,17 +1,33 @@
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { AddPhoto } from './ManagePhotos';
 import { ImageContainer } from './ManagePhotos';
+import Gallery from '../gallery/Gallery';
+import { uploadProject } from '../../lib/uploadProject';
 
 export default function CreateNewProject({ setCreateNew }) {
   const [preview, setPreview] = useState(undefined);
+  const [galleryActive, setGalleryActive] = useState(false);
+  const [selectedPhotos, setSelectedPhotos] = useState([]);
   const [inputs, setInputs] = useState({
-    image: '',
+    image: null,
     title: '',
     text: '',
-    technology: '',
+    tech: [],
+    photos: [],
+    date: '',
   });
+
+  const serviceIcons = [
+    'smart-lighting',
+    'control',
+    'home-cinema',
+    'media-room',
+    'multiroom',
+    'network',
+  ];
+
   function handleChange(e) {
     let { value, name, type } = e.target;
     if (type === 'file') {
@@ -31,21 +47,60 @@ export default function CreateNewProject({ setCreateNew }) {
     return () => URL.revokeObjectURL(objectUrl);
   }, [inputs.image]);
 
+  function handleTechIconClick(e) {
+    const { name } = e.currentTarget.dataset;
+    if (inputs.tech.includes(name)) {
+      const newArr = inputs.tech.filter((newCat) => newCat !== name);
+      setInputs({ ...inputs, tech: newArr });
+    } else {
+      setInputs({ ...inputs, tech: [...inputs.tech, name] });
+    }
+  }
+
+  const containerRef = useRef();
+
+  async function handleSave(e) {
+    containerRef.current.classList.add('inactive');
+    await uploadProject(inputs).then(() => {
+      setInputs({
+        image: null,
+        title: '',
+        text: '',
+        tech: [],
+        photos: [],
+        date: '',
+      });
+      setCreateNew(false);
+      containerRef.current.classList.remove('inactive');
+      window.scrollTo(0, 0);
+    });
+  }
+
   return (
-    <Container>
+    <Container ref={containerRef}>
       <p className="header">Create new project</p>
       <form action="">
         <FormContainer>
+          <label htmlFor="date">Location</label>
+          <textarea
+            type="text"
+            name="title"
+            value={inputs.title}
+            onChange={handleChange}
+          />
           {preview ? (
             <ImageContainer>
-              <i className="icon-cancel-1" onClick={handleCancel} />
+              <i
+                className="icon-cancel-1"
+                onClick={() => setInputs({ ...inputs, image: null })}
+              />
               <Image src={preview} layout="fill" objectFit="cover" />
             </ImageContainer>
           ) : (
             <label htmlFor="image">
               <AddPhoto>
                 <i className="icon-plus" />
-                <p>Add Photo</p>
+                <p>Add Main Photo</p>
               </AddPhoto>
             </label>
           )}
@@ -56,16 +111,74 @@ export default function CreateNewProject({ setCreateNew }) {
             name="image"
             onChange={handleChange}
           />
+          <label htmlFor="date">Date: Format "March 2022"</label>
+          <textarea
+            type="text"
+            name="date"
+            value={inputs.date}
+            onChange={handleChange}
+          />
+          <label htmlFor="text">Text Content</label>
+          <textarea
+            type="text"
+            name="text"
+            value={inputs.text}
+            onChange={handleChange}
+          />
+          <label htmlFor="tech">Tech installed</label>
+          <div style={{ display: 'flex', marginBottom: '2rem' }}>
+            {serviceIcons.map((iconCat) => (
+              <p
+                key={iconCat}
+                data-name={iconCat}
+                onClick={handleTechIconClick}
+                className={
+                  inputs.tech.includes(iconCat)
+                    ? 'checked tech-cat'
+                    : 'tech-cat'
+                }
+              >
+                {iconCat}
+              </p>
+            ))}
+          </div>
         </FormContainer>
       </form>
-      <p>paragraphs</p>
-      <p>tech installed</p>
-      <p>Gallery component to get urls</p>
+      {!galleryActive && (
+        <button
+          onClick={() => {
+            setGalleryActive(true);
+            setSelectedPhotos([]);
+          }}
+        >
+          Choose Photos
+        </button>
+      )}
+      {galleryActive && (
+        <>
+          <GalleryContainer>
+            <Gallery
+              selectedPhotos={selectedPhotos}
+              setSelectedPhotos={setSelectedPhotos}
+              preventFullscreen={true}
+              setInputs={setInputs}
+              inputs={inputs}
+            />
+            <div></div>
+          </GalleryContainer>
+          <button
+            style={{ marginTop: '1rem' }}
+            onClick={() => setGalleryActive(false)}
+          >
+            Done Choosing
+          </button>
+        </>
+      )}
       <div className="buttons">
         <p className="cancel" onClick={() => setCreateNew(false)}>
           Cancel <i className="icon-cancel-1" />
         </p>
-        <p className="save">
+        <p className="save" onClick={handleSave}>
           Save <i className="icon-plus" />
         </p>
       </div>
@@ -74,18 +187,31 @@ export default function CreateNewProject({ setCreateNew }) {
 }
 
 const Container = styled.div`
+  margin-bottom: 6rem;
+  &.inactive {
+    opacity: 0.2;
+    pointer-events: none;
+  }
   .header {
     font-weight: 500;
     margin-bottom: 2rem;
+    font-size: 1.5rem;
   }
   .buttons {
     display: flex;
     justify-content: flex-end;
   }
   .cancel,
-  .save {
+  .save,
+  button {
     cursor: pointer;
     padding: 0.5rem 0.25rem 0.5rem 0.75rem;
+  }
+  button {
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
   }
   .cancel {
     margin-right: 0.5rem;
@@ -104,12 +230,46 @@ const Container = styled.div`
       }
     }
   }
-  .save {
+  .save,
+  button {
     background: var(--teal);
     color: white;
+    border: none;
   }
 `;
 
 const FormContainer = styled.div`
-  border: 1px solid blue;
+  label[for='date'] {
+    width: fit-content;
+  }
+  label[for='text'],
+  label[for='tech'],
+  label[for='date'] {
+    font-weight: 500;
+    margin: 2rem 0 1rem 0;
+    display: inline-block;
+  }
+  textarea[name='text'] {
+    resize: vertical;
+    height: 30rem;
+    border: 1px solid black;
+    line-height: 3;
+  }
+
+  .tech-cat {
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  .checked {
+    background: var(--teal-trans);
+    color: white;
+    border: 1px solid transparent;
+  }
+`;
+
+const GalleryContainer = styled.div`
+  max-height: 25rem;
+  overflow: scroll;
 `;

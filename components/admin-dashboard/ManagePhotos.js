@@ -14,7 +14,12 @@ const categoriesData = [
   'networks',
   'service-and-maintenance',
 ];
-
+export async function uploadDocToDb(imageData, collection = 'images') {
+  const imagesRef = db.collection(collection).doc();
+  imagesRef.set({
+    ...imageData,
+  });
+}
 export default function ManagePhotos() {
   const [preview, setPreview] = useState(undefined);
   const [photoCategories, setPhotoCategories] = useState([]);
@@ -54,13 +59,6 @@ export default function ManagePhotos() {
     } else {
       setPhotoCategories([...photoCategories, category]);
     }
-  }
-
-  async function uploadDocToDb(imageData) {
-    const imagesRef = db.collection('images').doc();
-    imagesRef.set({
-      ...imageData,
-    });
   }
 
   const ref = useRef();
@@ -169,7 +167,7 @@ export const AddPhoto = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   /* margin: 4rem 0; */
   width: 20rem;
   height: 20rem;
