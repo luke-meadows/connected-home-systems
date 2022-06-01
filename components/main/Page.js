@@ -20,6 +20,7 @@ export default function Page({ children }) {
 
 const StyledPage = styled.div`
   position: relative;
+  min-height: 80vh;
 `;
 
 const Chat = styled.div`

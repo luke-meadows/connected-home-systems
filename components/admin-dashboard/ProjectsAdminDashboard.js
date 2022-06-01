@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { db } from '../../db/firebase';
 import CreateNewProject from './CreateNewProject';
+import { auth } from '../../db/firebase';
 
 export default function ProjectsAdminDashboard() {
   const [activeProject, setActiveProject] = useState(null);
@@ -22,46 +23,56 @@ export default function ProjectsAdminDashboard() {
   useEffect(() => {
     fetchProjects();
     return () => fetchProjects();
-  }, []);
+  }, [createNew]);
 
   function deleteProject(id) {
     db.collection('projects').doc(id).delete();
     fetchProjects();
   }
+  const [user, setUser] = useState(null);
+  console.log(auth.currentUser);
   return (
     <Container>
-      <h2>Projects</h2>
-      {!activeProject && !createNew && (
+      {!auth.currentUser && <AdminLogin setUser={setUser} />}
+      {auth.currentUser && (
         <>
-          <p
-            className="create-new-project-button"
-            onClick={() => setCreateNew(true)}
-          >
-            Create new project <i className="icon-plus" />
-          </p>
-          {projects &&
-            projects.map((project) => {
-              return (
-                <div key={project.image} className="existing-project-list-item">
-                  <p style={{ fontWeight: 400 }}>{project.title}</p>
-                  {/* <p style={{ textAlign: 'right', cursor: 'pointer' }}>Edit</p> */}
-                  <p
-                    onClick={() => deleteProject(project.id)}
-                    style={{
-                      textAlign: 'right',
-                      cursor: 'pointer',
-                      color: 'red',
-                    }}
-                  >
-                    Delete
-                  </p>
-                </div>
-              );
-            })}
+          <h2>Projects</h2>
+          {!activeProject && !createNew && (
+            <>
+              <p
+                className="create-new-project-button"
+                onClick={() => setCreateNew(true)}
+              >
+                Create new project <i className="icon-plus" />
+              </p>
+              {projects &&
+                projects.map((project) => {
+                  return (
+                    <div
+                      key={project.image}
+                      className="existing-project-list-item"
+                    >
+                      <p style={{ fontWeight: 400 }}>{project.title}</p>
+                      {/* <p style={{ textAlign: 'right', cursor: 'pointer' }}>Edit</p> */}
+                      <p
+                        onClick={() => deleteProject(project.id)}
+                        style={{
+                          textAlign: 'right',
+                          cursor: 'pointer',
+                          color: 'red',
+                        }}
+                      >
+                        Delete
+                      </p>
+                    </div>
+                  );
+                })}
+            </>
+          )}
+          {activeProject && <p>Blog view component w/ option to delete</p>}
+          {createNew && <CreateNewProject setCreateNew={setCreateNew} />}
         </>
       )}
-      {activeProject && <p>Blog view component w/ option to delete</p>}
-      {createNew && <CreateNewProject setCreateNew={setCreateNew} />}
     </Container>
   );
 }
