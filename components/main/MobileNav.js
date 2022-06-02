@@ -138,9 +138,7 @@ const SubNav = styled.div`
   max-height: 1px;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
-  opacity: 0;
   &.active {
     max-height: 20rem;
-    opacity: 1;
   }
 `;

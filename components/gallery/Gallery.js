@@ -185,10 +185,11 @@ const Images = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  min-height: 50rem;
+  min-height: 40rem;
   overflow-y: scroll;
   @media only screen and (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 `;
 
@@ -205,5 +206,8 @@ const ImageContainer = styled.div`
   box-shadow: var(--bs);
   &.hl {
     border: 10px solid var(--teal);
+  }
+  @media only screen and (max-width: 1000px) {
+    box-shadow: none;
   }
 `;
