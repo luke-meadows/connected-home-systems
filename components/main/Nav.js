@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 export default function Nav() {
-  const [serviceDropdownActive, setServiceDropdownActive] = useState(false);
+  const [serviceDropdownActive, setServiceDropdownActive] = useState(true);
 
   const router = useRouter();
   function handleClick(e) {
@@ -108,6 +108,7 @@ const StyledNav = styled.nav`
   flex: 1 1 0px;
   position: relative;
   height: 6rem;
+  max-width: fit-content;
   @media only screen and (max-width: 1000px) {
     display: none;
   }
@@ -160,16 +161,16 @@ const ServicesDropdown = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-
   .top {
     height: 6rem;
+
     display: flex;
     .left {
       width: 6rem;
       height: 6rem;
     }
     .right {
-      width: 5rem;
+      width: 4rem;
       height: 6rem;
     }
   }
