@@ -9,8 +9,8 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        // src="https://firebasestorage.googleapis.com/v0/b/chs-db.appspot.com/o/video%2Fhero2%20copy.mp4?alt=media&token=8a48f235-0c1f-45a4-868e-f62cd99f7a5d"
-        src={require('../../public/hero720.mp4')}
+        src="https://firebasestorage.googleapis.com/v0/b/chs-db.appspot.com/o/video%2Fhero2%20copy.mp4?alt=media&token=8a48f235-0c1f-45a4-868e-f62cd99f7a5d"
+        // src={require('../../public/hero720.mp4')}
         type="video/mp4"
       />
     </StyledHero>

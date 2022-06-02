@@ -105,6 +105,7 @@ const Main = styled.div`
     }
   }
   .button {
+    margin-right: auto;
     outline: none;
     border: none;
     background-color: var(--white);
@@ -114,7 +115,7 @@ const Main = styled.div`
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
-    margin-top: 1.8rem;
+    margin-top: 1rem;
     width: fit-content;
     font-weight: 500;
     @media only screen and (max-width: 1000px) {
