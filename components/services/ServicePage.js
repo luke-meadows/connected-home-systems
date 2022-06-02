@@ -8,18 +8,17 @@ import ServicePageImageCarousel from './ServicePageImageCarousel';
 export default function ServicePage({ service }) {
   if (!service) return <Loading />;
   return (
-    <div style={{ padding: '3rem 6rem 6rem 6rem' }}>
-      <h2
-        style={{
-          margin: '0 auto 3rem auto',
-          maxWidth: '100rem',
-          color: 'var(--black)',
-          fontWeight: '400',
-        }}
-      >
-        {service.title}
-      </h2>
+    <Container>
+      <h2>{service.title}</h2>
       <Grid>
+        <ImageContainer className="mobile">
+          <Image
+            src={service.img}
+            layout="responsive"
+            objectFit="cover"
+            objectPosition={service.position || ''}
+          />
+        </ImageContainer>
         <TextContainer>
           {service.text.map((text) => (
             <p key={text}>{text}</p>
@@ -49,7 +48,7 @@ export default function ServicePage({ service }) {
             </Tick>
           ))}
         </TextContainer>
-        <ImageContainer>
+        <ImageContainer className="web">
           <Image
             src={service.img}
             layout="fill"
@@ -59,9 +58,39 @@ export default function ServicePage({ service }) {
         </ImageContainer>
       </Grid>
       <ServicePageImageCarousel service={service.category} />
-    </div>
+    </Container>
   );
 }
+
+const Container = styled.div`
+  padding: 3rem 6rem 6rem 6rem;
+  h2 {
+    margin: 0 auto 3rem auto;
+    color: var(--black);
+    font-weight: 400;
+  }
+  .mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    padding: 0rem 2rem;
+    h2 {
+      font-size: 1.5rem;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 0.8rem;
+    }
+    .web {
+      display: none;
+    }
+    .mobile {
+      display: initial;
+    }
+  }
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -70,6 +99,9 @@ const Grid = styled.div`
   gap: 3rem;
   max-width: 100rem;
   margin: 0 auto;
+  @media only screen and (max-width: 1000px) {
+    display: initial;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -87,11 +119,13 @@ const TextContainer = styled.div`
     line-height: 2;
     margin-bottom: 0.5rem;
   }
+  @media only screen and (max-width: 1000px) {
+    margin-top: 1rem;
+  }
 `;
 
 const Tick = styled.div`
   display: flex;
-  align-items: center;
   margin: 0.25rem 0;
   i {
     color: var(--teal);

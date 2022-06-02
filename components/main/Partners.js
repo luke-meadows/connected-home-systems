@@ -89,7 +89,7 @@ const Container = styled.div`
   .swiper-mobile {
     display: none;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     padding: 3rem 1rem;
     .swiper-mobile {
       display: initial;
@@ -107,7 +107,7 @@ const ImageContainer = styled.div`
   height: 10rem;
   width: 10rem;
   position: relative;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     height: 5rem;
     width: 5rem;
   }

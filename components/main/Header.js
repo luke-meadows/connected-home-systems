@@ -2,14 +2,21 @@ import styled from 'styled-components';
 import HeaderContactDetails from './HeaderContactDetails';
 import Logo from './Logo';
 import Nav from './Nav';
+import MobileNav from './MobileNav';
+import { useState } from 'react';
 export default function Header() {
+  const [mobileNavActive, setMobileNavActive] = useState(false);
   return (
     <StyledHeader>
       <MainHeader>
-        <Logo />
+        <Logo setMobileNavActive={setMobileNavActive} />
         <Nav />
-        <HeaderContactDetails />
+        <HeaderContactDetails
+          mobileNavActive={mobileNavActive}
+          setMobileNavActive={setMobileNavActive}
+        />
       </MainHeader>
+      {mobileNavActive && <MobileNav setMobileNavActive={setMobileNavActive} />}
     </StyledHeader>
   );
 }
@@ -25,7 +32,7 @@ const StyledHeader = styled.header`
   z-index: 2;
   border-bottom: 1px solid var(--grey);
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     height: 4rem;
   }
 `;
@@ -47,7 +54,7 @@ const MainHeader = styled.div`
   align-items: center;
   height: 100%;
   padding: 0 6rem;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     padding: 0 1rem;
   }
 `;

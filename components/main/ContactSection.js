@@ -17,7 +17,7 @@ export default function ContactSection() {
 
 const ContactContainer = styled.div`
   padding: 4rem 6rem 6rem 6rem;
-
+  margin-top: 6rem;
   background: var(--grey);
   .text {
     align-items: flex-end;
@@ -36,14 +36,17 @@ const ContactContainer = styled.div`
     margin-bottom: 0.3rem;
     font-weight: 300;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     padding: 2rem 2rem 3rem 2rem;
+    margin-top: 4rem;
+
     h2 {
       font-size: 1.5rem;
+      line-height: 1.5;
     }
     p {
       font-size: 0.8rem;
-      line-height: 1.8;
+      line-height: 1.6;
     }
     .text {
       align-items: flex-end;

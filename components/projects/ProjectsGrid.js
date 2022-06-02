@@ -44,7 +44,7 @@ export default function ProjectsGrid() {
 
   return (
     <Grid>
-      {projects.length &&
+      {projects.length > 0 &&
         projects.map((project, i) => (
           <ProjectGridItem key={i} project={project} />
         ))}

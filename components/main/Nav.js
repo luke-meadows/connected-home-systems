@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 export default function Nav() {
   const [serviceDropdownActive, setServiceDropdownActive] = useState(false);
+
   const router = useRouter();
   function handleClick(e) {
     const { category } = e.currentTarget.dataset;
@@ -21,7 +22,7 @@ export default function Nav() {
         <Link href="/smart-lighting">Services</Link>
       </div>
       <Link href="/about-us">About</Link>
-      <Link href="/projects">Projects</Link>
+      {/* <Link href="/projects">Projects</Link> */}
       <Link href="/gallery">Gallery</Link>
       {/* <Link href="/">Technology</Link> */}
       <Link href="/contact">Contact</Link>
@@ -49,7 +50,7 @@ export default function Nav() {
               onClick={handleClick}
               data-category="design-and-consultancy"
             >
-              Design and consultancy
+              Design and Consultancy
             </div>
             <div
               className="link"
@@ -107,7 +108,7 @@ const StyledNav = styled.nav`
   flex: 1 1 0px;
   position: relative;
   height: 6rem;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     display: none;
   }
   a {

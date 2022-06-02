@@ -117,6 +117,10 @@ export default function Gallery({
         <Control name="smart-home" heading="Smart Home" />
         <Control name="multiroom" heading="Multiroom" />
         <Control name="networks" heading="Home Networks" />
+        <Control
+          name="design-and-consultancy"
+          heading="Design and Consultancy"
+        />
       </Controls>
       <Images>
         {images.map((x, i) => (
@@ -154,6 +158,15 @@ export const Controls = styled.div`
     font-size: 0.8rem;
     cursor: pointer;
   }
+  @media only screen and (max-width: 1000px) {
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+    p {
+      font-size: 0.5rem;
+      margin-right: 1rem;
+      margin-bottom: 0.75rem;
+    }
+  }
   .active {
     &:after {
       height: 0px;
@@ -172,11 +185,16 @@ const Images = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  min-height: 20rem;
+  min-height: 50rem;
+  overflow-y: scroll;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const ImageContainer = styled.div`
   aspect-ratio: 1;
+  min-height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;

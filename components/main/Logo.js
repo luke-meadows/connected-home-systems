@@ -2,10 +2,12 @@ import Image from 'next/image';
 import LogoImage from '../../public/logo.svg';
 import styled from 'styled-components';
 import Link from 'next/link';
-export default function Logo({ width }) {
+import { useRouter } from 'next/router';
+export default function Logo({ width, setMobileNavActive }) {
+  const router = useRouter();
   return (
     <StyledLogo width={width}>
-      <Link href="/">
+      <Link href="/" onClick={() => setMobileNavActive(false)}>
         <ImageContainer>
           <Image src={LogoImage} layout="responsive" objectFit="contain" />
         </ImageContainer>
@@ -21,7 +23,7 @@ const StyledLogo = styled.div`
 const ImageContainer = styled.div`
   width: 200px;
   position: relative;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     width: 130px;
   }
 `;

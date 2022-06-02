@@ -11,18 +11,18 @@ export default function Testimonials() {
 }
 
 const TestimonialsContainer = styled.div`
-  padding: 6rem 5rem 9rem 5rem;
+  padding: 6rem 0rem 9rem 0rem;
   position: relative;
 
   .customers {
-    margin-left: 1rem;
+    padding: 0 6rem;
     margin-bottom: 4rem;
     font-size: 2rem;
   }
-  @media only screen and (max-width: 800px) {
-    padding: 3rem 1rem;
+  @media only screen and (max-width: 1000px) {
+    padding: 3rem 0rem;
     .customers {
-      padding: 0;
+      padding: 0 2rem;
       font-size: 1.5rem;
       margin-bottom: 2rem;
     }

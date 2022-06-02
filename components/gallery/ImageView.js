@@ -86,6 +86,22 @@ const Container = styled.div`
     height: calc(100vh - 6rem);
     padding: 2rem 0;
   }
+  @media only screen and (max-width: 1000px) {
+    top: 4rem;
+    height: calc(100vh - 4rem);
+    i {
+      right: 0.5rem;
+      top: 1rem;
+    }
+    .image-gallery {
+    }
+    .image-gallery-left-nav {
+      left: 0rem;
+    }
+    .image-gallery-right-nav {
+      right: 0rem;
+    }
+  }
 `;
 
 const ImageContainer = styled.div``;

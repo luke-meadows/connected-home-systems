@@ -12,7 +12,6 @@ export default function Projects() {
         .then((snapshot) => {
           snapshot.forEach((shot) => projects.push(shot.data()));
         });
-      console.log(projects);
     };
 
     getProjects();

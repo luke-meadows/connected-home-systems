@@ -9,34 +9,19 @@ import Stars from './Stars';
 export default function TestimonialsCards() {
   return (
     <CardContainer>
-      <Swiper
-        slidesPerView={1}
-        spaceBetween={10}
-        freeMode={true}
-        loop={true}
-        autoplay={true}
-        modules={[FreeMode, Pagination, Autoplay]}
-        className="mySwiper swiper-mobile"
-      >
+      <div className="swiper-mobile no-select">
         {reviews.map((item, i) => {
           return (
-            <SwiperSlide
-              key={item.name}
-              style={{
-                display: 'flex',
-              }}
-            >
-              <Card key={i}>
-                <h4>
-                  {item.name} <span className="location">{item.location}</span>
-                </h4>
-                <p>&quot;{item.comment}&quot;</p>
-                <Stars quantity={item.stars} />
-              </Card>
-            </SwiperSlide>
+            <Card key={i}>
+              <h4>
+                {item.name} <span className="location">{item.location}</span>
+              </h4>
+              <p>&quot;{item.comment}&quot;</p>
+              <Stars quantity={item.stars} />
+            </Card>
           );
         })}
-      </Swiper>
+      </div>
       <Swiper
         slidesPerView={3}
         spaceBetween={10}
@@ -70,17 +55,32 @@ export default function TestimonialsCards() {
 }
 
 const CardContainer = styled.div`
+  margin: 0 5rem;
   .swiper-mobile {
     display: none;
   }
-  @media only screen and (max-width: 800px) {
-    padding: 3rem 1rem;
-    .swiper-mobile {
-      display: initial;
-    }
+  @media only screen and (max-width: 1000px) {
+    margin: 0;
+    overflow-y: scroll;
+    padding: 1rem;
+    display: flex;
+    width: 100vw;
     .swiper-web {
       display: none;
     }
+    .swiper-mobile {
+      display: flex;
+      padding-left: 1rem;
+    }
+  }
+  .no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
   }
 `;
 
@@ -90,11 +90,12 @@ const Card = styled.div`
   background: var(--grey3);
   border-radius: 5px;
   box-shadow: var(--bs);
+  min-height: 19rem;
   width: 100%;
-  min-height: 18rem;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     margin: 0rem;
     margin-right: 1rem;
+    box-shadow: var(--bs3);
   }
   .location {
     font-size: 0.8rem;
@@ -111,7 +112,7 @@ const Card = styled.div`
     color: var(--black);
     font-weight: 500;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     min-width: 80vw;
   }
 `;

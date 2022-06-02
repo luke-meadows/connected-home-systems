@@ -21,7 +21,7 @@ const Form = styled.form`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 4rem;
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 1000px) {
       grid-template-columns: repeat(1, 1fr);
     }
   }

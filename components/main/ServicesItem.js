@@ -30,7 +30,7 @@ const ServicesItemContainer = styled.div`
   height: 65vh;
   display: flex;
   margin: 0rem 6rem 3rem 6rem;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     padding: 2rem;
     margin: 0;
     position: relative;
@@ -88,13 +88,12 @@ const ItemText = styled.div`
     display: none;
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     width: 100%;
     display: initial;
     .mobile-image {
       display: initial;
       position: relative;
-
       margin-right: 1rem;
       height: 8rem;
       width: 10rem;

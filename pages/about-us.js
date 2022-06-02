@@ -6,7 +6,7 @@ import ProcessJourney from '../components/about-page/ProcessJourney';
 
 export default function AboutUs() {
   return (
-    <AboutUsPage style={{ marginTop: '6rem' }}>
+    <AboutUsPage>
       <AboutUsSection />
       <ProcessJourney />
       <Faq />
@@ -15,4 +15,9 @@ export default function AboutUs() {
   );
 }
 
-const AboutUsPage = styled.div``;
+const AboutUsPage = styled.div`
+  margin-top: 6rem;
+  @media only screen and (max-width: 1000px) {
+    margin-top: 4rem;
+  }
+`;

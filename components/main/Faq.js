@@ -57,8 +57,8 @@ const Container = styled.div`
     font-weight: 400;
     color: var(--black);
   }
-  @media only screen and (max-width: 800px) {
-    padding: 3rem 1rem;
+  @media only screen and (max-width: 1000px) {
+    padding: 3rem 2rem;
     h2 {
       margin-bottom: 1rem;
       font-size: 1.5rem;
@@ -100,7 +100,7 @@ const QuestionAnswer = styled.div`
     text-decoration: underline;
     font-style: italic;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     max-height: ${(props) => (props.size === 's' ? '3rem' : '4rem')};
   }
 `;

@@ -115,7 +115,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   color: white;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     padding: 3rem 2rem;
     h4 {
       font-size: 1rem;
@@ -147,7 +147,7 @@ const Column = styled.div`
       color: var(--teal);
     }
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     h4 {
       font-size: 0.8rem;
     }
@@ -165,7 +165,7 @@ const ImageContainer = styled.div`
 `;
 
 const Logos = styled.div`
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     display: none;
   }
 `;

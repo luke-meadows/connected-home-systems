@@ -17,6 +17,7 @@ export default function AboutUsSection() {
           borderRadius: '2px',
           overflow: 'hidden',
         }}
+        className="web"
       >
         <Image src={Van} layout="responsive" objectPosition="cover" />
       </div>
@@ -92,5 +93,14 @@ const StyledAbout = styled.div`
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 0.5rem;
+  }
+  @media only screen and (max-width: 1000px) {
+    padding: 2rem;
+    h2 {
+      margin-bottom: 2rem;
+    }
+    .web {
+      display: none;
+    }
   }
 `;

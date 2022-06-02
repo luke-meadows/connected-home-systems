@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-export default function HeaderContactDetails() {
+export default function HeaderContactDetails({
+  setMobileNavActive,
+  mobileNavActive,
+}) {
   return (
     <StyledDetails>
       <div className="contact">
@@ -25,7 +28,10 @@ export default function HeaderContactDetails() {
           </a>
         </div>
       </div>
-      <i className="icon-menu" />
+      <i
+        className="icon-menu"
+        onClick={() => setMobileNavActive(!mobileNavActive)}
+      />
     </StyledDetails>
   );
 }
@@ -38,7 +44,7 @@ const StyledDetails = styled.div`
   .icon-menu {
     display: none;
   }
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 1000px) {
     .contact {
       display: none;
     }

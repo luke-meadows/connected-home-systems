@@ -4,6 +4,7 @@ import Expectations from '../../public/imgs/expectations.jpg';
 import Installation from '../../public/imgs/installation.jpg';
 import Design from '../../public/imgs/service-imgs/design1.jpg';
 import Maintenance from '../../public/imgs/maintenance.jpg';
+
 export default function ProcessJourney() {
   return (
     <Journey>
@@ -23,7 +24,7 @@ export default function ProcessJourney() {
         >
           <h3>Expectations</h3>
           <p>
-            from the outset we are open about the specification of the equipment
+            From the outset we are open about the specification of the equipment
             and the costs giving you full control of your smart home
             improvement.
           </p>
@@ -109,13 +110,27 @@ const Journey = styled.div`
     margin: 4rem 0 6rem 0;
     text-align: center;
   }
+  @media only screen and (max-width: 1000px) {
+    display: none;
+    padding: 0 1rem;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 2rem;
+      text-align: left;
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+  }
 `;
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 45% 10% 45%;
   grid-template-columns: auto 8rem auto;
   max-width: 70rem;
   margin: 0 auto;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: auto 3rem auto;
+  }
 `;
 
 const ProcessText = styled.div`
@@ -135,6 +150,24 @@ const ProcessText = styled.div`
   }
   li {
     list-style-position: inside;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 0.5rem;
+    }
+    p,
+    li {
+      line-height: 2;
+      font-size: 0.8rem;
+    }
+    li {
+      list-style-position: inside;
+    }
   }
 `;
 const ProcessImage = styled.div`

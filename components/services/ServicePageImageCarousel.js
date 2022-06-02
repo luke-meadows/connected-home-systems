@@ -7,16 +7,7 @@ export default function ServicePageImageCarousel({ service }) {
   const [images, setImages] = useState(null);
   const [galleryImages, setGalleryImages] = useState(null);
   const [imageViewActive, setImageViewActive] = useState(false);
-  const arrowStyles = {
-    borderRadius: '50%',
-    height: '1.5rem',
-    width: '1.5rem',
-    border: '1px solid var(--black)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    cursor: 'pointer',
-  };
+
   useEffect(() => {
     let imgs = [];
     async function fetchData() {
@@ -38,7 +29,9 @@ export default function ServicePageImageCarousel({ service }) {
     fetchData();
     return () => fetchData;
   }, [service]);
+
   if (!images) return <div />;
+
   return (
     <div>
       {imageViewActive && (
@@ -47,42 +40,13 @@ export default function ServicePageImageCarousel({ service }) {
           items={galleryImages}
         />
       )}
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          margin: '6rem 0 2rem 0',
-        }}
-      >
-        <h3 style={{ color: 'var(--black)', fontWeight: '400' }}>
-          Past Projects
-        </h3>
-        {/* <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <div style={{ ...arrowStyles, marginRight: ' 0.25rem' }}>
-            <i
-              className="icon-left-dir"
-              style={{ marginRight: '0.1rem', color: 'rgba(0,0,0,0.8)' }}
-            />
-          </div>
-          <div
-            style={{
-              ...arrowStyles,
-              marginLeft: ' 0.25rem',
-            }}
-          >
-            <i
-              className="icon-right-dir"
-              style={{ marginLeft: '0.1rem', color: 'rgba(0,0,0,0.8)' }}
-            />
-          </div> */}
-        {/* </div> */}
-      </div>
+      {images.length > 0 && (
+        <Container>
+          <h3 style={{ color: 'var(--black)', fontWeight: '400' }}>
+            Past Projects
+          </h3>
+        </Container>
+      )}
       <Grid>
         {images.map((image, i) => {
           return (
@@ -96,10 +60,27 @@ export default function ServicePageImageCarousel({ service }) {
   );
 }
 
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6rem 0 2rem 0;
+  @media only screen and (max-width: 1000px) {
+    margin: 3rem 0 2rem 0;
+    h3 {
+      margin-bottom: 0rem;
+    }
+  }
+`;
+
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 0.5rem;
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2rem;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -110,4 +91,8 @@ const ImageContainer = styled.div`
   border-radius: 2px;
   overflow: hidden;
   box-shadow: var(--bs);
+  @media only screen and (max-width: 1000px) {
+    aspect-ratio: 1;
+    height: 10rem;
+  }
 `;
