@@ -20,7 +20,7 @@ const TestimonialsContainer = styled.div`
     font-size: 2rem;
   }
   @media only screen and (max-width: 1000px) {
-    padding: 3rem 0rem;
+    padding: 3rem 0rem 0rem 0;
     .customers {
       padding: 0 2rem;
       font-size: 1.5rem;

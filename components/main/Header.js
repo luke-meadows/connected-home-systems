@@ -55,6 +55,6 @@ const MainHeader = styled.div`
   height: 100%;
   padding: 0 6rem;
   @media only screen and (max-width: 1000px) {
-    padding: 0 1rem;
+    padding: 0 2rem;
   }
 `;

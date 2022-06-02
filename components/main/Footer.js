@@ -30,6 +30,21 @@ export default function Footer() {
         </Column>
       </ColumnContainer>
       <Column>
+        <h4>Socials</h4>
+        <a target="blank" href="https://www.facebook.com/connectedhomesystems">
+          Facebook
+        </a>
+        <a
+          target="blank"
+          href="https://www.instagram.com/connected_home_systems/"
+        >
+          Instagram
+        </a>
+        <a target="blank" href="https://twitter.com/ConnectedJon">
+          Twitter
+        </a>
+      </Column>
+      <Column>
         <h4>Services</h4>
         <p
           className="link"
@@ -81,21 +96,7 @@ export default function Footer() {
           Service and Maintenance
         </p>
       </Column>
-      <Column>
-        <h4>Socials</h4>
-        <a target="blank" href="https://www.facebook.com/connectedhomesystems">
-          Facebook
-        </a>
-        <a
-          target="blank"
-          href="https://www.instagram.com/connected_home_systems/"
-        >
-          Instagram
-        </a>
-        <a target="blank" href="https://twitter.com/ConnectedJon">
-          Twitter
-        </a>
-      </Column>
+
       <Logos>
         <LogoNoText width={1} />
         <ImageContainer>
@@ -150,6 +151,7 @@ const Column = styled.div`
   @media only screen and (max-width: 1000px) {
     h4 {
       font-size: 0.8rem;
+      max-width: 6ch;
     }
     .link,
     a {
