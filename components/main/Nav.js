@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 export default function Nav() {
-  const [serviceDropdownActive, setServiceDropdownActive] = useState(true);
+  const [serviceDropdownActive, setServiceDropdownActive] = useState(false);
 
   const router = useRouter();
   function handleClick(e) {
