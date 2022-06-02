@@ -1,15 +1,85 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import emailjs from '@emailjs/browser';
+
 export default function ContactForm() {
+  const [inputs, setInputs] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    confEmail: '',
+    address: '',
+    message: '',
+  });
+  function handleSubmit(e) {
+    e.preventDefault();
+    emailjs.send(
+      'service_wxi2594',
+      'template_by7dfro',
+      { ...inputs },
+      'H9CmB3Z21EWw8AfhT'
+    );
+    setInputs({
+      name: '',
+      phone: '',
+      email: '',
+      confEmail: '',
+      address: '',
+      message: '',
+    });
+  }
+  function handleChange(e) {
+    let { value, name, type } = e.target;
+    if (type === 'file') {
+      [value] = e.target.files;
+    }
+    setInputs({ ...inputs, [name]: value });
+  }
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <div className="top">
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="Phone Number" />
-        <input type="text" placeholder="Email" />
-        <input type="text" placeholder="Confirm Email" />
+        <input
+          name="name"
+          value={inputs.name}
+          onChange={handleChange}
+          type="text"
+          placeholder="Name"
+        />
+        <input
+          name="phone"
+          value={inputs.phone}
+          onChange={handleChange}
+          type="text"
+          placeholder="Phone Number"
+        />
+        <input
+          name="email"
+          value={inputs.email}
+          onChange={handleChange}
+          type="text"
+          placeholder="Email"
+        />
+        <input
+          name="confEmail"
+          value={inputs.confEmail}
+          onChange={handleChange}
+          type="text"
+          placeholder="Confirm Email"
+        />
       </div>
-      <input type="address" placeholder="Project Address" />
-      <textarea placeholder="Message" />
+      <input
+        name="address"
+        value={inputs.address}
+        onChange={handleChange}
+        type="address"
+        placeholder="Project Address"
+      />
+      <textarea
+        name="message"
+        value={inputs.message}
+        onChange={handleChange}
+        placeholder="Message"
+      />
       <button type="submit">Send</button>
     </Form>
   );

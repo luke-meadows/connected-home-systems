@@ -96,7 +96,7 @@ const Main = styled.div`
   }
 
   @media only screen and (max-width: 1000px) {
-    margin: 4rem 2rem 6rem 2rem;
+    margin: 4rem 2rem 4rem 2rem;
     .mobile-blurb {
       display: initial;
     }
