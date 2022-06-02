@@ -97,7 +97,7 @@ const Grid = styled.div`
   grid-template-columns: 6fr 4fr;
   justify-content: space-around;
   gap: 3rem;
-  max-width: 100rem;
+
   margin: 0 auto;
   @media only screen and (max-width: 1000px) {
     display: initial;
