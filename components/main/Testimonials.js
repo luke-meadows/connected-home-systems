@@ -11,7 +11,7 @@ export default function Testimonials() {
 }
 
 const TestimonialsContainer = styled.div`
-  padding: 6rem 0rem 9rem 0rem;
+  padding: 6rem 0rem 2rem 0rem;
   position: relative;
 
   .customers {

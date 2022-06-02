@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Expectations from '../../public/imgs/expectations.jpg';
 import Installation from '../../public/imgs/installation.jpg';
 import Design from '../../public/imgs/service-imgs/design1.jpg';
-import Maintenance from '../../public/imgs/maintenance.jpg';
+import Maintenance from '../../public/imgs/maintenace-journey.jpg';
 
 export default function ProcessJourney() {
   return (

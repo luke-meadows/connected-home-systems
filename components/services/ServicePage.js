@@ -63,7 +63,7 @@ export default function ServicePage({ service }) {
 }
 
 const Container = styled.div`
-  padding: 3rem 6rem 6rem 6rem;
+  padding: 3rem 6rem 0rem 6rem;
   h2 {
     margin: 0 auto 3rem auto;
     color: var(--black);
