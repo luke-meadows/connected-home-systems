@@ -48,7 +48,9 @@ export default function MobileNav({ setMobileNavActive }) {
           </div>
 
           <SubNav className={subNavActive ? 'active' : ''}>
-            <SubNavLink category="design-and-consultancy">About us</SubNavLink>
+            <SubNavLink category="design-and-consultancy">
+              Design and Consultancy
+            </SubNavLink>
             <SubNavLink category="smart-home">
               Design and Consultancy
             </SubNavLink>
