@@ -28,6 +28,7 @@ export default function TestimonialsCards() {
         freeMode={true}
         loop={true}
         autoplay={true}
+        Pagination={true}
         modules={[FreeMode, Pagination, Autoplay]}
         className="mySwiper swiper-web"
       >
