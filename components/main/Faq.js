@@ -42,7 +42,7 @@ export default function Faq() {
       <h2>FAQ&apos;s</h2>
       <div>
         {faqs.map((faq, i) => (
-          <Question key={i} faq={faq} />
+          <Question style={faq.size === 'x' && {}} key={i} faq={faq} />
         ))}
       </div>
     </Container>
@@ -101,6 +101,10 @@ const QuestionAnswer = styled.div`
     font-style: italic;
   }
   @media only screen and (max-width: 1000px) {
+    max-height: ${(props) =>
+      props.size === 's' || props.size === 'x' ? '3rem' : '4rem'};
+  }
+  @media only screen and (max-width: 380px) {
     max-height: ${(props) => (props.size === 's' ? '3rem' : '4rem')};
   }
 `;
