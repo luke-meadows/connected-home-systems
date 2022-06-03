@@ -21,4 +21,7 @@ export { db, auth };
 
 // Initialize Analytics and get a reference to the service
 // const analytics = firebase.getAnalytics(app);
-const analytics = firebase.analytics();
+
+if (typeof window != undefined) {
+  firebase.analytics();
+}
