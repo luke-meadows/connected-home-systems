@@ -17,9 +17,10 @@ export default function Footer() {
       <ColumnContainer>
         <Column>
           <h4>Connected Home Systems</h4>
-          <Link href="/contact">Contact us</Link>
-          <Link href="/projects">Projects</Link>
           <Link href="/about-us">About us</Link>
+          {/* <Link href="/projects">Projects</Link> */}
+          <Link href="/gallery">Gallery</Link>
+          <Link href="/contact">Contact us</Link>
         </Column>
         <div style={{ margin: '2rem 0' }} />
         <Column>
