@@ -1,4 +1,5 @@
 import firebase from 'firebase';
+// import firebase from "firebase/app";
 import 'firebase/analytics';
 
 const firebaseConfig = {
@@ -19,9 +20,4 @@ const db = app.firestore();
 const auth = firebase.auth();
 export { db, auth };
 
-// Initialize Analytics and get a reference to the service
-// const analytics = firebase.getAnalytics(app);
-
-if (typeof window != undefined) {
-  firebase.analytics();
-}
+export const analytics = firebase.analytics;
