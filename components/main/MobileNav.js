@@ -51,9 +51,7 @@ export default function MobileNav({ setMobileNavActive }) {
             <SubNavLink category="design-and-consultancy">
               Design and Consultancy
             </SubNavLink>
-            <SubNavLink category="smart-home">
-              Design and Consultancy
-            </SubNavLink>
+            <SubNavLink category="smart-home">Smart Home</SubNavLink>
             <SubNavLink category="smart-lighting">Smart Lighting</SubNavLink>
             <SubNavLink category="home-cinema">
               Home Cinema / Media Rooms
