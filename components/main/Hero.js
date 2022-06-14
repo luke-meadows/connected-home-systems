@@ -9,7 +9,7 @@ export default function Hero() {
         loop
         webkit-playsinline="true"
         playsInline={true}
-        src="https://firebasestorage.googleapis.com/v0/b/chs-db.appspot.com/o/video%2Fhero720.mp4?alt=media&token=a4c7f28e-632d-4d43-b9c9-29b39ff4a7a7"
+        src={require('../../public/HERO.mp4')}
         type="video/mp4"
       />
     </StyledHero>
@@ -60,7 +60,6 @@ const Text = styled.h1`
     left: 50%;
     transform: translateX(-50%);
     background-color: white;
-
     transform-origin: bottom right;
   }
 `;
