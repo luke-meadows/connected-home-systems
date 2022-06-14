@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default function test() {
   return (
     <StyledHero>
-      <HeroVideo
+      {/* <HeroVideo
         autoPlay
         muted
         loop
@@ -11,7 +11,7 @@ export default function test() {
         playsInline={true}
         src={require('../public/HERO.mp4')}
         type="video/mp4"
-      />
+      /> */}
     </StyledHero>
   );
 }
