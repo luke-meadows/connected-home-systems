@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import Expectations from '../../public/imgs/expectations.jpg';
-import Installation from '../../public/imgs/installation.jpg';
+import Expectations from '../../public/imgs/process-journey/expectations.jpg';
+import Installation from '../../public/imgs/process-journey/installation.jpg';
 import Design from '../../public/imgs/service-imgs/design1.jpg';
-import Maintenance from '../../public/imgs/maintenace-journey.jpg';
+import Maintenance from '../../public/imgs/process-journey/maintenace-journey.jpg';
 
 export default function ProcessJourney() {
   return (

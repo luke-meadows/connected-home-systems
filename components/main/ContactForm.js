@@ -149,7 +149,6 @@ const Form = styled.form`
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
-    margin-top: 1rem;
     width: fit-content;
     font-weight: 500;
     min-width: 10rem;
