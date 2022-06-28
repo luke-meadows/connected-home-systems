@@ -1,16 +1,25 @@
+import { useState } from 'react';
 import styled from 'styled-components';
+import FormSubmissionSuccess from '../contact/FormSubmissionSuccess';
 import ContactForm from './ContactForm';
 export default function ContactSection() {
+  const [showForm, setShowForm] = useState(true);
   return (
     <ContactContainer>
-      <div className="text">
-        <h2>Book a consultation</h2>
-        <p>
-          We&apos;d love to discuss your project, book a free telephone
-          consultation by sending us your details below.
-        </p>
-      </div>
-      <ContactForm />
+      {showForm ? (
+        <>
+          <div className="text">
+            <h2>Book a consultation</h2>
+            <p>
+              We&apos;d love to discuss your project, book a free telephone
+              consultation by sending us your details below.
+            </p>
+          </div>
+          <ContactForm setShowForm={setShowForm} />
+        </>
+      ) : (
+        <FormSubmissionSuccess />
+      )}
     </ContactContainer>
   );
 }
