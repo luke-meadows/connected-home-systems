@@ -1,4 +1,3 @@
-import { delBasePath } from 'next/dist/shared/lib/router/router';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import ProjectsGrid from '../../components/projects/ProjectsGrid';
@@ -32,7 +31,6 @@ export default function Projects() {
 const Container = styled.div`
   margin-top: 6rem;
   padding: 2rem 6rem 2rem 6rem;
-  min-height: 50vh;
   h2 {
     margin-bottom: 0rem;
     line-height: 2;
