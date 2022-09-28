@@ -65,6 +65,7 @@ export default function MobileNav({ setMobileNavActive }) {
         </div>
         <NavLink href={'/about-us'}>About us</NavLink>
         {/* <NavLink href={'/projects'}>Projects</NavLink> */}
+        <NavLink href={'/blog'}>Blog</NavLink>
         <NavLink href={'/gallery'}>Gallery</NavLink>
         <NavLink href={'/contact'}>Contact us</NavLink>
       </div>

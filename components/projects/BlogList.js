@@ -77,4 +77,10 @@ const StyledBlogItem = styled.div`
     margin-right: 2rem;
     margin-bottom: 1rem;
   }
+  @media only screen and (max-width: 1000px) {
+    .img-container {
+      height: 10rem;
+      width: 10rem;
+    }
+  }
 `;
