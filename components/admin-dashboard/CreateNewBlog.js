@@ -109,9 +109,9 @@ export default function CreateNewProject({ setCreateNew }) {
           />
           <label htmlFor="text">
             Text Content{' '}
-            <span className="warning">
+            {/* <span className="warning">
               One press of the enter key will create new paragraph
-            </span>
+            </span> */}
           </label>
           <textarea
             type="text"
