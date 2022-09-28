@@ -24,7 +24,7 @@ export default function Nav() {
       <Link href="/about-us">About</Link>
       {/* <Link href="/projects">Projects</Link> */}
       <Link href="/gallery">Gallery</Link>
-      {/* <Link href="/">Technology</Link> */}
+      <Link href="/blog">Blog</Link>
       <Link href="/contact">Contact</Link>
       {serviceDropdownActive && (
         <ServicesDropdown

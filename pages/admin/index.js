@@ -10,7 +10,6 @@ export default function Admin() {
     <div style={{ marginTop: '6rem', minHeight: 'calc(100vh - 6rem)' }}>
       {!auth.currentUser && <AdminLogin setUser={setUser} />}
       {auth.currentUser && <AdminDashboard />}
-      {/* <AdminDashboard /> */}
     </div>
   );
 }

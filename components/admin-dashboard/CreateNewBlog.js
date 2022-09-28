@@ -3,13 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { AddPhoto } from './ManagePhotos';
 import { ImageContainer } from './ManagePhotos';
-import Gallery from '../gallery/Gallery';
-import { uploadProject } from '../../lib/uploadProject';
+import { uploadBlog } from '../../lib/uploadBlog';
 
 export default function CreateNewProject({ setCreateNew }) {
   const [preview, setPreview] = useState(undefined);
-  const [galleryActive, setGalleryActive] = useState(false);
-  const [selectedPhotos, setSelectedPhotos] = useState([]);
   const [inputs, setInputs] = useState({
     image: null,
     title: '',
@@ -47,21 +44,11 @@ export default function CreateNewProject({ setCreateNew }) {
     return () => URL.revokeObjectURL(objectUrl);
   }, [inputs.image]);
 
-  function handleTechIconClick(e) {
-    const { name } = e.currentTarget.dataset;
-    if (inputs.tech.includes(name)) {
-      const newArr = inputs.tech.filter((newCat) => newCat !== name);
-      setInputs({ ...inputs, tech: newArr });
-    } else {
-      setInputs({ ...inputs, tech: [...inputs.tech, name] });
-    }
-  }
-
   const containerRef = useRef();
 
   async function handleSave(e) {
     containerRef.current.classList.add('inactive');
-    await uploadProject(inputs).then(() => {
+    await uploadBlog(inputs).then(() => {
       setInputs({
         image: null,
         title: '',
@@ -78,10 +65,10 @@ export default function CreateNewProject({ setCreateNew }) {
 
   return (
     <Container ref={containerRef}>
-      <p className="header">Create new project</p>
+      <p className="header">Create new blog post</p>
       <form action="">
         <FormContainer>
-          <label htmlFor="date">Location</label>
+          <label htmlFor="date">Title</label>
           <textarea
             type="text"
             name="title"
@@ -132,55 +119,9 @@ export default function CreateNewProject({ setCreateNew }) {
             value={inputs.text}
             onChange={handleChange}
           />
-          <label htmlFor="tech">Tech installed</label>
-          <div style={{ display: 'flex', marginBottom: '2rem' }}>
-            {serviceIcons.map((iconCat) => (
-              <p
-                key={iconCat}
-                data-name={iconCat}
-                onClick={handleTechIconClick}
-                className={
-                  inputs.tech.includes(iconCat)
-                    ? 'checked tech-cat'
-                    : 'tech-cat'
-                }
-              >
-                {iconCat}
-              </p>
-            ))}
-          </div>
         </FormContainer>
       </form>
-      {!galleryActive && (
-        <button
-          onClick={() => {
-            setGalleryActive(true);
-            setSelectedPhotos([]);
-          }}
-        >
-          Choose Photos
-        </button>
-      )}
-      {galleryActive && (
-        <>
-          <GalleryContainer>
-            <Gallery
-              selectedPhotos={selectedPhotos}
-              setSelectedPhotos={setSelectedPhotos}
-              preventFullscreen={true}
-              setInputs={setInputs}
-              inputs={inputs}
-            />
-            <div></div>
-          </GalleryContainer>
-          <button
-            style={{ marginTop: '1rem' }}
-            onClick={() => setGalleryActive(false)}
-          >
-            Done Choosing
-          </button>
-        </>
-      )}
+
       <div className="buttons">
         <p className="cancel" onClick={() => setCreateNew(false)}>
           Cancel <i className="icon-cancel-1" />

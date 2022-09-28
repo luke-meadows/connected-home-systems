@@ -27,6 +27,11 @@ export default function AdminDashboard({ setUser }) {
             <h3>Projects</h3>
           </Task>
         </Link>
+        <Link href="/admin/blogPosts">
+          <Task>
+            <h3>Blog Posts</h3>
+          </Task>
+        </Link>
       </Tasks>
     </Container>
   );
