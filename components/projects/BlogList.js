@@ -43,7 +43,8 @@ export default function BlogList() {
 
   return (
     <List>
-      {blogs.length > 0 && blogs.map((blog, i) => <BlogItem blog={blog} />)}
+      {blogs.length > 0 &&
+        blogs.map((blog, i) => <BlogItem key={i} blog={blog} />)}
     </List>
   );
 }
