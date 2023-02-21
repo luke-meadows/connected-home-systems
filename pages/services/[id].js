@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import ContactSection from '../../components/main/ContactSection';
@@ -14,6 +15,7 @@ export default function Service() {
   }, [service]);
   return (
     <div style={{ marginTop: '6rem' }}>
+      <NextSeo title={service[0].seo.title} description={service[0].seo.desc} />
       <ServicePage service={service[0]} />
       <ContactSection />
     </div>

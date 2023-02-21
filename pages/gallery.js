@@ -1,8 +1,13 @@
 import Gallery from '../components/gallery/Gallery';
 import styled from 'styled-components';
+import { NextSeo } from 'next-seo';
 export default function GalleryPage() {
   return (
     <Container>
+      <NextSeo
+        title="Connected Home Systems - Showcasing our most recent jobs"
+        description="We are proud of the work we complete for our clients, these images highlight the expertise and attention to detail we have."
+      />
       <h2>Gallery</h2>
       <Gallery />
     </Container>
