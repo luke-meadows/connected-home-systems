@@ -15,7 +15,10 @@ export default function Service() {
   }, [service]);
   return (
     <div style={{ marginTop: '6rem' }}>
-      <NextSeo title={service[0].seo.title} description={service[0].seo.desc} />
+      <NextSeo
+        title={service[0]?.seo.title}
+        description={service[0]?.seo.desc}
+      />
       <ServicePage service={service[0]} />
       <ContactSection />
     </div>
